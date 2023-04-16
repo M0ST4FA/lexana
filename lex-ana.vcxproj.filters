@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\src">
+      <UniqueIdentifier>{74c7981d-8113-4ccf-b8ae-0e6e8dd973a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\examples">
+      <UniqueIdentifier>{cfe111e8-08b6-402e-8c93-4e83f8fd73ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\tests">
+      <UniqueIdentifier>{ee1baaef-91e8-42b3-92a0-3194c936c349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\libs">
+      <UniqueIdentifier>{c59486a7-d548-43e4-b69c-2f4f5b67abd3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\libs\FSM">
+      <UniqueIdentifier>{9a4d0731-e922-455b-94cf-bd258a7216cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\libs\utility">
+      <UniqueIdentifier>{67fb0e1f-bcbb-4953-91e5-a38fe630ae1f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libs\FSM\DFA.h">
+      <Filter>Resource Files\libs\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\FSM\FiniteStateMachine.h">
+      <Filter>Resource Files\libs\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\FSM\NFA.h">
+      <Filter>Resource Files\libs\FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\utility\ANSI.h">
+      <Filter>Resource Files\libs\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\utility\common.h">
+      <Filter>Resource Files\libs\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\utility\Logger.h">
+      <Filter>Resource Files\libs\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LADataStructs.h">
+      <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\LexicalAnalyzer.h">
+      <Filter>Source Files\src</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\universal.h">
+      <Filter>Source Files\tests</Filter>
+    </ClInclude>
+    <ClInclude Include="tests\fsm.h">
+      <Filter>Source Files\tests</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libs\FSM\FiniteStateMachine.cpp">
+      <Filter>Resource Files\libs\FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\utility\common.cpp">
+      <Filter>Resource Files\libs\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\utility\Logger.cpp">
+      <Filter>Resource Files\libs\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\universal.cpp">
+      <Filter>Source Files\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files\examples</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\dfa.cpp">
+      <Filter>Source Files\tests</Filter>
+    </ClCompile>
+    <ClCompile Include="tests\nfa.cpp">
+      <Filter>Source Files\tests</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>
