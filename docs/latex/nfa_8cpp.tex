@@ -1,0 +1,71 @@
+\hypertarget{nfa_8cpp}{}\doxysection{tests/nfa.cpp File Reference}
+\label{nfa_8cpp}\index{tests/nfa.cpp@{tests/nfa.cpp}}
+{\ttfamily \#include \"{}gtest/gtest.\+h\"{}}\newline
+{\ttfamily \#include \"{}./universal.\+h\"{}}\newline
+{\ttfamily \#include \"{}../libs/\+FSM/\+NFA.\+h\"{}}\newline
+{\ttfamily \#include \"{}fsm.\+h\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_n_f_a_test}{NFATest}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{nfa_8cpp_a2932da2443bffe6902eecc015547dc48}{FSMState\+Set\+Type}} = m0st4fa\+::\+FSMState\+Set\+Type
+\item 
+using \mbox{\hyperlink{nfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee}{Table\+Type}} = m0st4fa\+::\+FSMTable
+\item 
+using \mbox{\hyperlink{nfa_8cpp_a7186217e28189317cc7961dff9e0f1e2}{Tran\+Fn}} = m0st4fa\+::\+Trans\+Fn$<$ \mbox{\hyperlink{dfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee}{Table\+Type}} $>$
+\item 
+using \mbox{\hyperlink{nfa_8cpp_a2884aead696b18a66029a07b22d301fa}{NFA}} = m0st4fa\+::\+Non\+Deter\+Finite\+Automatan$<$ \mbox{\hyperlink{dfa_8cpp_a7186217e28189317cc7961dff9e0f1e2}{Tran\+Fn}} $>$
+\item 
+using \mbox{\hyperlink{nfa_8cpp_af74ed607abd207e41c3eb395109a2017}{Result}} = m0st4fa\+::\+FSMResult
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{nfa_8cpp_ae65cbf876e13df80e8951afa0d89c106}{INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+CASE\+\_\+P}} (NFATests, \mbox{\hyperlink{class_f_s_m_tests}{FSMTests}}, \mbox{\hyperlink{nfa_8cpp_a2884aead696b18a66029a07b22d301fa}{NFA}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{nfa_8cpp_a2932da2443bffe6902eecc015547dc48}\label{nfa_8cpp_a2932da2443bffe6902eecc015547dc48} 
+\index{nfa.cpp@{nfa.cpp}!FSMStateSetType@{FSMStateSetType}}
+\index{FSMStateSetType@{FSMStateSetType}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{FSMStateSetType}{FSMStateSetType}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{dfa_8cpp_a2932da2443bffe6902eecc015547dc48}{FSMState\+Set\+Type}} =  m0st4fa\+::\+FSMState\+Set\+Type}
+
+\Hypertarget{nfa_8cpp_a2884aead696b18a66029a07b22d301fa}\label{nfa_8cpp_a2884aead696b18a66029a07b22d301fa} 
+\index{nfa.cpp@{nfa.cpp}!NFA@{NFA}}
+\index{NFA@{NFA}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{NFA}{NFA}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{nfa_8cpp_a2884aead696b18a66029a07b22d301fa}{NFA}} =  m0st4fa\+::\+Non\+Deter\+Finite\+Automatan$<$\mbox{\hyperlink{dfa_8cpp_a7186217e28189317cc7961dff9e0f1e2}{Tran\+Fn}}$>$}
+
+\Hypertarget{nfa_8cpp_af74ed607abd207e41c3eb395109a2017}\label{nfa_8cpp_af74ed607abd207e41c3eb395109a2017} 
+\index{nfa.cpp@{nfa.cpp}!Result@{Result}}
+\index{Result@{Result}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{dfa_8cpp_af74ed607abd207e41c3eb395109a2017}{Result}} =  m0st4fa\+::\+FSMResult}
+
+\Hypertarget{nfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee}\label{nfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee} 
+\index{nfa.cpp@{nfa.cpp}!TableType@{TableType}}
+\index{TableType@{TableType}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{TableType}{TableType}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{dfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee}{Table\+Type}} =  m0st4fa\+::\+FSMTable}
+
+\Hypertarget{nfa_8cpp_a7186217e28189317cc7961dff9e0f1e2}\label{nfa_8cpp_a7186217e28189317cc7961dff9e0f1e2} 
+\index{nfa.cpp@{nfa.cpp}!TranFn@{TranFn}}
+\index{TranFn@{TranFn}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{TranFn}{TranFn}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{dfa_8cpp_a7186217e28189317cc7961dff9e0f1e2}{Tran\+Fn}} =  m0st4fa\+::\+Trans\+Fn$<$\mbox{\hyperlink{dfa_8cpp_aa57b7ff5996a8aaf987333293d8c3fee}{Table\+Type}}$>$}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{nfa_8cpp_ae65cbf876e13df80e8951afa0d89c106}\label{nfa_8cpp_ae65cbf876e13df80e8951afa0d89c106} 
+\index{nfa.cpp@{nfa.cpp}!INSTANTIATE\_TYPED\_TEST\_CASE\_P@{INSTANTIATE\_TYPED\_TEST\_CASE\_P}}
+\index{INSTANTIATE\_TYPED\_TEST\_CASE\_P@{INSTANTIATE\_TYPED\_TEST\_CASE\_P}!nfa.cpp@{nfa.cpp}}
+\doxysubsubsection{\texorpdfstring{INSTANTIATE\_TYPED\_TEST\_CASE\_P()}{INSTANTIATE\_TYPED\_TEST\_CASE\_P()}}
+{\footnotesize\ttfamily INSTANTIATE\+\_\+\+TYPED\+\_\+\+TEST\+\_\+\+CASE\+\_\+P (\begin{DoxyParamCaption}\item[{NFATests}]{,  }\item[{\mbox{\hyperlink{class_f_s_m_tests}{FSMTests}}}]{,  }\item[{\mbox{\hyperlink{nfa_8cpp_a2884aead696b18a66029a07b22d301fa}{NFA}}}]{ }\end{DoxyParamCaption})}
+

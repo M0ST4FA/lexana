@@ -1,2 +1,3 @@
-# lex-ana
-A library implementing a simple to use lexical analyzer abstraction.
+# Documentation
+
+- See the doxygen generated documentation in the `docs` directory.

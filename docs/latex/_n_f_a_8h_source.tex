@@ -1,0 +1,312 @@
+\hypertarget{_n_f_a_8h_source}{}\doxysection{NFA.\+h}
+\label{_n_f_a_8h_source}\index{libs/FSM/NFA.h@{libs/FSM/NFA.h}}
+\mbox{\hyperlink{_n_f_a_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stack>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <ranges>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <assert.h>}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_finite_state_machine_8h}{FiniteStateMachine.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}\ \{}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{//\ DECLARATIONS}}
+\DoxyCodeLine{00017\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{NonDeterFiniteAutomatan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine}}<TransFuncT,\ InputT>\ \{}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{Base}}\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine<TransFuncT,\ InputT>}};}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_substring}{SubstringType}}\ =\ \mbox{\hyperlink{structm0st4fa_1_1_substring}{Substring<FSMStateSetType>}};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ static\ variables}}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \textcolor{keyword}{static}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ DEAD\_STATE\ =\ 0;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ PRIVATE\ METHODS}}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MAIN}}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \_simulate\_whole\_string(\textcolor{keyword}{const}\ InputT\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \_simulate\_longest\_prefix(\textcolor{keyword}{const}\ InputT\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \_simulate\_longest\_substring(\textcolor{keyword}{const}\ InputT\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ HELPERS}}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_check\_accepted\_longest\_prefix(\textcolor{keyword}{const}\ std::vector<FSMStateSetType>\&,\ \textcolor{keywordtype}{size\_t}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_check\_accepted\_substring(\textcolor{keyword}{const}\ InputT\&,\ std::vector<FSMStateSetType>\&,\ \textcolor{keywordtype}{size\_t},\ \textcolor{keywordtype}{size\_t}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \_record\_matched\_substrings(\textcolor{keyword}{const}\ InputT,\ \textcolor{keywordtype}{size\_t}\&,\ \textcolor{keywordtype}{size\_t}\&,\ std::vector<FSMStateSetType>\&,\ std::vector<SubstringType>\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \_get\_longest\_substring\_from\_matched\_sets(\textcolor{keyword}{const}\ InputT,\ \textcolor{keyword}{const}\ std::vector<SubstringType>\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \_epsilon\_closure(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan_a7083a500d53010605753d211c684a3cb}{NonDeterFiniteAutomatan}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan_a82dc947853fea3808e49ef55da2f3a49}{NonDeterFiniteAutomatan}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ fStates,\ \textcolor{keyword}{const}\ TransFuncT\&\ tranFn,\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}}\ machineType\ =\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697}{FSMType::MT\_EPSILON\_NFA}},\ \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{FlagsType}}\ flags\ =\ \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246}{FSM\_FLAG::FF\_FLAG\_NONE}})\ :}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine}}<TransFuncT,\ InputT>\{\ fStates,\ tranFn,\ machineType,\ flags\ \}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ correct\ machine\ type\ is\ not\ passed}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(machineType\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697}{FSMType::MT\_EPSILON\_NFA}}\ ||\ machineType\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{FSMType::MT\_NON\_EPSILON\_NFA}}))\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ message\ =\ R\textcolor{stringliteral}{"{}(NonDeterFiniteAutomatan:\ machineType\ must\ be\ either\ "{}MT\_EPSILON\_NFA"{}\ or\ "{}MT\_NON\_EPSILON\_NFA"{})"{};}}
+\DoxyCodeLine{00051\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a82838d5d7a530883491d24bae45a6d0a}{m\_Logger}}.\mbox{\hyperlink{classm0st4fa_1_1_logger_ad2d7c8f0ebb50dc5747374ce0df12e18}{log}}(\mbox{\hyperlink{structm0st4fa_1_1_logger_info_a86979cdf63c8400d492826aab8a4ba3d}{LoggerInfo::FATAL\_ERROR}},\ message);}}
+\DoxyCodeLine{00052\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{keywordflow}{throw}\ \mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception}{InvalidStateMachineArgumentsException}}(message);}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a93bbc0499903ffa2d78306b08a687146}{FSMResult}}\ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan_a46dabe2f620febdfdb369fd25c679fb4}{simulate}}(\textcolor{keyword}{const}\ InputT\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}{FSM\_MODE}})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}>}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{NFA}}\ =\ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{NonDeterFiniteAutomatan<TransFuncT,\ InputT>}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//\ IMPLEMENTATIONS}}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00067\ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_simulate\_whole\_string}}(\textcolor{keyword}{const}\ InputT\&\ input)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00068\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ currState\ =\ \{\ startState\ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>getMachineType()\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{FSMType::MT\_NON\_EPSILON\_NFA}})\ \textcolor{comment}{//\ If\ the\ machine\ is\ a\ non-\/epsilon\ NFA}}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ c\ :\ input)}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currState\ =\ this-\/>m\_TransitionFunc(currState,\ c);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{//\ If\ the\ machine\ is\ an\ epsilon\ NFA}}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ c\ :\ input)}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currState\ =\ \_epsilon\_closure(this-\/>m\_TransitionFunc(currState,\ c));}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assert\ whether\ we've\ reached\ a\ final\ state}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(currState);}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ accepted\ =\ !finalStates.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}(accepted,\ finalStates,\ \{\ 0,\ accepted\ ?\ input.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a73f939b94292c62fc766d4d59ddffd6f}{size}}()\ :\ 0\ \},\ input);}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00092\ \ \ \ \ FSMResult\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_simulate\_longest\_prefix(\textcolor{keyword}{const}\ InputT\&\ input)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00093\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ std::vector<FSMStateSetType>\ matchedStates\ =\ \{\ \{startState\}\ \};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ charIndex\ =\ 0;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>getMachineType()\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{FSMType::MT\_NON\_EPSILON\_NFA}})}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ charIndex\ <\ input.size();\ charIndex++)\ \{}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ c\ =\ input.at(charIndex);}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ next\ set\ of\ states\ and\ update\ our\ path\ through\ the\ machine}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchedStates.push\_back(this-\/>m\_TransitionFunc(matchedStates.back(),\ c));}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ charIndex\ <\ input.size();\ charIndex++)\ \{}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{auto}\ c\ =\ input.at(charIndex);}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ next\ set\ of\ states\ and\ update\ our\ path\ through\ the\ machine}}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchedStates.push\_back(this-\/>\_epsilon\_closure(this-\/>m\_TransitionFunc(matchedStates.back(),\ c)));}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ sure\ \`{}charIndex`\ <\ input.size()}}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charIndex\ ==\ input.size())}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ charIndex\ =\ input.size()\ -\/\ 1;}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ set\ the\ index\ of\ the\ current\ character;\ figure\ out\ whether\ there\ is\ an\ accepted\ longest\ prefix;\ set\ the\ end\ index}}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ accepted\ =\ \_check\_accepted\_longest\_prefix(matchedStates,\ charIndex);}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ end\ =\ accepted\ ?\ charIndex\ +\ 1\ :\ 0;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ final\ states\ we've\ reached}}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(matchedStates.back());}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(accepted,\ finalStates,\ \{\ 0,\ end\ \},\ input);}
+\DoxyCodeLine{00132\ \ \ \ \ \}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00138\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00139\ \ \ \ \ FSMResult\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_simulate\_longest\_substring(\textcolor{keyword}{const}\ InputT\&\ input)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00140\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ std::vector<FSMStateSetType>\ matchedStates\ =\ \{\ \{startState\}\ \};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ std::vector<SubstringType>\ substrings\{\};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\ =\ 0,\ charIndex\ =\ 0;}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \_record\_matched\_substrings(input,\ start,\ charIndex,\ matchedStates,\ substrings);}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (substrings.size())}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_get\_longest\_substring\_from\_matched\_sets(input,\ substrings);}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ there\ was\ no\ accepted\ substring}}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(\textcolor{keyword}{false},\ \{\},\ \{0,\ 0\},\ input);}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00167\ \ \ \ \ \textcolor{keywordtype}{bool}\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_check\_accepted\_longest\_prefix(\textcolor{keyword}{const}\ std::vector<FSMStateSetType>\&\ stateSet,\ \textcolor{keywordtype}{size\_t}\&\ charIndex)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00168\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ std::ranges::reverse\_view\ rv\{stateSet\};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ state\ :\ rv)}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\_is\_state\_final(state))}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ charIndex-\/-\/;}
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ sure\ \`{}charIndex`\ does\ not\ get\ below\ 0}}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charIndex\ <\ 0)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ charIndex\ =\ 0;}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00188\ \ \ \ \ \}}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00195\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00196\ \ \ \ \ \textcolor{keywordtype}{bool}\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_check\_accepted\_substring(\textcolor{keyword}{const}\ InputT\&\ input,\ std::vector<FSMStateSetType>\&\ matchedStates,\ \textcolor{keywordtype}{size\_t}\ startIndex,\ \textcolor{keywordtype}{size\_t}\&\ charIndex)\textcolor{keyword}{\ const\ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ assert(charIndex\ ==\ startIndex);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ matchInput\ =\ [input,\ \&charIndex,\ \&matchedStates,\ \textcolor{keyword}{this}](\textcolor{keywordtype}{bool}\ calcClosure\ =\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ charIndex\ <\ input.size();\ charIndex++)\ \{}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ input[charIndex];}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ currStateSet\{\};}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (calcClosure)\ \{}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currStateSet\ =\ \_epsilon\_closure(}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_TransitionFunc(matchedStates.back(),\ c)}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currStateSet\ =\ this-\/>m\_TransitionFunc(matchedStates.back(),\ c);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00220\ }
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ current\ state\ is\ empty}}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!currStateSet.size())\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charIndex-\/-\/;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\ \textcolor{comment}{//\ break\ out\ of\ the\ loop\ and\ the\ function}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ next\ set\ of\ states}}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ update\ our\ path\ through\ the\ machine}}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matchedStates.push\_back(currStateSet);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ make\ sure\ charIndex\ is\ less\ that\ input.size()\ even\ if\ the\ entire\ string\ accepts}}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charIndex\ ==\ input.size())}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ charIndex-\/-\/;}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>getMachineType()\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{FSMType::MT\_NON\_EPSILON\_NFA}})}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ matchInput();}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ matchInput(\textcolor{keyword}{true});}
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ figure\ out\ whether\ there\ is\ an\ accepted\ longest\ prefix}}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_check\_accepted\_longest\_prefix(matchedStates,\ charIndex);}
+\DoxyCodeLine{00244\ \ \ \ \ \}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00249\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00250\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_record\_matched\_substrings(\textcolor{keyword}{const}\ InputT\ input,\ \textcolor{keywordtype}{size\_t}\&\ start,\ \textcolor{keywordtype}{size\_t}\&\ charIndex,\ std::vector<FSMStateSetType>\&\ matchedStates,\ std::vector<SubstringType>\&\ substrings)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00251\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (;\ charIndex\ <\ input.size();\ charIndex\ =\ ++start)\ \{}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ whether\ the\ substring\ is\ accepted\ (and\ populate\ everything\ given\ by\ reference)}}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ accepted\ =\ \_check\_accepted\_substring(input,\ matchedStates,\ start,\ charIndex);}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ substring\ was\ accepted}}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (accepted)\ \{}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ substrings.push\_back(\{\ matchedStates,\ start,\ charIndex\ +\ 1\ \});}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ rest\ of\ the\ input\ is\ less\ than\ the\ current\ substring\ in\ length,\ leave}}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((input.size()\ -\/\ start)\ <\ matchedStates.size())}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00264\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \ \ \ \ \ \ \ \ matchedStates.resize(1);}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \}}
+\DoxyCodeLine{00270\ }
+\DoxyCodeLine{00275\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00276\ \ \ \ \ \textcolor{keyword}{inline}\ FSMResult\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_get\_longest\_substring\_from\_matched\_sets(\textcolor{keyword}{const}\ InputT\ input,\ \textcolor{keyword}{const}\ std::vector<SubstringType>\&\ substrings)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ SubstringType*\ longest\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size\ =\ 0;}
+\DoxyCodeLine{00280\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ choose\ the\ longest\ substring\ or\ the\ first\ of\ many\ having\ the\ same\ length}}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ substring\ :\ substrings)\ \{}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ length\ of\ this\ substring\ is\ longer\ than\ that\ of\ the\ previously\ catched}}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (substring.size()\ >\ size)\ \{}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ longest\ =\ \&substring;}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ size\ =\ longest-\/>size();}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ start\ =\ 0;}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ end\ =\ 0;}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (longest)\ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ start\ =\ longest-\/>indecies.start;}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ end\ =\ longest-\/>indecies.end;}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ final\ states\ we've\ reached}}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ currState\ =\ longest-\/>matchedStates.back();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ finalStateSet\ =\ this-\/>\_get\_final\_states\_from\_state\_set(currState);}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{comment}{//assert("{}This\ set\ must\ contain\ at\ least\ a\ single\ final\ state"{}\ \&\&\ finalStateSet.size());}}
+\DoxyCodeLine{00302\ }
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(\textcolor{keyword}{true},\ finalStateSet,\ \{\ start,\ end\ \},\ input);}
+\DoxyCodeLine{00304\ \ \ \ \ \};}
+\DoxyCodeLine{00305\ }
+\DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_epsilon\_closure(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ set)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00308\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ res\{set\};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ std::stack<FSMStateType>\ stack\{\};}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ stack}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s\ :\ set)}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ \ \ \ \ stack.push(s);}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}\ (stack.size())\ \{}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ last\ state\ and\ pop\ it;\ we\ will\ get\ its\ closure\ now,\ so\ we\ will\ not\ need\ it\ in\ the\ future}}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ s\ =\ stack.top();}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ stack.pop();}
+\DoxyCodeLine{00320\ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ the\ state\ has\ at\ least\ one\ transition\ on\ epsilon}}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ epsilonTransitions\ =\ this-\/>m\_TransitionFunc(s,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ set\ has\ at\ least\ a\ single\ epsilon-\/transition}}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}())\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state\ :\ epsilonTransitions)}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!res.contains(state))}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stack.push(state);}
+\DoxyCodeLine{00336\ }
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.insert(epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}}(),\ epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}}());}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00343\ \ \ \ \ \}}
+\DoxyCodeLine{00344\ \ \ \ \ }
+\DoxyCodeLine{00349\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00350\ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan_a46dabe2f620febdfdb369fd25c679fb4}{NonDeterFiniteAutomatan<TransFuncT,\ InputT>::simulate}}(\textcolor{keyword}{const}\ InputT\&\ input,\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}{FSM\_MODE}}\ mode)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00351\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (mode)\ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a}{FSM\_MODE::MM\_WHOLE\_STRING}}:}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_simulate\_whole\_string(input);}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}{FSM\_MODE::MM\_LONGEST\_PREFIX}}:}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_simulate\_longest\_prefix(input);}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb}{FSM\_MODE::MM\_LONGEST\_SUBSTRING}}:}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_simulate\_longest\_substring(input);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_Logger.log(\mbox{\hyperlink{structm0st4fa_1_1_logger_info_a6797864646ee11570bc8f57f6b746419}{LoggerInfo::ERR\_INVALID\_ARG}},\ \textcolor{stringliteral}{"{}Unreachable:\ simulate()\ cannot\ reach\ this\ point.\ The\ provided\ mode\ is\ probably\ erraneous."{}});}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{structm0st4fa_1_1_unrecognized_sim_mode_exception}{UnrecognizedSimModeException}}();}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \}}
+\DoxyCodeLine{00365\ \ \ \ \ }
+\DoxyCodeLine{00366\ \}}
+
+\end{DoxyCode}

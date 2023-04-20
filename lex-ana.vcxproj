@@ -143,11 +143,12 @@
     <ClInclude Include="tests\universal.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="examples\main.cpp" />
     <ClCompile Include="libs\FSM\FiniteStateMachine.cpp" />
     <ClCompile Include="libs\utility\common.cpp" />
     <ClCompile Include="libs\utility\Logger.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="tests\dfa.cpp" />
+    <ClCompile Include="tests\lexical analyzer.cpp" />
     <ClCompile Include="tests\nfa.cpp" />
     <ClCompile Include="tests\universal.cpp" />
   </ItemGroup>

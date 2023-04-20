@@ -1,0 +1,62 @@
+\hypertarget{gtest-param-util_8h}{}\doxysection{packages/\+Microsoft.googletest.\+v140.\+windesktop.\+msvcstl.\+static.\+rt-\/dyn.1.8.1.7/build/native/include/gtest/internal/gtest-\/param-\/util.h File Reference}
+\label{gtest-param-util_8h}\index{packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-\/dyn.1.8.1.7/build/native/include/gtest/internal/gtest-\/param-\/util.h@{packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-\/dyn.1.8.1.7/build/native/include/gtest/internal/gtest-\/param-\/util.h}}
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$iterator$>$}\newline
+{\ttfamily \#include $<$set$>$}\newline
+{\ttfamily \#include $<$utility$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include \"{}gtest/internal/gtest-\/internal.\+h\"{}}\newline
+{\ttfamily \#include \"{}gtest/internal/gtest-\/linked\+\_\+ptr.\+h\"{}}\newline
+{\ttfamily \#include \"{}gtest/internal/gtest-\/port.\+h\"{}}\newline
+{\ttfamily \#include \"{}gtest/gtest-\/printers.\+h\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structtesting_1_1_test_param_info}{testing\+::\+Test\+Param\+Info$<$ Param\+Type $>$}}
+\item 
+struct \mbox{\hyperlink{structtesting_1_1_print_to_string_param_name}{testing\+::\+Print\+To\+String\+Param\+Name}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_param_iterator_interface}{testing\+::internal\+::\+Param\+Iterator\+Interface$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_param_iterator}{testing\+::internal\+::\+Param\+Iterator$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_param_generator_interface}{testing\+::internal\+::\+Param\+Generator\+Interface$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_param_generator}{testing\+::internal\+::\+Param\+Generator$<$ T $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_range_generator}{testing\+::internal\+::\+Range\+Generator$<$ T, Increment\+T $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_values_in_iterator_range_generator}{testing\+::internal\+::\+Values\+In\+Iterator\+Range\+Generator$<$ T $>$}}
+\item 
+struct \mbox{\hyperlink{structtesting_1_1internal_1_1_param_name_gen_func}{testing\+::internal\+::\+Param\+Name\+Gen\+Func$<$ Param\+Type $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_parameterized_test_factory}{testing\+::internal\+::\+Parameterized\+Test\+Factory$<$ Test\+Class $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_test_meta_factory_base}{testing\+::internal\+::\+Test\+Meta\+Factory\+Base$<$ Param\+Type $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_test_meta_factory}{testing\+::internal\+::\+Test\+Meta\+Factory$<$ Test\+Case $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_parameterized_test_case_info_base}{testing\+::internal\+::\+Parameterized\+Test\+Case\+Info\+Base}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_parameterized_test_case_info}{testing\+::internal\+::\+Parameterized\+Test\+Case\+Info$<$ Test\+Case $>$}}
+\item 
+class \mbox{\hyperlink{classtesting_1_1internal_1_1_parameterized_test_case_registry}{testing\+::internal\+::\+Parameterized\+Test\+Case\+Registry}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesting}{testing}}
+\item 
+namespace \mbox{\hyperlink{namespacetesting_1_1internal}{testing\+::internal}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{gtest-port_8h_aa73be6f0ba4a7456180a94904ce17790}{GTEST\+\_\+\+API\+\_\+}} void \mbox{\hyperlink{namespacetesting_1_1internal_a8c3088e65ec31e3671b0c4c407d4d9fc}{testing\+::internal\+::\+Report\+Invalid\+Test\+Case\+Type}} (const char $\ast$test\+\_\+case\+\_\+name, \mbox{\hyperlink{structtesting_1_1internal_1_1_code_location}{Code\+Location}} code\+\_\+location)
+\item 
+{\footnotesize template$<$class Param\+Type $>$ }\\std\+::string \mbox{\hyperlink{namespacetesting_1_1internal_a954ec4a8a932dac7743e77e459ffefdc}{testing\+::internal\+::\+Default\+Param\+Name}} (const \mbox{\hyperlink{structtesting_1_1_test_param_info}{Test\+Param\+Info}}$<$ Param\+Type $>$ \&info)
+\item 
+{\footnotesize template$<$class Param\+Type , class Param\+Name\+Gen\+Functor $>$ }\\Param\+Name\+Gen\+Functor \mbox{\hyperlink{namespacetesting_1_1internal_abc0f0626877188afba6ad122d502f088}{testing\+::internal\+::\+Get\+Param\+Name\+Gen}} (Param\+Name\+Gen\+Functor func)
+\item 
+{\footnotesize template$<$class Param\+Type $>$ }\\\mbox{\hyperlink{structtesting_1_1internal_1_1_param_name_gen_func}{Param\+Name\+Gen\+Func}}$<$ Param\+Type $>$\+::\+Type $\ast$ \mbox{\hyperlink{namespacetesting_1_1internal_aee6012d048a5aca8070ddccb0a3b5d80}{testing\+::internal\+::\+Get\+Param\+Name\+Gen}} ()
+\end{DoxyCompactItemize}

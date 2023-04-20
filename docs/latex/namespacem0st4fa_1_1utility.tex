@@ -1,0 +1,139 @@
+\hypertarget{namespacem0st4fa_1_1utility}{}\doxysection{m0st4fa\+::utility Namespace Reference}
+\label{namespacem0st4fa_1_1utility}\index{m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsection*{Concepts}
+\begin{DoxyCompactItemize}
+\item 
+concept \mbox{\hyperlink{conceptm0st4fa_1_1utility_1_1_convertable_to_string}{Convertable\+To\+String}}
+\item 
+concept \mbox{\hyperlink{conceptm0st4fa_1_1utility_1_1_num_convertable_to_string}{Num\+Convertable\+To\+String}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{to\+String}} (const std\+::source\+\_\+location \&srcloc, bool full)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespacem0st4fa_1_1utility_a4532f9043d863ed3f35d577a283d4871}{pow}} (size\+\_\+t base, size\+\_\+t p)
+\item 
+size\+\_\+t \mbox{\hyperlink{namespacem0st4fa_1_1utility_adc03eb4b9c83ca258f2705d7fe1811f7}{to\+Integer}} (const std\+::string \&str, bool at\+Beginning)
+\item 
+{\footnotesize template$<$typename T $>$ \newline
+requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Convertable\+To\+String; \}}\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_adbf445d12d35264d99fb6afc9800018e}{to\+String}} (const T \&iterable, bool as\+List=true)
+\item 
+{\footnotesize template$<$typename T $>$ \newline
+requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Num\+Convertable\+To\+String; \}}\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a5de11fa2a6d6d1e77581ed7e3b3489b9}{to\+String}} (const T \&iterable, bool as\+List=true)
+\item 
+{\footnotesize template$<$Num\+Convertable\+To\+String T, size\+\_\+t xdim, size\+\_\+t ydim$>$ }\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a381f2e8e66ab802671424ce2a82bfe2d}{to\+String}} (const std\+::array$<$ std\+::array$<$ T, ydim $>$, xdim $>$ \&array, bool as\+List=true)
+\item 
+{\footnotesize template$<$typename K , typename V $>$ }\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_ab455344553cd252bd8c8635bd942a3a7}{to\+String}} (const std\+::map$<$ K, V $>$ \&map)
+\item 
+{\footnotesize template$<$typename IterableT , typename ExceptT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_acd211dd6f2451643326c2d099268ab02}{insert\+And\+Assert}} (const IterableT \&from, IterableT \&to, ExceptT except)
+\item 
+{\footnotesize template$<$typename IterableT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a7ff3ec7a85f4ca32cc83a3e03d7e6239}{insert\+And\+Assert}} (const IterableT \&from, IterableT \&to)
+\item 
+{\footnotesize template$<$typename ElementT , typename IterableT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_abb27011d2e9eed27684de9c7a352eef5}{is\+In}} (const ElementT element, const IterableT \&iterable)
+\item 
+{\footnotesize template$<$typename IterableT $>$ \newline
+requires requires (IterableT a) \{ a.\+contains($\ast$a.\+begin()); \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a3d9f44417c4fffc907dc4f86aa949548}{operator==}} (const IterableT \&lhs, const IterableT \&rhs)
+\item 
+{\footnotesize template$<$typename IterableT $>$ \newline
+requires requires (IterableT a) \{ a.\+at(0); \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_ae9f6f0264cf7b195cca7e3a77f143a10}{operator==}} (const IterableT \&lhs, const IterableT \&rhs)
+\item 
+{\footnotesize template$<$typename T $>$ \newline
+requires requires(T a, T b) \{ a $<$ b; a $>$ b; \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a5c9a274051c084ddb99d5f6246007c99}{within\+Range}} (T element, T b1, T b2, bool inclusive=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacem0st4fa_1_1utility_a7ff3ec7a85f4ca32cc83a3e03d7e6239}\label{namespacem0st4fa_1_1utility_a7ff3ec7a85f4ca32cc83a3e03d7e6239} 
+\index{m0st4fa::utility@{m0st4fa::utility}!insertAndAssert@{insertAndAssert}}
+\index{insertAndAssert@{insertAndAssert}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{insertAndAssert()}{insertAndAssert()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename IterableT $>$ \\
+bool m0st4fa\+::utility\+::insert\+And\+Assert (\begin{DoxyParamCaption}\item[{const IterableT \&}]{from,  }\item[{IterableT \&}]{to }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_acd211dd6f2451643326c2d099268ab02}\label{namespacem0st4fa_1_1utility_acd211dd6f2451643326c2d099268ab02} 
+\index{m0st4fa::utility@{m0st4fa::utility}!insertAndAssert@{insertAndAssert}}
+\index{insertAndAssert@{insertAndAssert}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{insertAndAssert()}{insertAndAssert()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename IterableT , typename ExceptT $>$ \\
+bool m0st4fa\+::utility\+::insert\+And\+Assert (\begin{DoxyParamCaption}\item[{const IterableT \&}]{from,  }\item[{IterableT \&}]{to,  }\item[{ExceptT}]{except }\end{DoxyParamCaption})}
+
+Inserts elements from {\ttfamily from} to {\ttfamily to} except any element that equals {\ttfamily except} If the type of {\ttfamily except} is nullptr\+\_\+t, it is ignored and all elements are added \Hypertarget{namespacem0st4fa_1_1utility_abb27011d2e9eed27684de9c7a352eef5}\label{namespacem0st4fa_1_1utility_abb27011d2e9eed27684de9c7a352eef5} 
+\index{m0st4fa::utility@{m0st4fa::utility}!isIn@{isIn}}
+\index{isIn@{isIn}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{isIn()}{isIn()}}
+{\footnotesize\ttfamily template$<$typename ElementT , typename IterableT $>$ \\
+bool m0st4fa\+::utility\+::is\+In (\begin{DoxyParamCaption}\item[{const ElementT}]{element,  }\item[{const IterableT \&}]{iterable }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_a3d9f44417c4fffc907dc4f86aa949548}\label{namespacem0st4fa_1_1utility_a3d9f44417c4fffc907dc4f86aa949548} 
+\index{m0st4fa::utility@{m0st4fa::utility}!operator==@{operator==}}
+\index{operator==@{operator==}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename IterableT $>$ \newline
+requires requires (IterableT a) \{ a.\+contains($\ast$a.\+begin()); \}\\
+bool m0st4fa\+::utility\+::operator== (\begin{DoxyParamCaption}\item[{const IterableT \&}]{lhs,  }\item[{const IterableT \&}]{rhs }\end{DoxyParamCaption})}
+
+works with iterables that have method {\ttfamily contains} \Hypertarget{namespacem0st4fa_1_1utility_ae9f6f0264cf7b195cca7e3a77f143a10}\label{namespacem0st4fa_1_1utility_ae9f6f0264cf7b195cca7e3a77f143a10} 
+\index{m0st4fa::utility@{m0st4fa::utility}!operator==@{operator==}}
+\index{operator==@{operator==}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename IterableT $>$ \newline
+requires requires (IterableT a) \{ a.\+at(0); \}\\
+bool m0st4fa\+::utility\+::operator== (\begin{DoxyParamCaption}\item[{const IterableT \&}]{lhs,  }\item[{const IterableT \&}]{rhs }\end{DoxyParamCaption})}
+
+works with iterables that do not have method {\ttfamily contains}, but that have method {\ttfamily at} \Hypertarget{namespacem0st4fa_1_1utility_a4532f9043d863ed3f35d577a283d4871}\label{namespacem0st4fa_1_1utility_a4532f9043d863ed3f35d577a283d4871} 
+\index{m0st4fa::utility@{m0st4fa::utility}!pow@{pow}}
+\index{pow@{pow}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{pow()}{pow()}}
+{\footnotesize\ttfamily size\+\_\+t m0st4fa\+::utility\+::pow (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{base,  }\item[{size\+\_\+t}]{p }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_adc03eb4b9c83ca258f2705d7fe1811f7}\label{namespacem0st4fa_1_1utility_adc03eb4b9c83ca258f2705d7fe1811f7} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toInteger@{toInteger}}
+\index{toInteger@{toInteger}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toInteger()}{toInteger()}}
+{\footnotesize\ttfamily size\+\_\+t m0st4fa\+::utility\+::to\+Integer (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{,  }\item[{bool}]{ = {\ttfamily false} }\end{DoxyParamCaption})}
+
+extract the first integer from the string and convert it into size\+\_\+t the integer may not necessarily be at the beginning except if the boolean is set. \Hypertarget{namespacem0st4fa_1_1utility_a381f2e8e66ab802671424ce2a82bfe2d}\label{namespacem0st4fa_1_1utility_a381f2e8e66ab802671424ce2a82bfe2d} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$Num\+Convertable\+To\+String T, size\+\_\+t xdim, size\+\_\+t ydim$>$ \\
+std\+::string m0st4fa\+::utility\+::to\+String (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::array$<$ T, ydim $>$, xdim $>$ \&}]{array,  }\item[{bool}]{as\+List = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_ab455344553cd252bd8c8635bd942a3a7}\label{namespacem0st4fa_1_1utility_ab455344553cd252bd8c8635bd942a3a7} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename K , typename V $>$ \\
+std\+::string m0st4fa\+::utility\+::to\+String (\begin{DoxyParamCaption}\item[{const std\+::map$<$ K, V $>$ \&}]{map }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}\label{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily std\+::string m0st4fa\+::utility\+::to\+String (\begin{DoxyParamCaption}\item[{const std\+::source\+\_\+location \&}]{srcloc,  }\item[{bool}]{full }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_adbf445d12d35264d99fb6afc9800018e}\label{namespacem0st4fa_1_1utility_adbf445d12d35264d99fb6afc9800018e} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \newline
+requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Convertable\+To\+String; \}\\
+std\+::string m0st4fa\+::utility\+::to\+String (\begin{DoxyParamCaption}\item[{const T \&}]{iterable,  }\item[{bool}]{as\+List = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_a5de11fa2a6d6d1e77581ed7e3b3489b9}\label{namespacem0st4fa_1_1utility_a5de11fa2a6d6d1e77581ed7e3b3489b9} 
+\index{m0st4fa::utility@{m0st4fa::utility}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename T $>$ \newline
+requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Num\+Convertable\+To\+String; \}\\
+std\+::string m0st4fa\+::utility\+::to\+String (\begin{DoxyParamCaption}\item[{const T \&}]{iterable,  }\item[{bool}]{as\+List = {\ttfamily true} }\end{DoxyParamCaption})}
+
+\Hypertarget{namespacem0st4fa_1_1utility_a5c9a274051c084ddb99d5f6246007c99}\label{namespacem0st4fa_1_1utility_a5c9a274051c084ddb99d5f6246007c99} 
+\index{m0st4fa::utility@{m0st4fa::utility}!withinRange@{withinRange}}
+\index{withinRange@{withinRange}!m0st4fa::utility@{m0st4fa::utility}}
+\doxysubsubsection{\texorpdfstring{withinRange()}{withinRange()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \newline
+requires requires(T a, T b) \{ a $<$ b; a $>$ b; \}\\
+bool m0st4fa\+::utility\+::within\+Range (\begin{DoxyParamCaption}\item[{T}]{element,  }\item[{T}]{b1,  }\item[{T}]{b2,  }\item[{bool}]{inclusive = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

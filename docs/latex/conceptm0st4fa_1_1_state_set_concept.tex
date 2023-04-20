@@ -1,0 +1,13 @@
+\hypertarget{conceptm0st4fa_1_1_state_set_concept}{}\doxysection{m0st4fa\+::State\+Set\+Concept Concept Reference}
+\label{conceptm0st4fa_1_1_state_set_concept}\index{m0st4fa::StateSetConcept@{m0st4fa::StateSetConcept}}
+
+
+{\ttfamily \#include $<$Finite\+State\+Machine.\+h$>$}
+
+\doxysubsection{Concept definition}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptm0st4fa_1_1_state_set_concept}{m0st4fa::StateSetConcept}}\ =\ \ std::is\_same\_v<T,\ FSMStateSetType>\ ||\ std::is\_same\_v<T,\ std::vector<FSMStateType>>}
+
+\end{DoxyCode}

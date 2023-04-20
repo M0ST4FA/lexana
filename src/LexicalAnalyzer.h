@@ -19,8 +19,8 @@ namespace m0st4fa {
 		InputT m_SourceCode;
 
 		/** 
-		* @brief the current line w're searching at
-		**/
+		* @brief the current line w're searching at.
+		**/ 
 		size_t m_Line = 0;
 		// @brief the last character we've touched since the last retrieved token or escaped whitespace.
 		size_t m_Col = 0;
@@ -98,7 +98,7 @@ namespace m0st4fa {
 namespace m0st4fa {
 
 	/**
-	* @brief eliminate any whitespace "prefix" from the current source code. depending on the flag given to it, it may also count new lines and set `m_Line` and `m_Col` appropriately.
+	* @brief Eliminate any whitespace "prefix" from the current source code. depending on the flag given to it, it may also count new lines and set `m_Line` and `m_Col` appropriately.
 	* @param flags to influence its behavior. currently, the only flag that does is `LAF_ALLOW_NEW_LINE`; any other flag will be ignored and will have no effect on its behavior.
 	**/
 	template<typename TokenT, typename TableT, typename InputT>

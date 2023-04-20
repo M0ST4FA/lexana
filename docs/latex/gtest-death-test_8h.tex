@@ -1,0 +1,58 @@
+\hypertarget{gtest-death-test_8h}{}\doxysection{packages/\+Microsoft.googletest.\+v140.\+windesktop.\+msvcstl.\+static.\+rt-\/dyn.1.8.1.7/build/native/include/gtest/gtest-\/death-\/test.h File Reference}
+\label{gtest-death-test_8h}\index{packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-\/dyn.1.8.1.7/build/native/include/gtest/gtest-\/death-\/test.h@{packages/Microsoft.googletest.v140.windesktop.msvcstl.static.rt-\/dyn.1.8.1.7/build/native/include/gtest/gtest-\/death-\/test.h}}
+{\ttfamily \#include \"{}gtest/internal/gtest-\/death-\/test-\/internal.\+h\"{}}\newline
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacetesting}{testing}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}{GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST}}(statement,  regex,  terminator)
+\item 
+\#define \mbox{\hyperlink{gtest-death-test_8h_a8564de0e012dd0898949c513d1571f8b}{EXPECT\+\_\+\+DEATH\+\_\+\+IF\+\_\+\+SUPPORTED}}(statement,  regex)~    \mbox{\hyperlink{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}{GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST}}(statement, regex, )
+\item 
+\#define \mbox{\hyperlink{gtest-death-test_8h_ab2f0f25b46353767179a49ebd15b7345}{ASSERT\+\_\+\+DEATH\+\_\+\+IF\+\_\+\+SUPPORTED}}(statement,  regex)~    \mbox{\hyperlink{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}{GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST}}(statement, regex, return)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacetesting_a37b7e87f0a5f502c6918f37d1768c1f3}{testing\+::\+GTEST\+\_\+\+DECLARE\+\_\+string\+\_\+}} (death\+\_\+test\+\_\+style)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{gtest-death-test_8h_ab2f0f25b46353767179a49ebd15b7345}\label{gtest-death-test_8h_ab2f0f25b46353767179a49ebd15b7345} 
+\index{gtest-\/death-\/test.h@{gtest-\/death-\/test.h}!ASSERT\_DEATH\_IF\_SUPPORTED@{ASSERT\_DEATH\_IF\_SUPPORTED}}
+\index{ASSERT\_DEATH\_IF\_SUPPORTED@{ASSERT\_DEATH\_IF\_SUPPORTED}!gtest-\/death-\/test.h@{gtest-\/death-\/test.h}}
+\doxysubsubsection{\texorpdfstring{ASSERT\_DEATH\_IF\_SUPPORTED}{ASSERT\_DEATH\_IF\_SUPPORTED}}
+{\footnotesize\ttfamily \#define ASSERT\+\_\+\+DEATH\+\_\+\+IF\+\_\+\+SUPPORTED(\begin{DoxyParamCaption}\item[{}]{statement,  }\item[{}]{regex }\end{DoxyParamCaption})~    \mbox{\hyperlink{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}{GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST}}(statement, regex, return)}
+
+\Hypertarget{gtest-death-test_8h_a8564de0e012dd0898949c513d1571f8b}\label{gtest-death-test_8h_a8564de0e012dd0898949c513d1571f8b} 
+\index{gtest-\/death-\/test.h@{gtest-\/death-\/test.h}!EXPECT\_DEATH\_IF\_SUPPORTED@{EXPECT\_DEATH\_IF\_SUPPORTED}}
+\index{EXPECT\_DEATH\_IF\_SUPPORTED@{EXPECT\_DEATH\_IF\_SUPPORTED}!gtest-\/death-\/test.h@{gtest-\/death-\/test.h}}
+\doxysubsubsection{\texorpdfstring{EXPECT\_DEATH\_IF\_SUPPORTED}{EXPECT\_DEATH\_IF\_SUPPORTED}}
+{\footnotesize\ttfamily \#define EXPECT\+\_\+\+DEATH\+\_\+\+IF\+\_\+\+SUPPORTED(\begin{DoxyParamCaption}\item[{}]{statement,  }\item[{}]{regex }\end{DoxyParamCaption})~    \mbox{\hyperlink{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}{GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST}}(statement, regex, )}
+
+\Hypertarget{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855}\label{gtest-death-test_8h_aa5f42ab29859b7f49a901770d2e66855} 
+\index{gtest-\/death-\/test.h@{gtest-\/death-\/test.h}!GTEST\_UNSUPPORTED\_DEATH\_TEST@{GTEST\_UNSUPPORTED\_DEATH\_TEST}}
+\index{GTEST\_UNSUPPORTED\_DEATH\_TEST@{GTEST\_UNSUPPORTED\_DEATH\_TEST}!gtest-\/death-\/test.h@{gtest-\/death-\/test.h}}
+\doxysubsubsection{\texorpdfstring{GTEST\_UNSUPPORTED\_DEATH\_TEST}{GTEST\_UNSUPPORTED\_DEATH\_TEST}}
+{\footnotesize\ttfamily \#define GTEST\+\_\+\+UNSUPPORTED\+\_\+\+DEATH\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{statement,  }\item[{}]{regex,  }\item[{}]{terminator }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ GTEST\_AMBIGUOUS\_ELSE\_BLOCKER\_\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (\mbox{\hyperlink{namespacetesting_1_1internal_a4d46f09c3bfe68700b7f728d2cc3782f}{::testing::internal::AlwaysTrue}}())\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ GTEST\_LOG\_(WARNING)\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Death\ tests\ are\ not\ supported\ on\ this\ platform.\(\backslash\)n"{}}\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}Statement\ '"{}}\ \#statement\ \textcolor{stringliteral}{"{}'\ cannot\ be\ verified."{}};\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{namespacetesting_1_1internal_a4b24c851ab13569b1b15b3d259b60d2e}{::testing::internal::AlwaysFalse}}())\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ::testing::internal::RE::PartialMatch(\textcolor{stringliteral}{"{}.*"{}},\ (regex));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ GTEST\_SUPPRESS\_UNREACHABLE\_CODE\_WARNING\_BELOW\_(statement);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ terminator;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ else\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ::testing::Message()}
+
+\end{DoxyCode}

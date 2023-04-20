@@ -1,0 +1,81 @@
+\hypertarget{namespacem0st4fa}{}\doxysection{m0st4fa Namespace Reference}
+\label{namespacem0st4fa}\index{m0st4fa@{m0st4fa}}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer}{Lexical\+Analyzer}}
+\item 
+struct \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Lexical\+Analyzer\+Result}}
+\begin{DoxyCompactList}\small\item\em represents the result of a single {\ttfamily get\+Next\+Token()} call. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structm0st4fa_1_1_position}{Position}}
+\begin{DoxyCompactList}\small\item\em represents the position of the search during analyzing input lexically. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{Token\+Factory\+Type}} = std\+::function$<$ TokenT(FSMState\+Type, InputT)$>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum struct \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{LA\+\_\+\+FLAG}} \{ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}{LAF\+\_\+\+DEFAULT}} = 0b0000
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934}{LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS}} = 0b0001
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83}{LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE}} = 0b0010
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d}{LAF\+\_\+\+COUNT}} = 3
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename TerminalT $>$ \newline
+requires requires (TerminalT a) \{ to\+String(a); \}}\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&token)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}\label{namespacem0st4fa_a58965446aff3084930498d9cce4e9997} 
+\index{m0st4fa@{m0st4fa}!TokenFactoryType@{TokenFactoryType}}
+\index{TokenFactoryType@{TokenFactoryType}!m0st4fa@{m0st4fa}}
+\doxysubsubsection{\texorpdfstring{TokenFactoryType}{TokenFactoryType}}
+{\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
+using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa\+::\+Token\+Factory\+Type}} = typedef std\+::function$<$TokenT(FSMState\+Type, InputT)$>$}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9} 
+\index{m0st4fa@{m0st4fa}!LA\_FLAG@{LA\_FLAG}}
+\index{LA\_FLAG@{LA\_FLAG}!m0st4fa@{m0st4fa}}
+\doxysubsubsection{\texorpdfstring{LA\_FLAG}{LA\_FLAG}}
+{\footnotesize\ttfamily enum struct \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{m0st4fa\+::\+LA\+\_\+\+FLAG}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_DEFAULT@{LAF\_DEFAULT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_DEFAULT@{LAF\_DEFAULT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd} 
+LAF\+\_\+\+DEFAULT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934} 
+LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83} 
+LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_COUNT@{LAF\_COUNT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_COUNT@{LAF\_COUNT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d} 
+LAF\+\_\+\+COUNT&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}\label{namespacem0st4fa_accca36199a8a42507ec600d898d02a65} 
+\index{m0st4fa@{m0st4fa}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!m0st4fa@{m0st4fa}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily template$<$typename TerminalT $>$ \newline
+requires requires (TerminalT a) \{ to\+String(a); \}\\
+std\+::ostream \& m0st4fa\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&}]{token }\end{DoxyParamCaption})}
+

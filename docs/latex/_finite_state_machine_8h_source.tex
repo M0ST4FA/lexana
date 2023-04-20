@@ -1,0 +1,409 @@
+\hypertarget{_finite_state_machine_8h_source}{}\doxysection{Finite\+State\+Machine.\+h}
+\label{_finite_state_machine_8h_source}\index{libs/FSM/FiniteStateMachine.h@{libs/FSM/FiniteStateMachine.h}}
+\mbox{\hyperlink{_finite_state_machine_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <set>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <array>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <source\_location>}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <functional>}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../utility/Logger.h"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <concepts>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ EXCEPTION\ TYPES}}
+\DoxyCodeLine{00016\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception}{InvalidStateMachineArgumentsException}}\ :\ \textcolor{keyword}{public}\ std::invalid\_argument\ \{}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception_ab696418fcc0640bfc6a277ac7ed312c3}{InvalidStateMachineArgumentsException}}(\textcolor{keyword}{const}\ std::string\&\ message)\ :\ \mbox{\hyperlink{namespacestd}{std}}::invalid\_argument\{\ message\}\ \{\};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_unrecognized_sim_mode_exception}{UnrecognizedSimModeException}}\ :\ \textcolor{keyword}{public}\ std::runtime\_error\ \{}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_unrecognized_sim_mode_exception_a52abcf2ae5d1f7fa30053b49efbc1cac}{UnrecognizedSimModeException}}()\ :\ \mbox{\hyperlink{namespacestd}{std}}::runtime\_error\{\ \textcolor{stringliteral}{"{}Unrecognized\ mode\ give\ to\ \`{}simulate()`\ function."{}}\}\ \{\};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}\ \{}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ TYPE\ ALIASES}}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ =\ unsigned;}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a7578998cefd9861e9e535c2a32833835}{SetType}}\ =\ std::set<FSMStateType>;}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a7578998cefd9861e9e535c2a32833835}{SetType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a593f3757277cb2b174b774111de70554}{FSMStateSetType}}(\textcolor{keyword}{const}\ std::initializer\_list<FSMStateType>\&\ i)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}\{\ i\ \}\ \{\};}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a71650452cd2942cc3f4c89d257f74e80}{FSMStateSetType}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a7578998cefd9861e9e535c2a32833835}{SetType}}\&\ set)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}\{\ set\ \}\ \{\};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a5e398f6487fe5c9bc36efc293ef91387}{FSMStateSetType}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}\{\ state\ \}\ \{\};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_af467f85cfefd31f87ee12ad962f3c130}{FSMStateSetType}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ CONVERSION}}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a7578998cefd9861e9e535c2a32833835}{SetType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}())}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\{\};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *this-\/>\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}}();}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ MODIFIERS}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputIt>}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aaaa327356c13954ef082049c93c61aa6}{insert}}(\textcolor{keyword}{const}\ InputIt\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}},\ \textcolor{keyword}{const}\ InputIt\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}})\ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.insert(\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}},\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}});}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a40116c4110ec94eb0cb6a3eb9f5258d2}{insert}}(std::initializer\_list<FSMStateType>\ ilist)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.insert(ilist);}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ad1088684db82e509a76c7988beabd4aa}{insert}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state)\ \{}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.insert(state);}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_af40ed8419e21ca49a9bb111365f8de71}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ rhs)\ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_StateSet\ =\ rhs.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}};}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ ITERATORS}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ SetType::iterator\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}}()\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.begin();}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ SetType::iterator\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}}()\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.end();}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ SetType::iterator\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ac1ae40ad649f9dd52480f13b4d1c3951}{begin}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.begin();}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ SetType::iterator\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a860a5c2cbd180b5f1bbbec7c636c674a}{end}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.end();}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ LOOKUP\ AND\ CAPACITY}}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a39b9da97fb6fcd757396c3e2596b2f87}{contains}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.contains(val);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a73f939b94292c62fc766d4d59ddffd6f}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.size();}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_ae414f764740602d23e37e64010a8541f}{m\_StateSet}}.empty();}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \};}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00105\ \ \ \ \ \textcolor{keyword}{concept\ }\mbox{\hyperlink{conceptm0st4fa_1_1_state_set_concept}{StateSetConcept}}\ =\ std::is\_same\_v<T,\ FSMStateSetType>\ ||\ std::is\_same\_v<T,\ std::vector<FSMStateType>>;}
+\DoxyCodeLine{00106\ \ \ \ \ }
+\DoxyCodeLine{00107\ \ \ \ \ \textcolor{keyword}{template}\ <StateSetConcept\ T>}
+\DoxyCodeLine{00108\ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ T\&\ set)}
+\DoxyCodeLine{00109\ \ \ \ \ \{}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ set\ is\ empty}}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (set.empty())\ \{}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\{\ \}"{}};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ it\ is\ not\ empty}}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::string\ temp\ =\ \textcolor{stringliteral}{"{}\{\ "{}};}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ temp\ +=\ std::to\_string(*set.begin());}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s\ :\ set)\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (s\ ==\ *set.begin())}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ temp\ +=\ (\textcolor{stringliteral}{"{},\ "{}}\ +\ std::to\_string(s));}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ temp\ +=\ \textcolor{stringliteral}{"{}\ \}\(\backslash\)n"{}};}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ std::cout\ <<\ temp;}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00133\ \ \ \ \ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{FlagsType}};}
+\DoxyCodeLine{00136\ \ \ \ \ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{IndexType}};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{comment}{//\ ENUMS}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \textcolor{comment}{//\ the\ mode\ of\ simulation.}}
+\DoxyCodeLine{00142\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}{FSM\_MODE}}\ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a}{MM\_WHOLE\_STRING}}\ =\ 0,}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}{MM\_LONGEST\_PREFIX}},}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb}{MM\_LONGEST\_SUBSTRING}},}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6}{MM\_NONE}},}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9}{MM\_FSM\_MODE\_MAX}},}
+\DoxyCodeLine{00148\ \ \ \ \ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \textcolor{comment}{//\ the\ type\ of\ the\ FSM.}}
+\DoxyCodeLine{00151\ \ \ \ \ \textcolor{keyword}{enum\ class}\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}}\ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697}{MT\_EPSILON\_NFA}}\ =\ 0,}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{MT\_NON\_EPSILON\_NFA}},}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc}{MT\_DFA}},}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b}{MT\_MACHINE\_TYPE\_MAX}},}
+\DoxyCodeLine{00156\ \ \ \ \ \};}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \textcolor{comment}{//\ flags\ to\ customize\ the\ behavior\ of\ the\ FSM.}}
+\DoxyCodeLine{00159\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fc}{FSM\_FLAG}}\ \{}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{comment}{//FF\_CASE\_INSENSITIVE,}}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{comment}{//FF\_CASE\_SENSITIVE,}}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246}{FF\_FLAG\_NONE}}\ =\ 0b0000000,}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca20ae23d7fc54abb9fd084e812f74ed87}{FF\_FLAG\_MAX}}}
+\DoxyCodeLine{00164\ \ \ \ \ \};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table}{FSMTable}}\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_ab48b9f6ff68365addc5cb6986ad9a6b5}{StateSetVecType}}\ =\ std::vector<FSMStateSetType>;}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_aa516a3222102f7e95a9effadd09ba8a0}{VecType}}\ =\ std::vector<StateSetVecType>;}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a9bbd8f4ab9e96551edfb25229df5b4ff}{ItType}}\ =\ VecType::iterator;}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a3ed13f184caa9adfb394171c15bf669a}{ConstItType}}\ =\ VecType::const\_iterator;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{mutable}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_aa516a3222102f7e95a9effadd09ba8a0}{VecType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputT\ =\ \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_acae4d3f24e8c06595e609030e50adec9}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\&\ state,\ \textcolor{keyword}{const}\ InputT\ c)\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.size()\ <=\ state)}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.resize(state\ +\ 1);}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00180\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<FSMStateSetType>\&\ stateMap\ =\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.at(state);}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateMap.size()\ <=\ c)}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateMap.resize(c\ +\ 1);}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stateMap.at(c);}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputT\ =\ \textcolor{keywordtype}{char}>}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a980731fcbf9169498d3e02731baaef9f}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\&\ state,\ \textcolor{keyword}{const}\ InputT\ c)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.size()\ <=\ state)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.resize(state\ +\ 1);}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<FSMStateSetType>\&\ stateMap\ =\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.at(state);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (stateMap.size()\ <=\ c)}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stateMap.resize(c\ +\ 1);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ stateMap.at(c);}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_ab48b9f6ff68365addc5cb6986ad9a6b5}{StateSetVecType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_ad46b4ea1771585fc3e8153b0a90cf05d}{operator[]}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\&\ state)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.size()\ <=\ state)}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.resize(state\ +\ 1);}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.at(state);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_ab48b9f6ff68365addc5cb6986ad9a6b5}{StateSetVecType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a41eb6ec0e75290c22d18d21311c85505}{at}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\&\ state)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.size()\ <=\ state)}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.resize(state\ +\ 1);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.at(state);}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a9bbd8f4ab9e96551edfb25229df5b4ff}{ItType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_aca600c5cfe31962810fa31e04fcf8a26}{begin}}()\ \{}
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.begin();}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a3ed13f184caa9adfb394171c15bf669a}{ConstItType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a1de7941d44dc07b31a7d78748ed28863}{begin}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.begin();}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a9bbd8f4ab9e96551edfb25229df5b4ff}{ItType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a7ccb99a233896745b9d6ca529ca18cfa}{end}}()\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.end();}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_a3ed13f184caa9adfb394171c15bf669a}{ConstItType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_acc47055b547b23e5cbe8a587669c00f0}{end}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table_afbbe2cc35c8633da44c77f1751337fe7}{table}}.end();}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00229\ \ \ \ \ \};}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00231\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TableT\ =\ FSMTable>}
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_transition_function}{TransitionFunction}}\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ TableT\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_aebce54b69baa0fe1877428379ef50144}{m\_Table}};}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_a5f4a447d0c3aa0eebaad8fe2414c8479}{TransitionFunction}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_ae38a631e7413699eba83ce09d044814a}{TransitionFunction}}(\textcolor{keyword}{const}\ TableT\&\ table)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_aebce54b69baa0fe1877428379ef50144}{m\_Table}}(table)\ \{\}}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_a9346d8c4e204275de14f98401228e4a9}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\&\ state,\ \textcolor{keyword}{const}\ InputT\ c)\ \textcolor{keyword}{noexcept}(\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_transition_function_aebce54b69baa0fe1877428379ef50144}{m\_Table}}(state,\ c);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_a4f72030f58438776392e79e9e565d1b0}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state,\ \textcolor{keyword}{const}\ InputT\ input)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_aebce54b69baa0fe1877428379ef50144}{m\_Table}}(state,\ input);}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ InputT>}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_a49427b5c2a4669ab50dcf8c05f0b3d74}{operator()}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ stateSet,\ \textcolor{keyword}{const}\ InputT\ input)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ res;}
+\DoxyCodeLine{00252\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state\ :\ stateSet)\ \{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ tmp\ =\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function_aebce54b69baa0fe1877428379ef50144}{m\_Table}}(state,\ input);}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aaaa327356c13954ef082049c93c61aa6}{insert}}(tmp.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}}(),\ tmp.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}}());}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ res;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00260\ }
+\DoxyCodeLine{00261\ \ \ \ \ \};}
+\DoxyCodeLine{00262\ }
+\DoxyCodeLine{00263\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TableT\ =\ FSMTable>}
+\DoxyCodeLine{00264\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_transition_function}{TransFn}}\ =\ \mbox{\hyperlink{structm0st4fa_1_1_transition_function}{TransitionFunction<TableT>}};}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00266\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}};}
+\DoxyCodeLine{00267\ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e}{operator<<}}(\textcolor{keyword}{const}\ std::ostream\&,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\&);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
+\DoxyCodeLine{00270\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine}}\ \{}
+\DoxyCodeLine{00271\ }
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ friends}}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}};}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ private\ instance\ data\ members}}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ m\_FinalStates\{\};}
+\DoxyCodeLine{00277\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}}\ m\_MachineType;}
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{FlagsType}}\ m\_Flags;}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00281\ }
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_logger}{Logger}}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a82838d5d7a530883491d24bae45a6d0a}{m\_Logger}};}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ TransFuncT\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a2272f8f6104113949263db50b9293a62}{m\_TransitionFunc}};}
+\DoxyCodeLine{00284\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a7215857088d45243d073f33c231b20c2}{\_is\_state\_final}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ state)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00289\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s\ :\ state)}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a53da3f3aa118d8c6b652a866d4c6fc9d}{getFinalStates}}().\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a39b9da97fb6fcd757396c3e2596b2f87}{contains}}(s))}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a8ac7a0fe5d311a5f34ca92cebd9936f1}{\_get\_final\_states\_from\_state\_set}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ state)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00302\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ finalStates;}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{auto}\ s\ :\ state)}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a53da3f3aa118d8c6b652a866d4c6fc9d}{getFinalStates}}().\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a39b9da97fb6fcd757396c3e2596b2f87}{contains}}(s))}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ finalStates.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aaaa327356c13954ef082049c93c61aa6}{insert}}(s);}
+\DoxyCodeLine{00308\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ finalStates;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ static}}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{START\_STATE}}\ =\ 1;}
+\DoxyCodeLine{00314\ }
+\DoxyCodeLine{00315\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a539839fe4557facff44153d89ebe7a26}{FiniteStateMachine}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a3c7af072e5ce964c85753f15a8ea8c58}{FiniteStateMachine}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ fStates,\ \textcolor{keyword}{const}\ TransFuncT\&\ tranFn,\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}}\ machineType\ ,\mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{FlagsType}}\ flags)\ :}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ m\_FinalStates\ \{\ fStates\ \},\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a2272f8f6104113949263db50b9293a62}{m\_TransitionFunc}}\{\ tranFn\ \},\ m\_MachineType\ \{machineType\},\ m\_Flags\{flags\}}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_logger_info}{LoggerInfo}}\ loggerInfo\ =\ \{\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .\mbox{\hyperlink{structm0st4fa_1_1_logger_info_a56ee87d4afca4a821c562e971b91a150}{level}}\ =\ \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38}{LOG\_LEVEL::LL\_ERROR}},\ }
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ .info\ =\ \{\ .errorType\ =\ \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a09a80eda4f4a4272bb5903efea9be104}{ERROR\_TYPE::ET\_INVALID\_ARGUMENT}}\}\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fStates.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}())\ \{}
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ message\ =\ \textcolor{stringliteral}{"{}FSM:\ The\ set\ of\ final\ states\ cannot\ be\ empty."{}};}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a82838d5d7a530883491d24bae45a6d0a}{m\_Logger}}.\mbox{\hyperlink{classm0st4fa_1_1_logger_ad2d7c8f0ebb50dc5747374ce0df12e18}{log}}(loggerInfo,\ message);}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception}{InvalidStateMachineArgumentsException}}\{\ message\ \};}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (machineType\ ==\ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b}{FSMType::MT\_MACHINE\_TYPE\_MAX}})\ \{}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ message\ =\ R\textcolor{stringliteral}{"{}(FSM:\ The\ machine\ type\ is\ invalid.)"{};}}
+\DoxyCodeLine{00334\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a82838d5d7a530883491d24bae45a6d0a}{m\_Logger}}.\mbox{\hyperlink{classm0st4fa_1_1_logger_ad2d7c8f0ebb50dc5747374ce0df12e18}{log}}(loggerInfo,\ message);}}
+\DoxyCodeLine{00335\ \textcolor{stringliteral}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{keywordflow}{throw}\ \mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception}{InvalidStateMachineArgumentsException}}\{\ message\ \};}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine}}\&\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a5f2abc540d355bdc7ef4361e1faac6e4}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine}}\&\ rhs)\ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_TransitionFunc\ =\ rhs.\mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a2272f8f6104113949263db50b9293a62}{m\_TransitionFunc}};}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_Flags\ =\ rhs.m\_Flags;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_MachineType\ =\ rhs.m\_MachineType;}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_FinalStates\ =\ rhs.m\_FinalStates;}
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a53da3f3aa118d8c6b652a866d4c6fc9d}{getFinalStates}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_FinalStates;\ \};}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{FlagsType}}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_ab1d9a70bdf5fc86b34e588027a657955}{getFlags}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_Flags;\ \};}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}}\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a0a7519ec96f4e3ba07c27bdaf057c7bf}{getMachineType}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ m\_MachineType;\ \};}
+\DoxyCodeLine{00351\ \ \ \ \ \};}
+\DoxyCodeLine{00352\ }
+\DoxyCodeLine{00353\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{IndexType}}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_aba6cfbcffa63ff0041595408ade851ce}{start}}\ =\ 0;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{IndexType}}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_a8b10068050dce6e6963c828a6a0aea60}{end}}\ =\ 0;}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_ad405e3854456d5105f45a1f3d42589d9}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::format(\textcolor{stringliteral}{"{}(\{\},\ \{\})"{}},\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_aba6cfbcffa63ff0041595408ade851ce}{start}},\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_a8b10068050dce6e6963c828a6a0aea60}{end}});}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_ad405e3854456d5105f45a1f3d42589d9}{toString}}();}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00363\ }
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_ad0de9a3859fc365cd55484c10fd0d9ee}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\&)\ \textcolor{keyword}{const}\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_a482e52c3a8d8d316843cb589a10b0078}{operator+}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ num)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_aba6cfbcffa63ff0041595408ade851ce}{start}}\ +\ num,\ \mbox{\hyperlink{structm0st4fa_1_1_indecies_a8b10068050dce6e6963c828a6a0aea60}{end}}\ +\ num\ \};}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \};}
+\DoxyCodeLine{00370\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ \{}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ DATA\ MEMBERS\ AND\ NESTED\ TYPES}}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a8abfefc771ef4620e10b304558bcc7a8}{accepted}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a1c44d76426c72f522bd7ec7d0df19172}{finalState}}\ =\ \{\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{FiniteStateMachine<FSMStateType>::START\_STATE}}\ \};}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a48b0b2322b9bd3b9a5e82ad7fb3dc9e2}{indecies}};}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\_view\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a454f1c3294acdbc680775d300f6ddfe9}{input}};}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ UTILITY\ FUNCTIONS}}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a04c95b2f3c61fb264e7836f76c69f71c}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a48b0b2322b9bd3b9a5e82ad7fb3dc9e2}{indecies}}.\mbox{\hyperlink{structm0st4fa_1_1_indecies_a8b10068050dce6e6963c828a6a0aea60}{end}}\ -\/\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a48b0b2322b9bd3b9a5e82ad7fb3dc9e2}{indecies}}.\mbox{\hyperlink{structm0st4fa_1_1_indecies_aba6cfbcffa63ff0041595408ade851ce}{start}};}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ std::string\_view\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a53989779357e9d11d1dd0103d3d30252}{getMatch}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>input.substr(\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a48b0b2322b9bd3b9a5e82ad7fb3dc9e2}{indecies}}.\mbox{\hyperlink{structm0st4fa_1_1_indecies_aba6cfbcffa63ff0041595408ade851ce}{start}},\ this-\/>size());}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a10661f91875e66ac3e6423258b3bca0b}{getIndecies}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a48b0b2322b9bd3b9a5e82ad7fb3dc9e2}{indecies}};}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00387\ \ \ \ \ \};}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00389\ \ \ \ \ \textcolor{comment}{//\ @brief\ represents\ a\ single\ matched\ substring.}}
+\DoxyCodeLine{00390\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T\ =\ FSMStateType>}
+\DoxyCodeLine{00391\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_substring}{Substring}}\ \{}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ std::vector<T>\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a9cb41c7e4b13b14bdeb05d1c942d9597}{matchedStates}};}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a74620339490294c9bd5bc352e60928b8}{indecies}};}
+\DoxyCodeLine{00394\ }
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a9307c563d04619de2e1fc6ccc7017654}{begin}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a9cb41c7e4b13b14bdeb05d1c942d9597}{matchedStates}}.begin();}
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_ab50368898ec678e67e1883aa2aefcf87}{end}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a9cb41c7e4b13b14bdeb05d1c942d9597}{matchedStates}}.end();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_ad8256dfb444d47c3a45224d8a0c4fedb}{size}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_substring_a9cb41c7e4b13b14bdeb05d1c942d9597}{matchedStates}}.size();}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00405\ }
+\DoxyCodeLine{00406\ \ \ \ \ \};}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00408\ \};}
+\DoxyCodeLine{00409\ }
+
+\end{DoxyCode}

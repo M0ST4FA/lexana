@@ -1,0 +1,106 @@
+\hypertarget{class_l_a_tests}{}\doxysection{LATests Class Reference}
+\label{class_l_a_tests}\index{LATests@{LATests}}
+Inheritance diagram for LATests\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_l_a_tests}
+\end{center}
+\end{figure}
+\doxysubsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer}{Lexical\+Analyzer}}$<$ \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}, m0st4fa\+::\+FSMTable, std\+::string\+\_\+view $>$ \mbox{\hyperlink{class_l_a_tests_aac2d0144a1ea73cd328631c038c3dd76}{Lexical\+Analyzer\+Type}}
+\item 
+using \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{Result}} = \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}, std\+::string\+\_\+view $>$
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{struct_f_s_m_shared_info}{FSMShared\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{struct_f_s_m_shared_info_a47dc7720ca91399a71bee1b06261c4a0}{FSMState\+Set\+Type}} = m0st4fa\+::\+FSMState\+Set\+Type
+\item 
+using \mbox{\hyperlink{struct_f_s_m_shared_info_a81446e0a85c435af6c489873f24ee120}{FSMTable\+Type}} = m0st4fa\+::\+FSMTable
+\item 
+using \mbox{\hyperlink{struct_f_s_m_shared_info_a2e385ca6fd48973768d3ad1d35cb0ac2}{Tran\+Fn}} = m0st4fa\+::\+Trans\+Fn$<$ \mbox{\hyperlink{struct_f_s_m_shared_info_a81446e0a85c435af6c489873f24ee120}{FSMTable\+Type}} $>$
+\item 
+using \mbox{\hyperlink{struct_f_s_m_shared_info_a5c75f879a58da61f4c35c4428e821e31}{DFAType}} = m0st4fa\+::\+Deter\+Finite\+Automatan$<$ \mbox{\hyperlink{struct_f_s_m_shared_info_a2e385ca6fd48973768d3ad1d35cb0ac2}{Tran\+Fn}} $>$
+\item 
+using \mbox{\hyperlink{struct_f_s_m_shared_info_a3bc762673dd5bfdfab14a516a648304b}{Result}} = m0st4fa\+::\+FSMResult
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Types inherited from \mbox{\hyperlink{struct_l_a_shared_info}{LAShared\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139}{Terminal}} \{ \newline
+\mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139a4cf9f9a91e676724d2faa9afb87afaa4}{T\+\_\+A}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139ae02f7c45c9eef2c0b7c9d36002e78ca1}{T\+\_\+B}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139a89ab5e04f70191d4175442e8815bbecf}{T\+\_\+\+ALPHA}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139aab4b65f8d69a2ffad351c7fe541b6291}{T\+\_\+\+NUM}}
+, \newline
+\mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139ae94eed2bb2e06d892233c836ad37e104}{T\+\_\+\+ID}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139a2cad762443b3fe670de9f1ea315bd5b7}{T\+\_\+\+EQUAL}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139a5b41aa3ed765cdee1b34548ba13bd820}{T\+\_\+\+EOF}}
+, \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139a33890fb04186174aa1d6285bf721b667}{T\+\_\+\+EPSILON}}
+ \}
+\item 
+using \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} = \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ \mbox{\hyperlink{struct_l_a_shared_info_aaa70ada541613ad75f548b05dbf81139}{Terminal}}, std\+::string\+\_\+view $>$
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_l_a_tests_a7ad6a44a92ca8bf23fad86afd6127b05}{test\+LAResult\+Positive}} (const \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{Result}} \&res, bool found\+Token=false, const \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \&token=\mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}\{\}, m0st4fa\+::\+Indecies indecies=m0st4fa\+::\+Indecies\{\}, size\+\_\+t line\+Number=0, std\+::source\+\_\+location src\+Loc=std\+::source\+\_\+location\+::current()) const
+\item 
+void \mbox{\hyperlink{class_l_a_tests_aa459f83a093cb31155358e4484efbb1a}{test\+LAResult\+Negative}} (const \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{Result}} \&res, bool found\+Token=false, const \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \&token=\mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}\{\}, m0st4fa\+::\+Indecies indecies=m0st4fa\+::\+Indecies\{\}, size\+\_\+t line\+Number=0, std\+::source\+\_\+location src\+Loc=std\+::source\+\_\+location\+::current()) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{struct_f_s_m_shared_info}{FSMShared\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T  = FSMTable\+Type$>$ }\\static constexpr void \mbox{\hyperlink{struct_f_s_m_shared_info_af714480c996eaaf8d2807535ff3b8a65}{init\+Tran\+Fn\+\_\+ab}} (T \&fun)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static constexpr void \mbox{\hyperlink{struct_f_s_m_shared_info_adfa669babe27ff0a4ac6b6d421430e24}{init\+Tran\+Fn\+\_\+a}} (T \&fun)
+\item 
+{\footnotesize template$<$typename T $>$ }\\static constexpr void \mbox{\hyperlink{struct_f_s_m_shared_info_a2cbebc2bf02e00b93a40e3ff68fb3426}{init\+Tran\+Fn\+\_\+id\+\_\+eq\+\_\+num}} (T \&fun)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Member Functions inherited from \mbox{\hyperlink{struct_l_a_shared_info}{LAShared\+Info}}}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \mbox{\hyperlink{struct_l_a_shared_info_ab733fead39b6502d225973bbebc50b7a}{fact\+\_\+ab}} (m0st4fa\+::\+FSMState\+Type state, std\+::string\+\_\+view lexeme)
+\item 
+static \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \mbox{\hyperlink{struct_l_a_shared_info_ab8a40f0ff5a62fd59f7852aee56b01ca}{fact\+\_\+a}} (m0st4fa\+::\+FSMState\+Type state, std\+::string\+\_\+view lexeme)
+\item 
+static \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \mbox{\hyperlink{struct_l_a_shared_info_a8a11d3b4085fa77e46ffb55b9f4373bd}{fact\+\_\+id\+\_\+eq\+\_\+num}} (m0st4fa\+::\+FSMState\+Type state, std\+::string\+\_\+view lexeme)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Typedef Documentation}
+\Hypertarget{class_l_a_tests_aac2d0144a1ea73cd328631c038c3dd76}\label{class_l_a_tests_aac2d0144a1ea73cd328631c038c3dd76} 
+\index{LATests@{LATests}!LexicalAnalyzerType@{LexicalAnalyzerType}}
+\index{LexicalAnalyzerType@{LexicalAnalyzerType}!LATests@{LATests}}
+\doxysubsubsection{\texorpdfstring{LexicalAnalyzerType}{LexicalAnalyzerType}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer}{Lexical\+Analyzer}}$<$\mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}, m0st4fa\+::\+FSMTable, std\+::string\+\_\+view$>$ \mbox{\hyperlink{class_l_a_tests_aac2d0144a1ea73cd328631c038c3dd76}{LATests\+::\+Lexical\+Analyzer\+Type}}\hspace{0.3cm}{\ttfamily [protected]}}
+
+\Hypertarget{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}\label{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364} 
+\index{LATests@{LATests}!Result@{Result}}
+\index{Result@{Result}!LATests@{LATests}}
+\doxysubsubsection{\texorpdfstring{Result}{Result}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{LATests\+::\+Result}} =  \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$\mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}, std\+::string\+\_\+view$>$\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_l_a_tests_aa459f83a093cb31155358e4484efbb1a}\label{class_l_a_tests_aa459f83a093cb31155358e4484efbb1a} 
+\index{LATests@{LATests}!testLAResultNegative@{testLAResultNegative}}
+\index{testLAResultNegative@{testLAResultNegative}!LATests@{LATests}}
+\doxysubsubsection{\texorpdfstring{testLAResultNegative()}{testLAResultNegative()}}
+{\footnotesize\ttfamily void LATests\+::test\+LAResult\+Negative (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{Result}} \&}]{res,  }\item[{bool}]{found\+Token = {\ttfamily false},  }\item[{const \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \&}]{token = {\ttfamily \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}\{\}},  }\item[{m0st4fa\+::\+Indecies}]{indecies = {\ttfamily m0st4fa\+:\+:Indecies\{\}},  }\item[{size\+\_\+t}]{line\+Number = {\ttfamily 0},  }\item[{std\+::source\+\_\+location}]{src\+Loc = {\ttfamily std\+:\+:source\+\_\+location\+:\+:current()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\Hypertarget{class_l_a_tests_a7ad6a44a92ca8bf23fad86afd6127b05}\label{class_l_a_tests_a7ad6a44a92ca8bf23fad86afd6127b05} 
+\index{LATests@{LATests}!testLAResultPositive@{testLAResultPositive}}
+\index{testLAResultPositive@{testLAResultPositive}!LATests@{LATests}}
+\doxysubsubsection{\texorpdfstring{testLAResultPositive()}{testLAResultPositive()}}
+{\footnotesize\ttfamily void LATests\+::test\+LAResult\+Positive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_l_a_tests_ab42be0b096e8522c689a6a5941c75364}{Result}} \&}]{res,  }\item[{bool}]{found\+Token = {\ttfamily false},  }\item[{const \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}} \&}]{token = {\ttfamily \mbox{\hyperlink{struct_l_a_shared_info_a04b55caba7381574a8848b012b333582}{Token\+Type}}\{\}},  }\item[{m0st4fa\+::\+Indecies}]{indecies = {\ttfamily m0st4fa\+:\+:Indecies\{\}},  }\item[{size\+\_\+t}]{line\+Number = {\ttfamily 0},  }\item[{std\+::source\+\_\+location}]{src\+Loc = {\ttfamily std\+:\+:source\+\_\+location\+:\+:current()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+tests/\mbox{\hyperlink{lexical_01analyzer_8cpp}{lexical analyzer.\+cpp}}\end{DoxyCompactItemize}
