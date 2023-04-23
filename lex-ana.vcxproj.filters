@@ -1,67 +1,52 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{205b93d4-3237-42fa-b7a4-a256d848c763}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="libs">
-      <UniqueIdentifier>{c59486a7-d548-43e4-b69c-2f4f5b67abd3}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="libs\FSM">
-      <UniqueIdentifier>{9a4d0731-e922-455b-94cf-bd258a7216cf}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="libs\utility">
-      <UniqueIdentifier>{67fb0e1f-bcbb-4953-91e5-a38fe630ae1f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="examples">
       <UniqueIdentifier>{cfe111e8-08b6-402e-8c93-4e83f8fd73ac}</UniqueIdentifier>
     </Filter>
     <Filter Include="tests">
       <UniqueIdentifier>{ee1baaef-91e8-42b3-92a0-3194c936c349}</UniqueIdentifier>
     </Filter>
+    <Filter Include="libsrc">
+      <UniqueIdentifier>{f0de0908-f056-4ca2-8ee6-ac665e0a4b69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{41ed847a-c5d6-4515-83bd-d62678690992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FSM">
+      <UniqueIdentifier>{b32e9af0-ff38-4024-abc4-163f21c06986}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="libs\FSM\DFA.h">
-      <Filter>libs\FSM</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\FSM\FiniteStateMachine.h">
-      <Filter>libs\FSM</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\FSM\NFA.h">
-      <Filter>libs\FSM</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\utility\ANSI.h">
-      <Filter>libs\utility</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\utility\common.h">
-      <Filter>libs\utility</Filter>
-    </ClInclude>
-    <ClInclude Include="libs\utility\Logger.h">
-      <Filter>libs\utility</Filter>
-    </ClInclude>
     <ClInclude Include="tests\universal.h">
       <Filter>tests</Filter>
     </ClInclude>
     <ClInclude Include="tests\fsm.h">
       <Filter>tests</Filter>
     </ClInclude>
-    <ClInclude Include="src\LexicalAnalyzer.h">
-      <Filter>src</Filter>
+    <ClInclude Include="LADataStructs.h">
+      <Filter>libsrc</Filter>
     </ClInclude>
-    <ClInclude Include="src\LADataStructs.h">
-      <Filter>src</Filter>
+    <ClInclude Include="LexicalAnalyzer.h">
+      <Filter>libsrc</Filter>
+    </ClInclude>
+    <ClInclude Include="DFA.h">
+      <Filter>FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="FiniteStateMachine.h">
+      <Filter>FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="NFA.h">
+      <Filter>FSM</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>utility</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>utility</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libs\FSM\FiniteStateMachine.cpp">
-      <Filter>libs\FSM</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\utility\common.cpp">
-      <Filter>libs\utility</Filter>
-    </ClCompile>
-    <ClCompile Include="libs\utility\Logger.cpp">
-      <Filter>libs\utility</Filter>
-    </ClCompile>
     <ClCompile Include="tests\universal.cpp">
       <Filter>tests</Filter>
     </ClCompile>
@@ -76,6 +61,15 @@
     </ClCompile>
     <ClCompile Include="examples\main.cpp">
       <Filter>examples</Filter>
+    </ClCompile>
+    <ClCompile Include="FiniteStateMachine.cpp">
+      <Filter>FSM</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>utility</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>utility</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

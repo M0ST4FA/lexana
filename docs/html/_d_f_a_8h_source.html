@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lex-ana: libs/FSM/DFA.h Source File</title>
+<title>lex-ana: DFA.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 
@@ -133,7 +133,7 @@ $(document).ready(function(){initNavTree('_d_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;ranges&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;assert.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="namespacem0st4fa.html">    7</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacem0st4fa.html">m0st4fa</a> {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacem0st4fa.html">m0st4fa</a> {</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="comment">// DECLARATIONS</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"></span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> TransFuncT, <span class="keyword">typename</span> InputT = std::<span class="keywordtype">string</span>_view&gt;</div>
@@ -227,7 +227,7 @@ $(document).ready(function(){initNavTree('_d_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        <span class="keyword">const</span> <a class="code hl_typedef" href="namespacem0st4fa.html#af754423c0a61517ca3581db1774a32fb">IndexType</a> end = accepted ? charIndex + 1 : 0;</div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="comment">// Note: it is guaranteed that there will be one final state; it is just that this data structure is used for both NFA and DFA</span></div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> finalStates = this-&gt;_get_final_states_from_state_set(matchedStates.back());</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keyword">const</span> FSMStateSetType finalStates = this-&gt;_get_final_states_from_state_set(matchedStates.back());</div>
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>        <span class="keywordflow">return</span> FSMResult(accepted, finalStates, { start, end }, input);</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
@@ -293,7 +293,7 @@ $(document).ready(function(){initNavTree('_d_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacem0st4fa.html#a855fbcfd3ea0757ffebb58511f70c162">FSMStateType</a> startState = <a class="code hl_variable" href="classm0st4fa_1_1_finite_state_machine.html#a575eac35a40e1cc7443c763e09e24449">FiniteStateMachine&lt;TransFuncT, InputT&gt;::START_STATE</a>;</div>
 <div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        std::ranges::reverse_view rv{ matchedStates };</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a>&amp; state : rv)</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> FSMStateSetType&amp; state : rv)</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        {</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            <span class="keywordflow">if</span> (this-&gt;_is_state_final(state))</div>
@@ -373,7 +373,7 @@ $(document).ready(function(){initNavTree('_d_f_a_8h_source.html',''); initResiza
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html">m0st4fa::FiniteStateMachine</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:270</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html_a575eac35a40e1cc7443c763e09e24449"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html#a575eac35a40e1cc7443c763e09e24449">m0st4fa::FiniteStateMachine::START_STATE</a></div><div class="ttdeci">static constexpr FSMStateType START_STATE</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:313</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html_a5f2abc540d355bdc7ef4361e1faac6e4"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html#a5f2abc540d355bdc7ef4361e1faac6e4">m0st4fa::FiniteStateMachine::operator=</a></div><div class="ttdeci">FiniteStateMachine &amp; operator=(const FiniteStateMachine &amp;rhs)</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:339</div></div>
-<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> DFA.h:7</div></div>
+<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> common.cpp:10</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc">m0st4fa::FSMType::MT_DFA</a></div><div class="ttdeci">@ MT_DFA</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a53b8a61e6b48c3c7423155472a6af1ad"><div class="ttname"><a href="namespacem0st4fa.html#a53b8a61e6b48c3c7423155472a6af1ad">m0st4fa::FlagsType</a></div><div class="ttdeci">unsigned FlagsType</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:135</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246"><div class="ttname"><a href="namespacem0st4fa.html#a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246">m0st4fa::FF_FLAG_NONE</a></div><div class="ttdeci">@ FF_FLAG_NONE</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:162</div></div>
@@ -394,7 +394,7 @@ $(document).ready(function(){initNavTree('_d_f_a_8h_source.html',''); initResiza
 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_927b41e49550f43a7dc615841aa00136.html">FSM</a></li><li class="navelem"><a class="el" href="_d_f_a_8h.html">DFA.h</a></li>
+    <li class="navelem"><a class="el" href="_d_f_a_8h.html">DFA.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

@@ -1,8 +1,8 @@
-\hypertarget{_l_a_data_structs_8h}{}\doxysection{src/\+LAData\+Structs.h File Reference}
-\label{_l_a_data_structs_8h}\index{src/LADataStructs.h@{src/LADataStructs.h}}
+\hypertarget{_l_a_data_structs_8h}{}\doxysection{LAData\+Structs.\+h File Reference}
+\label{_l_a_data_structs_8h}\index{LADataStructs.h@{LADataStructs.h}}
 {\ttfamily \#include $<$string$>$}\newline
 {\ttfamily \#include $<$functional$>$}\newline
-{\ttfamily \#include \"{}../libs/\+FSM/\+Finite\+State\+Machine.\+h\"{}}\newline
+{\ttfamily \#include \"{}Finite\+State\+Machine.\+h\"{}}\newline
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +20,7 @@ namespace \mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa\+::\+Token\+Factory\+Type}} = std\+::function$<$ TokenT(FSMState\+Type, InputT)$>$
+{\footnotesize template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa\+::\+Token\+Factory\+Type}} = std\+::function$<$ TokenT(\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMState\+Type}}, InputT)$>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -35,5 +35,5 @@ enum struct \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}
 \begin{DoxyCompactItemize}
 \item 
 {\footnotesize template$<$typename TerminalT $>$ \newline
-requires requires (TerminalT a) \{ to\+String(a); \}}\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{m0st4fa\+::operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&token)
+requires requires (TerminalT a) \{ \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{to\+String}}(a); \}}\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{m0st4fa\+::operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&token)
 \end{DoxyCompactItemize}

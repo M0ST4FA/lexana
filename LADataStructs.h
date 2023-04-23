@@ -3,7 +3,7 @@
 #include <string>
 #include <functional>
 
-#include "../libs/FSM/FiniteStateMachine.h"
+#include "FiniteStateMachine.h"
 
 namespace m0st4fa {
 

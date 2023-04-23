@@ -9,7 +9,7 @@
 #include <source_location>
 #include <functional>
 
-#include "../utility/Logger.h"
+#include "Logger.h"
 #include <concepts>
 
 // EXCEPTION TYPES
@@ -200,7 +200,7 @@ namespace m0st4fa {
 
 		const StateSetVecType& operator[](const FSMStateType& state) const {
 			if (table.size() <= state)
-				table.resize(state + 1);
+				table.resize((size_t)state + 1);
 
 			return table.at(state);
 		}

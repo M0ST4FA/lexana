@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
 #include "./fsm.h"
 #include "./universal.h"
-#include "../src/LexicalAnalyzer.h"
+#include "../LexicalAnalyzer.h"
 
 using m0st4fa::LexicalAnalyzer;
 

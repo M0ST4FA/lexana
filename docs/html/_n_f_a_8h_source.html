@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lex-ana: libs/FSM/NFA.h Source File</title>
+<title>lex-ana: NFA.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 
@@ -238,7 +238,7 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="keywordtype">size_t</span> end = accepted ? charIndex + 1 : 0;</div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        </div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        <span class="comment">// get the final states we&#39;ve reached</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a>&amp; finalStates = this-&gt;_get_final_states_from_state_set(matchedStates.back());</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="keyword">const</span> FSMStateSetType&amp; finalStates = this-&gt;_get_final_states_from_state_set(matchedStates.back());</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="keywordflow">return</span> FSMResult(accepted, finalStates, { 0, end }, input);</div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
@@ -268,7 +268,7 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">constexpr</span> <a class="code hl_typedef" href="namespacem0st4fa.html#a855fbcfd3ea0757ffebb58511f70c162">FSMStateType</a> startState = <a class="code hl_variable" href="classm0st4fa_1_1_finite_state_machine.html#a575eac35a40e1cc7443c763e09e24449">FiniteStateMachine&lt;TransFuncT, InputT&gt;::START_STATE</a>;</div>
 <div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>        std::ranges::reverse_view rv{stateSet};</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a>&amp; state : rv)</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keywordflow">for</span>(<span class="keyword">const</span> FSMStateSetType&amp; state : rv)</div>
 <div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        {</div>
 <div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>            <span class="keywordflow">if</span> (this-&gt;_is_state_final(state))</div>
 <div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -294,7 +294,7 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                <span class="keyword">auto</span> c = input[charIndex];</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> currStateSet{};</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                FSMStateSetType currStateSet{};</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>                <span class="keywordflow">if</span> (calcClosure) {</div>
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>                    currStateSet = _epsilon_closure(</div>
@@ -376,17 +376,17 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        }</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        <span class="comment">// get the final states we&#39;ve reached</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> currState = longest-&gt;matchedStates.back();</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> finalStateSet = this-&gt;_get_final_states_from_state_set(currState);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        <span class="keyword">const</span> FSMStateSetType currState = longest-&gt;matchedStates.back();</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keyword">const</span> FSMStateSetType finalStateSet = this-&gt;_get_final_states_from_state_set(currState);</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="comment">//assert(&quot;This set must contain at least a single final state&quot; &amp;&amp; finalStateSet.size());</span></div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keywordflow">return</span> FSMResult(<span class="keyword">true</span>, finalStateSet, { start, end }, input);</div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    };</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> TransFuncT, <span class="keyword">typename</span> InputT&gt;</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> NonDeterFiniteAutomatan&lt;TransFuncT, InputT&gt;::_epsilon_closure(<span class="keyword">const</span> <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a>&amp; set)<span class="keyword"> const</span></div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    FSMStateSetType NonDeterFiniteAutomatan&lt;TransFuncT, InputT&gt;::_epsilon_closure(<span class="keyword">const</span> FSMStateSetType&amp; set)<span class="keyword"> const</span></div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span><span class="keyword">    </span>{</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> res{set};</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        FSMStateSetType res{set};</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
 <div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        std::stack&lt;FSMStateType&gt; stack{};</div>
 <div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="comment">// initialize the stack</span></div>
@@ -399,15 +399,15 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>            stack.pop();</div>
 <div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
 <div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>            <span class="comment">// check if the state has at least one transition on epsilon</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            <a class="code hl_struct" href="structm0st4fa_1_1_f_s_m_state_set_type.html">FSMStateSetType</a> epsilonTransitions = this-&gt;m_TransitionFunc(s, <span class="charliteral">&#39;\0&#39;</span>);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            FSMStateSetType epsilonTransitions = this-&gt;m_TransitionFunc(s, <span class="charliteral">&#39;\0&#39;</span>);</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            <span class="comment">// if the set has at least a single epsilon-transition</span></div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            <span class="keywordflow">if</span> (!epsilonTransitions.<a class="code hl_function" href="structm0st4fa_1_1_f_s_m_state_set_type.html#a0e3494d11f34e4cbd76ea0a6e9039d39">empty</a>()) {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>            <span class="keywordflow">if</span> (!epsilonTransitions.empty()) {</div>
 <div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code hl_typedef" href="namespacem0st4fa.html#a855fbcfd3ea0757ffebb58511f70c162">FSMStateType</a> state : epsilonTransitions)</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>                    if (!res.contains(state))</div>
 <div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                        stack.push(state);</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                res.insert(epsilonTransitions.<a class="code hl_function" href="structm0st4fa_1_1_f_s_m_state_set_type.html#a912dba6fbc8b18d2ef96a9baae2a872b">begin</a>(), epsilonTransitions.<a class="code hl_function" href="structm0st4fa_1_1_f_s_m_state_set_type.html#aae7619879d4eabc1c4665f8f76b0839e">end</a>());</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                res.insert(epsilonTransitions.begin(), epsilonTransitions.end());</div>
 <div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            };</div>
 <div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>            </div>
 <div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>        };</div>
@@ -443,7 +443,7 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="ttc" id="aclassm0st4fa_1_1_non_deter_finite_automatan_html_a46dabe2f620febdfdb369fd25c679fb4"><div class="ttname"><a href="classm0st4fa_1_1_non_deter_finite_automatan.html#a46dabe2f620febdfdb369fd25c679fb4">m0st4fa::NonDeterFiniteAutomatan::simulate</a></div><div class="ttdeci">FSMResult simulate(const InputT &amp;, const FSM_MODE) const</div><div class="ttdoc">simulate the NFA against input according to mode. this function can throw an exception of type Unreco...</div><div class="ttdef"><b>Definition:</b> NFA.h:350</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_non_deter_finite_automatan_html_a7083a500d53010605753d211c684a3cb"><div class="ttname"><a href="classm0st4fa_1_1_non_deter_finite_automatan.html#a7083a500d53010605753d211c684a3cb">m0st4fa::NonDeterFiniteAutomatan::NonDeterFiniteAutomatan</a></div><div class="ttdeci">NonDeterFiniteAutomatan()=default</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_non_deter_finite_automatan_html_a82dc947853fea3808e49ef55da2f3a49"><div class="ttname"><a href="classm0st4fa_1_1_non_deter_finite_automatan.html#a82dc947853fea3808e49ef55da2f3a49">m0st4fa::NonDeterFiniteAutomatan::NonDeterFiniteAutomatan</a></div><div class="ttdeci">NonDeterFiniteAutomatan(const FSMStateSetType &amp;fStates, const TransFuncT &amp;tranFn, FSMType machineType=FSMType::MT_EPSILON_NFA, FlagsType flags=FSM_FLAG::FF_FLAG_NONE)</div><div class="ttdef"><b>Definition:</b> NFA.h:43</div></div>
-<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> DFA.h:7</div></div>
+<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> common.cpp:10</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92">m0st4fa::FSMType</a></div><div class="ttdeci">FSMType</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:151</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697">m0st4fa::FSMType::MT_EPSILON_NFA</a></div><div class="ttdeci">@ MT_EPSILON_NFA</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa">m0st4fa::FSMType::MT_NON_EPSILON_NFA</a></div><div class="ttdeci">@ MT_NON_EPSILON_NFA</div></div>
@@ -458,8 +458,6 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_state_set_type_html"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_state_set_type.html">m0st4fa::FSMStateSetType</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:37</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_state_set_type_html_a0e3494d11f34e4cbd76ea0a6e9039d39"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_state_set_type.html#a0e3494d11f34e4cbd76ea0a6e9039d39">m0st4fa::FSMStateSetType::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:98</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_state_set_type_html_a73f939b94292c62fc766d4d59ddffd6f"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_state_set_type.html#a73f939b94292c62fc766d4d59ddffd6f">m0st4fa::FSMStateSetType::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:95</div></div>
-<div class="ttc" id="astructm0st4fa_1_1_f_s_m_state_set_type_html_a912dba6fbc8b18d2ef96a9baae2a872b"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_state_set_type.html#a912dba6fbc8b18d2ef96a9baae2a872b">m0st4fa::FSMStateSetType::begin</a></div><div class="ttdeci">SetType::iterator begin()</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:78</div></div>
-<div class="ttc" id="astructm0st4fa_1_1_f_s_m_state_set_type_html_aae7619879d4eabc1c4665f8f76b0839e"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_state_set_type.html#aae7619879d4eabc1c4665f8f76b0839e">m0st4fa::FSMStateSetType::end</a></div><div class="ttdeci">SetType::iterator end()</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:81</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_invalid_state_machine_arguments_exception_html"><div class="ttname"><a href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html">m0st4fa::InvalidStateMachineArgumentsException</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:19</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_logger_info_html_a6797864646ee11570bc8f57f6b746419"><div class="ttname"><a href="structm0st4fa_1_1_logger_info.html#a6797864646ee11570bc8f57f6b746419">m0st4fa::LoggerInfo::ERR_INVALID_ARG</a></div><div class="ttdeci">static const LoggerInfo ERR_INVALID_ARG</div><div class="ttdef"><b>Definition:</b> Logger.h:46</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_logger_info_html_a86979cdf63c8400d492826aab8a4ba3d"><div class="ttname"><a href="structm0st4fa_1_1_logger_info.html#a86979cdf63c8400d492826aab8a4ba3d">m0st4fa::LoggerInfo::FATAL_ERROR</a></div><div class="ttdeci">static const LoggerInfo FATAL_ERROR</div><div class="ttdef"><b>Definition:</b> Logger.h:46</div></div>
@@ -471,7 +469,7 @@ $(document).ready(function(){initNavTree('_n_f_a_8h_source.html',''); initResiza
 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_927b41e49550f43a7dc615841aa00136.html">FSM</a></li><li class="navelem"><a class="el" href="_n_f_a_8h.html">NFA.h</a></li>
+    <li class="navelem"><a class="el" href="_n_f_a_8h.html">NFA.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

@@ -2,10 +2,10 @@
 
 #include <string>
 
-#include "../libs/FSM/FiniteStateMachine.h"
-#include "../libs/FSM/DFA.h"
-#include "../libs/utility/Logger.h"
-#include "../src/LADataStructs.h"
+#include "../FiniteStateMachine.h"
+#include "../DFA.h"
+#include "../Logger.h"
+#include "../LADataStructs.h"
 
 namespace m0st4fa {
 

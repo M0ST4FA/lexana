@@ -1,15 +1,14 @@
 \hypertarget{_lexical_analyzer_8h_source}{}\doxysection{Lexical\+Analyzer.\+h}
-\label{_lexical_analyzer_8h_source}\index{src/LexicalAnalyzer.h@{src/LexicalAnalyzer.h}}
 \mbox{\hyperlink{_lexical_analyzer_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
 \DoxyCodeLine{00002\ }
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00004\ }
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../libs/FSM/FiniteStateMachine.h"{}}}
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../libs/FSM/DFA.h"{}}}
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../libs/utility/Logger.h"{}}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../src/LADataStructs.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}../FiniteStateMachine.h"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}../DFA.h"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}../Logger.h"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}../LADataStructs.h"{}}}
 \DoxyCodeLine{00009\ }
 \DoxyCodeLine{00010\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}\ \{}
 \DoxyCodeLine{00011\ }
@@ -18,14 +17,14 @@
 \DoxyCodeLine{00014\ }
 \DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Result}}\ =\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{LexicalAnalyzerResult<TokenT,\ InputT>}};}
 \DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ DFAType<TransFn<TableT>,\ InputT>\ m\_Automatan;}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{DFAType<TransFn<TableT>}},\ InputT>\ m\_Automatan;}
 \DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{TokenFactoryType<TokenT,\ InputT>}}\ m\_TokenFactory\ =\ \textcolor{keyword}{nullptr};}
 \DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ InputT\ m\_SourceCode;}
 \DoxyCodeLine{00020\ }
 \DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_Line\ =\ 0;}
 \DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ @brief\ the\ last\ character\ we've\ touched\ since\ the\ last\ retrieved\ token\ or\ escaped\ whitespace.}}
 \DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ m\_Col\ =\ 0;}
-\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ Logger\ m\_Logger;}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_logger}{Logger}}\ m\_Logger;}
 \DoxyCodeLine{00028\ }
 \DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \_remove\_whitespace\_prefix(\textcolor{keywordtype}{unsigned}\ =\ (\textcolor{keywordtype}{unsigned})\mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}{LA\_FLAG::LAF\_DEFAULT}});}
 \DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{bool}\ \_check\_source\_code\_empty()\ \{}
@@ -33,7 +32,7 @@
 \DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
 \DoxyCodeLine{00033\ }
 \DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ msg\ =\ std::format(\textcolor{stringliteral}{"{}(\{\},\ \{\})\ \{:s\}"{}},\ this-\/>m\_Line,\ this-\/>m\_Col,\ std::string\{\textcolor{stringliteral}{"{}End\ of\ file\ reached"{}}\});}
-\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_Logger.logDebug(msg);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>m\_Logger.\mbox{\hyperlink{classm0st4fa_1_1_logger_a7749a995f655048181f5d779507d1de7}{logDebug}}(msg);}
 \DoxyCodeLine{00036\ }
 \DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ assuming\ that\ EOF\ is\ the\ default\ value\ for\ a\ token}}
 \DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
@@ -49,7 +48,7 @@
 \DoxyCodeLine{00052\ }
 \DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{protected}:}
 \DoxyCodeLine{00054\ }
-\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DFAType<TransFn<TableT>,\ InputT>\&\ \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer_a78175d1ee2447dca701e2eeaae3fe518}{getAutomatan}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>m\_Automatan;\ \};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{DFAType<TransFn<TableT>}},\ InputT>\&\ \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer_a78175d1ee2447dca701e2eeaae3fe518}{getAutomatan}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>m\_Automatan;\ \};}
 \DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{TokenFactoryType<TokenT,\ InputT>}}\ \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer_a104e6bb82d82935f490ec847e47d32b9}{getTokenFactory}}()\ \{\ \textcolor{keywordflow}{return}\ this-\/>m\_TokenFactory;\ \};}
 \DoxyCodeLine{00057\ }
 \DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{public}:}
@@ -57,7 +56,7 @@
 \DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer_ac9780af3718c7ca8c9e266c18068a195}{LexicalAnalyzer}}()\ =\ \textcolor{keywordflow}{default};}
 \DoxyCodeLine{00061\ }
 \DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer_a2ca5caacf72c67a63e15711536f15599}{LexicalAnalyzer}}(}
-\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ DFAType<TransFn<TableT>,\ InputT>\&\ automaton,}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{DFAType}}<\mbox{\hyperlink{structm0st4fa_1_1_transition_function}{TransFn<TableT>}},\ InputT>\&\ automaton,}
 \DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{TokenFactoryType<TokenT,\ InputT>}}\ tokenFactory,}
 \DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\_view\ sourceCode)\ :}
 \DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ m\_Automatan\{\ automaton\ \},\ m\_TokenFactory\{\ tokenFactory\ \},\ m\_SourceCode\{\ sourceCode\ \}}
@@ -131,10 +130,10 @@
 \DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Result}}\{\};}
 \DoxyCodeLine{00147\ }
 \DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ whether\ there\ is\ a\ matched\ lexeme}}
-\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMResult\ fsmRes\ =\ this-\/>m\_Automatan.simulate(this-\/>m\_SourceCode,\ FSM\_MODE::MM\_LONGEST\_PREFIX);}
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ fsmRes\ =\ this-\/>m\_Automatan.\mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan_ac29003da19a49bd7d831b8287f18cbf2}{simulate}}(this-\/>m\_SourceCode,\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}{FSM\_MODE::MM\_LONGEST\_PREFIX}});}
 \DoxyCodeLine{00150\ }
 \DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ there\ is\ not,\ early\ return}}
-\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ fsmRes.accepted)}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (not\ fsmRes.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a8abfefc771ef4620e10b304558bcc7a8}{accepted}})}
 \DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{LexicalAnalyzerResult<TokenT,\ InputT>}}\{\};}
 \DoxyCodeLine{00154\ }
 \DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ there\ is\ a\ matching\ lexeme}}
@@ -143,7 +142,7 @@
 \DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Result}}\ res\{\ fsmRes,\ this-\/>getLine(),\ this-\/>getCol(),\ this-\/>m\_TokenFactory\};}
 \DoxyCodeLine{00159\ }
 \DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 2.\ adjust\ the\ column\ (character)\ number}}
-\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lexemeSize\ =\ fsmRes.size();}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ lexemeSize\ =\ fsmRes.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a04c95b2f3c61fb264e7836f76c69f71c}{size}}();}
 \DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ this-\/>m\_Col\ +=\ lexemeSize;}
 \DoxyCodeLine{00163\ }
 \DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ 3.\ erase\ the\ lexeme\ from\ source\ code\ stream}}
@@ -160,10 +159,10 @@
 \DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Result}}\{\};}
 \DoxyCodeLine{00180\ }
 \DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ whether\ there\ is\ a\ matched\ lexeme}}
-\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMResult\ fsmRes\ =\ this-\/>m\_Automatan.simulate(this-\/>m\_SourceCode,\ FSM\_MODE::MM\_LONGEST\_PREFIX);}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}\ fsmRes\ =\ this-\/>m\_Automatan.\mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan_ac29003da19a49bd7d831b8287f18cbf2}{simulate}}(this-\/>m\_SourceCode,\ \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}{FSM\_MODE::MM\_LONGEST\_PREFIX}});}
 \DoxyCodeLine{00183\ }
 \DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ there\ is\ not,\ early\ return}}
-\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fsmRes.accepted)}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!fsmRes.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result_a8abfefc771ef4620e10b304558bcc7a8}{accepted}})}
 \DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{LexicalAnalyzerResult<TokenT,\ InputT>}}\{\};}
 \DoxyCodeLine{00187\ }
 \DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ there\ is\ a\ matching\ lexeme}}

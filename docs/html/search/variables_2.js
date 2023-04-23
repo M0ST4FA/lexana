@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['epsilon_0',['EPSILON',['../structm0st4fa_1_1_token.html#a66045b8a4a3a141a91ea9f6793fdbc65',1,'m0st4fa::Token']]]
+  ['debug_0',['DEBUG',['../structm0st4fa_1_1_logger_info.html#a30ff3f865eecc9d142320406cd1e8260',1,'m0st4fa::LoggerInfo']]]
 ];

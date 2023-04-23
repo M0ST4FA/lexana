@@ -4,11 +4,11 @@
 #include <map>
 #include <algorithm>
 
-#include "../libs/FSM/DFA.h"
-#include "../src/LADataStructs.h"
-#include "../src/LexicalAnalyzer.h"
-#include "../libs/utility/common.h"
-#include "../libs/utility/Logger.h"
+#include "../DFA.h"
+#include "../LADataStructs.h"
+#include "../LexicalAnalyzer.h"
+#include "../common.h"
+#include "../Logger.h"
 #include "universal.h"
 
 struct FSMSharedInfo {

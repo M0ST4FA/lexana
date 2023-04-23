@@ -1,5 +1,4 @@
 \hypertarget{_n_f_a_8h_source}{}\doxysection{NFA.\+h}
-\label{_n_f_a_8h_source}\index{libs/FSM/NFA.h@{libs/FSM/NFA.h}}
 \mbox{\hyperlink{_n_f_a_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -113,7 +112,7 @@
 \DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ end\ =\ accepted\ ?\ charIndex\ +\ 1\ :\ 0;}
 \DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ final\ states\ we've\ reached}}
-\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(matchedStates.back());}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMStateSetType\&\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(matchedStates.back());}
 \DoxyCodeLine{00130\ }
 \DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(accepted,\ finalStates,\ \{\ 0,\ end\ \},\ input);}
 \DoxyCodeLine{00132\ \ \ \ \ \}}
@@ -143,7 +142,7 @@
 \DoxyCodeLine{00168\ \textcolor{keyword}{\ \ \ \ }\{}
 \DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
 \DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ std::ranges::reverse\_view\ rv\{stateSet\};}
-\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ state\ :\ rv)}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keyword}{const}\ FSMStateSetType\&\ state\ :\ rv)}
 \DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\_is\_state\_final(state))}
 \DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
@@ -169,7 +168,7 @@
 \DoxyCodeLine{00207\ }
 \DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{auto}\ c\ =\ input[charIndex];}
 \DoxyCodeLine{00209\ }
-\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ currStateSet\{\};}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ FSMStateSetType\ currStateSet\{\};}
 \DoxyCodeLine{00211\ }
 \DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (calcClosure)\ \{}
 \DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ currStateSet\ =\ \_epsilon\_closure(}
@@ -251,17 +250,17 @@
 \DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \}}
 \DoxyCodeLine{00297\ }
 \DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ get\ the\ final\ states\ we've\ reached}}
-\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ currState\ =\ longest-\/>matchedStates.back();}
-\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ finalStateSet\ =\ this-\/>\_get\_final\_states\_from\_state\_set(currState);}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMStateSetType\ currState\ =\ longest-\/>matchedStates.back();}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMStateSetType\ finalStateSet\ =\ this-\/>\_get\_final\_states\_from\_state\_set(currState);}
 \DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \textcolor{comment}{//assert("{}This\ set\ must\ contain\ at\ least\ a\ single\ final\ state"{}\ \&\&\ finalStateSet.size());}}
 \DoxyCodeLine{00302\ }
 \DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(\textcolor{keyword}{true},\ finalStateSet,\ \{\ start,\ end\ \},\ input);}
 \DoxyCodeLine{00304\ \ \ \ \ \};}
 \DoxyCodeLine{00305\ }
 \DoxyCodeLine{00306\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TransFuncT,\ \textcolor{keyword}{typename}\ InputT>}
-\DoxyCodeLine{00307\ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_epsilon\_closure(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ set)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00307\ \ \ \ \ FSMStateSetType\ NonDeterFiniteAutomatan<TransFuncT,\ InputT>::\_epsilon\_closure(\textcolor{keyword}{const}\ FSMStateSetType\&\ set)\textcolor{keyword}{\ const}}
 \DoxyCodeLine{00308\ \textcolor{keyword}{\ \ \ \ }\{}
-\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ res\{set\};}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ FSMStateSetType\ res\{set\};}
 \DoxyCodeLine{00310\ }
 \DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ std::stack<FSMStateType>\ stack\{\};}
 \DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ initialize\ the\ stack}}
@@ -274,15 +273,15 @@
 \DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ stack.pop();}
 \DoxyCodeLine{00320\ }
 \DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ check\ if\ the\ state\ has\ at\ least\ one\ transition\ on\ epsilon}}
-\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ epsilonTransitions\ =\ this-\/>m\_TransitionFunc(s,\ \textcolor{charliteral}{'\(\backslash\)0'});}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \ \ \ \ FSMStateSetType\ epsilonTransitions\ =\ this-\/>m\_TransitionFunc(s,\ \textcolor{charliteral}{'\(\backslash\)0'});}
 \DoxyCodeLine{00323\ }
 \DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ if\ the\ set\ has\ at\ least\ a\ single\ epsilon-\/transition}}
-\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a0e3494d11f34e4cbd76ea0a6e9039d39}{empty}}())\ \{}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!epsilonTransitions.empty())\ \{}
 \DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ state\ :\ epsilonTransitions)}
 \DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ if\ (!res.contains(state))}
 \DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ stack.push(state);}
 \DoxyCodeLine{00336\ }
-\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.insert(epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_a912dba6fbc8b18d2ef96a9baae2a872b}{begin}}(),\ epsilonTransitions.\mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type_aae7619879d4eabc1c4665f8f76b0839e}{end}}());}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ res.insert(epsilonTransitions.begin(),\ epsilonTransitions.end());}
 \DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
 \DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ }
 \DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \};}

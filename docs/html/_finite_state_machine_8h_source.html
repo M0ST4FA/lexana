@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lex-ana: libs/FSM/FiniteStateMachine.h Source File</title>
+<title>lex-ana: FiniteStateMachine.h Source File</title>
 
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 
@@ -138,7 +138,7 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;source_location&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;../utility/Logger.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="_logger_8h.html">Logger.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;concepts&gt;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">// EXCEPTION TYPES</span></div>
@@ -147,13 +147,13 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html">   19</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html">InvalidStateMachineArgumentsException</a> : <span class="keyword">public</span> std::invalid_argument {</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html#ab696418fcc0640bfc6a277ac7ed312c3">   21</a></span>        <a class="code hl_function" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html#ab696418fcc0640bfc6a277ac7ed312c3">InvalidStateMachineArgumentsException</a>(<span class="keyword">const</span> std::string&amp; message) : <a class="code hl_namespace" href="namespacestd.html">std</a>::invalid_argument{ message} {};</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html#ab696418fcc0640bfc6a277ac7ed312c3">   21</a></span>        <a class="code hl_function" href="structm0st4fa_1_1_invalid_state_machine_arguments_exception.html#ab696418fcc0640bfc6a277ac7ed312c3">InvalidStateMachineArgumentsException</a>(<span class="keyword">const</span> std::string&amp; message) : std::invalid_argument{ message} {};</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    };</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html">   25</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html">UnrecognizedSimModeException</a> : <span class="keyword">public</span> std::runtime_error {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html#a52abcf2ae5d1f7fa30053b49efbc1cac">   27</a></span>        <a class="code hl_function" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html#a52abcf2ae5d1f7fa30053b49efbc1cac">UnrecognizedSimModeException</a>() : <a class="code hl_namespace" href="namespacestd.html">std</a>::runtime_error{ <span class="stringliteral">&quot;Unrecognized mode give to `simulate()` function.&quot;</span>} {};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html#a52abcf2ae5d1f7fa30053b49efbc1cac">   27</a></span>        <a class="code hl_function" href="structm0st4fa_1_1_unrecognized_sim_mode_exception.html#a52abcf2ae5d1f7fa30053b49efbc1cac">UnrecognizedSimModeException</a>() : std::runtime_error{ <span class="stringliteral">&quot;Unrecognized mode give to `simulate()` function.&quot;</span>} {};</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    };</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
@@ -329,7 +329,7 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
 <div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="structm0st4fa_1_1_f_s_m_table.html#ad46b4ea1771585fc3e8153b0a90cf05d">  201</a></span>        <span class="keyword">const</span> <a class="code hl_typedef" href="structm0st4fa_1_1_f_s_m_table.html#ab48b9f6ff68365addc5cb6986ad9a6b5">StateSetVecType</a>&amp; <a class="code hl_function" href="structm0st4fa_1_1_f_s_m_table.html#ad46b4ea1771585fc3e8153b0a90cf05d">operator[]</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="namespacem0st4fa.html#a855fbcfd3ea0757ffebb58511f70c162">FSMStateType</a>&amp; state)<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="structm0st4fa_1_1_f_s_m_table.html#afbbe2cc35c8633da44c77f1751337fe7">table</a>.size() &lt;= state)</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                <a class="code hl_variable" href="structm0st4fa_1_1_f_s_m_table.html#afbbe2cc35c8633da44c77f1751337fe7">table</a>.resize(state + 1);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                <a class="code hl_variable" href="structm0st4fa_1_1_f_s_m_table.html#afbbe2cc35c8633da44c77f1751337fe7">table</a>.resize((<span class="keywordtype">size_t</span>)state + 1);</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
 <div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>            <span class="keywordflow">return</span> <a class="code hl_variable" href="structm0st4fa_1_1_f_s_m_table.html#afbbe2cc35c8633da44c77f1751337fe7">table</a>.at(state);</div>
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>        }</div>
@@ -530,6 +530,7 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>};</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
+<div class="ttc" id="a_logger_8h_html"><div class="ttname"><a href="_logger_8h.html">Logger.h</a></div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html">m0st4fa::FiniteStateMachine</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:270</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html_a0a7519ec96f4e3ba07c27bdaf057c7bf"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html#a0a7519ec96f4e3ba07c27bdaf057c7bf">m0st4fa::FiniteStateMachine::getMachineType</a></div><div class="ttdeci">FSMType getMachineType() const</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:350</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_finite_state_machine_html_a2272f8f6104113949263db50b9293a62"><div class="ttname"><a href="classm0st4fa_1_1_finite_state_machine.html#a2272f8f6104113949263db50b9293a62">m0st4fa::FiniteStateMachine::m_TransitionFunc</a></div><div class="ttdeci">TransFuncT m_TransitionFunc</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:283</div></div>
@@ -545,7 +546,7 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="ttc" id="aclassm0st4fa_1_1_logger_html"><div class="ttname"><a href="classm0st4fa_1_1_logger.html">m0st4fa::Logger</a></div><div class="ttdef"><b>Definition:</b> Logger.h:49</div></div>
 <div class="ttc" id="aclassm0st4fa_1_1_logger_html_ad2d7c8f0ebb50dc5747374ce0df12e18"><div class="ttname"><a href="classm0st4fa_1_1_logger.html#ad2d7c8f0ebb50dc5747374ce0df12e18">m0st4fa::Logger::log</a></div><div class="ttdeci">void log(const LoggerInfo, const std::string &amp;, std::source_location=std::source_location::current()) const</div><div class="ttdef"><b>Definition:</b> Logger.cpp:24</div></div>
 <div class="ttc" id="aconceptm0st4fa_1_1_state_set_concept_html"><div class="ttname"><a href="conceptm0st4fa_1_1_state_set_concept.html">m0st4fa::StateSetConcept</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:105</div></div>
-<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> DFA.h:7</div></div>
+<div class="ttc" id="anamespacem0st4fa_html"><div class="ttname"><a href="namespacem0st4fa.html">m0st4fa</a></div><div class="ttdef"><b>Definition:</b> common.cpp:10</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92">m0st4fa::FSMType</a></div><div class="ttdeci">FSMType</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:151</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697">m0st4fa::FSMType::MT_EPSILON_NFA</a></div><div class="ttdeci">@ MT_EPSILON_NFA</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b"><div class="ttname"><a href="namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b">m0st4fa::FSMType::MT_MACHINE_TYPE_MAX</a></div><div class="ttdeci">@ MT_MACHINE_TYPE_MAX</div></div>
@@ -566,7 +567,6 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 <div class="ttc" id="anamespacem0st4fa_html_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb"><div class="ttname"><a href="namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb">m0st4fa::FSM_MODE::MM_LONGEST_SUBSTRING</a></div><div class="ttdeci">@ MM_LONGEST_SUBSTRING</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a"><div class="ttname"><a href="namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a">m0st4fa::FSM_MODE::MM_WHOLE_STRING</a></div><div class="ttdeci">@ MM_WHOLE_STRING</div></div>
 <div class="ttc" id="anamespacem0st4fa_html_af754423c0a61517ca3581db1774a32fb"><div class="ttname"><a href="namespacem0st4fa.html#af754423c0a61517ca3581db1774a32fb">m0st4fa::IndexType</a></div><div class="ttdeci">unsigned long long IndexType</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:136</div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition:</b> gtest-tuple.h:113</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_result_html"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_result.html">m0st4fa::FSMResult</a></div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:370</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_result_html_a04c95b2f3c61fb264e7836f76c69f71c"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_result.html#a04c95b2f3c61fb264e7836f76c69f71c">m0st4fa::FSMResult::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:378</div></div>
 <div class="ttc" id="astructm0st4fa_1_1_f_s_m_result_html_a10661f91875e66ac3e6423258b3bca0b"><div class="ttname"><a href="structm0st4fa_1_1_f_s_m_result.html#a10661f91875e66ac3e6423258b3bca0b">m0st4fa::FSMResult::getIndecies</a></div><div class="ttdeci">Indecies getIndecies() const</div><div class="ttdef"><b>Definition:</b> FiniteStateMachine.h:384</div></div>
@@ -638,7 +638,7 @@ $(document).ready(function(){initNavTree('_finite_state_machine_8h_source.html',
 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_6719ab1f1f7655efc2fa43f7eb574fd1.html">libs</a></li><li class="navelem"><a class="el" href="dir_927b41e49550f43a7dc615841aa00136.html">FSM</a></li><li class="navelem"><a class="el" href="_finite_state_machine_8h.html">FiniteStateMachine.h</a></li>
+    <li class="navelem"><a class="el" href="_finite_state_machine_8h.html">FiniteStateMachine.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7 </li>
   </ul>
 </div>

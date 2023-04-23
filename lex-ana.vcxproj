@@ -131,22 +131,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="libs\FSM\DFA.h" />
-    <ClInclude Include="libs\FSM\FiniteStateMachine.h" />
-    <ClInclude Include="libs\FSM\NFA.h" />
-    <ClInclude Include="libs\utility\ANSI.h" />
-    <ClInclude Include="libs\utility\common.h" />
-    <ClInclude Include="libs\utility\Logger.h" />
-    <ClInclude Include="src\LADataStructs.h" />
-    <ClInclude Include="src\LexicalAnalyzer.h" />
+    <ClInclude Include="common.h" />
+    <ClInclude Include="DFA.h" />
+    <ClInclude Include="FiniteStateMachine.h" />
+    <ClInclude Include="LADataStructs.h" />
+    <ClInclude Include="LexicalAnalyzer.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="NFA.h" />
     <ClInclude Include="tests\fsm.h" />
     <ClInclude Include="tests\universal.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="common.cpp" />
     <ClCompile Include="examples\main.cpp" />
-    <ClCompile Include="libs\FSM\FiniteStateMachine.cpp" />
-    <ClCompile Include="libs\utility\common.cpp" />
-    <ClCompile Include="libs\utility\Logger.cpp" />
+    <ClCompile Include="FiniteStateMachine.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="tests\dfa.cpp" />
     <ClCompile Include="tests\lexical analyzer.cpp" />
     <ClCompile Include="tests\nfa.cpp" />

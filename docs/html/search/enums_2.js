@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['fsm_5fflag_0',['FSM_FLAG',['../namespacem0st4fa.html#a7c3a36bae6428b2485cb69de36ff92fc',1,'m0st4fa']]],
-  ['fsm_5fmode_1',['FSM_MODE',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3',1,'m0st4fa']]],
-  ['fsmtype_2',['FSMType',['../namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92',1,'m0st4fa']]]
+  ['la_5fflag_0',['LA_FLAG',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9',1,'m0st4fa']]],
+  ['log_5flevel_1',['LOG_LEVEL',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282a',1,'m0st4fa']]]
 ];

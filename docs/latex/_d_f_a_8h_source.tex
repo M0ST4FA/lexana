@@ -1,5 +1,4 @@
 \hypertarget{_d_f_a_8h_source}{}\doxysection{DFA.\+h}
-\label{_d_f_a_8h_source}\index{libs/FSM/DFA.h@{libs/FSM/DFA.h}}
 \mbox{\hyperlink{_d_f_a_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
@@ -102,7 +101,7 @@
 \DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{IndexType}}\ end\ =\ accepted\ ?\ charIndex\ +\ 1\ :\ 0;}
 \DoxyCodeLine{00116\ }
 \DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Note:\ it\ is\ guaranteed\ that\ there\ will\ be\ one\ final\ state;\ it\ is\ just\ that\ this\ data\ structure\ is\ used\ for\ both\ NFA\ and\ DFA}}
-\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(matchedStates.back());}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ FSMStateSetType\ finalStates\ =\ this-\/>\_get\_final\_states\_from\_state\_set(matchedStates.back());}
 \DoxyCodeLine{00119\ }
 \DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ FSMResult(accepted,\ finalStates,\ \{\ start,\ end\ \},\ input);}
 \DoxyCodeLine{00121\ \ \ \ \ \}}
@@ -168,7 +167,7 @@
 \DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \textcolor{keyword}{constexpr}\ \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}}\ startState\ =\ \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine_a575eac35a40e1cc7443c763e09e24449}{FiniteStateMachine<TransFuncT,\ InputT>::START\_STATE}};}
 \DoxyCodeLine{00195\ }
 \DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ std::ranges::reverse\_view\ rv\{\ matchedStates\ \};}
-\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMStateSetType}}\&\ state\ :\ rv)}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ FSMStateSetType\&\ state\ :\ rv)}
 \DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \{}
 \DoxyCodeLine{00203\ }
 \DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\_is\_state\_final(state))}
