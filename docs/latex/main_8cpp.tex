@@ -5,12 +5,24 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{main_8cpp_a9d50a308b27b8352fd0f12a1a069a0f3}{example1}} ()
+\item 
 int \mbox{\hyperlink{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main}} (int argc, char $\ast$$\ast$argv)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
+\Hypertarget{main_8cpp_a9d50a308b27b8352fd0f12a1a069a0f3}\label{main_8cpp_a9d50a308b27b8352fd0f12a1a069a0f3} 
+\index{main.cpp@{main.cpp}!example1@{example1}}
+\index{example1@{example1}!main.cpp@{main.cpp}}
+\doxysubsubsection{\texorpdfstring{example1()}{example1()}}
+{\footnotesize\ttfamily void example1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Steps\+: Make a DFA. Create your lexer. Run your lexer.
+
+Let\textquotesingle{}s say we want to make a DFA that matches the regular language of identifiers. In this case, our regex will be\+: \textbackslash{}w+(\textbackslash{}w$\vert$\textbackslash{}d$\vert$\+\_\+)$\ast$ The first step is to build the state machine table (transition function). The next step is to construct the DFA.
+
+Dead state is always 0 (fixed by the library). Initial state will be 1 (chosen by me). Final states\+: \{2\}\Hypertarget{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}\label{main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627} 
 \index{main.cpp@{main.cpp}!main@{main}}
 \index{main@{main}!main.cpp@{main.cpp}}
 \doxysubsubsection{\texorpdfstring{main()}{main()}}

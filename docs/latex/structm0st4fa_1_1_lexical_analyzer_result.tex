@@ -19,13 +19,17 @@ using \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908
 \item 
 \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_af87e7d2b0645435246ca62ec03bb0c60}{Lexical\+Analyzer\+Result}} ()=default
 \item 
-\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a43bb7aef6d5e7aa64fabe9b7600fee61}{Lexical\+Analyzer\+Result}} (const TokenT \&\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}, \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}} \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}, const size\+\_\+t \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{line\+Number}}, const size\+\_\+t col\+Number)
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a43bb7aef6d5e7aa64fabe9b7600fee61}{Lexical\+Analyzer\+Result}} (const TokenT \&\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}, Indecies \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}, const size\+\_\+t \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{line\+Number}}, const size\+\_\+t col\+Number)
 \item 
-\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5}{Lexical\+Analyzer\+Result}} (const \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{m0st4fa\+::\+FSMResult}} \&fsmres, const size\+\_\+t \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{line\+Number}}, const size\+\_\+t col\+Number, const \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{Token\+Factory\+Type}} factory)
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5}{Lexical\+Analyzer\+Result}} (const m0st4fa\+::\+FSMResult \&fsmres, const size\+\_\+t \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{line\+Number}}, const size\+\_\+t col\+Number, const \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{Token\+Factory\+Type}} factory)
 \item 
 void \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a8bba13ab2f1735ed716955a2ad4f85ab}{reset}} ()
 \item 
 \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a0665a508992cb5e89fdef2c6b171a322}{operator TokenT}} () const
+\item 
+std\+::string \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aa2dded5c5e0a5636b6bbd1ffe0becd4d}{to\+String}} () const
+\item 
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a517a3f886af508318f0c96d7e3f6229a}{operator std\+::string}} () const
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -34,7 +38,7 @@ bool \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bf
 \item 
 TokenT \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}} = TokenT\{\}
 \item 
-\mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}} \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}} = \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\{0, 0\}
+Indecies \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}} = Indecies\{0, 0\}
 \item 
 size\+\_\+t \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{line\+Number}} = 0
 \end{DoxyCompactItemize}
@@ -68,18 +72,25 @@ using \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+L
 \index{LexicalAnalyzerResult@{LexicalAnalyzerResult}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
 \doxysubsubsection{\texorpdfstring{LexicalAnalyzerResult()}{LexicalAnalyzerResult()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
-\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::\+Lexical\+Analyzer\+Result (\begin{DoxyParamCaption}\item[{const TokenT \&}]{token,  }\item[{\mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}}]{indecies,  }\item[{const size\+\_\+t}]{line\+Number,  }\item[{const size\+\_\+t}]{col\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::\+Lexical\+Analyzer\+Result (\begin{DoxyParamCaption}\item[{const TokenT \&}]{token,  }\item[{Indecies}]{indecies,  }\item[{const size\+\_\+t}]{line\+Number,  }\item[{const size\+\_\+t}]{col\+Number }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5}\label{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5} 
 \index{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}!LexicalAnalyzerResult@{LexicalAnalyzerResult}}
 \index{LexicalAnalyzerResult@{LexicalAnalyzerResult}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
 \doxysubsubsection{\texorpdfstring{LexicalAnalyzerResult()}{LexicalAnalyzerResult()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
-\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::\+Lexical\+Analyzer\+Result (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{m0st4fa\+::\+FSMResult}} \&}]{fsmres,  }\item[{const size\+\_\+t}]{line\+Number,  }\item[{const size\+\_\+t}]{col\+Number,  }\item[{const \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{Token\+Factory\+Type}}}]{factory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::\+Lexical\+Analyzer\+Result (\begin{DoxyParamCaption}\item[{const m0st4fa\+::\+FSMResult \&}]{fsmres,  }\item[{const size\+\_\+t}]{line\+Number,  }\item[{const size\+\_\+t}]{col\+Number,  }\item[{const \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{Token\+Factory\+Type}}}]{factory }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{structm0st4fa_1_1_lexical_analyzer_result_a517a3f886af508318f0c96d7e3f6229a}\label{structm0st4fa_1_1_lexical_analyzer_result_a517a3f886af508318f0c96d7e3f6229a} 
+\index{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}!operator std::string@{operator std::string}}
+\index{operator std::string@{operator std::string}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
+\doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
+{\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
+\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
 \Hypertarget{structm0st4fa_1_1_lexical_analyzer_result_a0665a508992cb5e89fdef2c6b171a322}\label{structm0st4fa_1_1_lexical_analyzer_result_a0665a508992cb5e89fdef2c6b171a322} 
 \index{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}!operator TokenT@{operator TokenT}}
 \index{operator TokenT@{operator TokenT}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
@@ -93,6 +104,13 @@ using \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+L
 \doxysubsubsection{\texorpdfstring{reset()}{reset()}}
 {\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
 void \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\Hypertarget{structm0st4fa_1_1_lexical_analyzer_result_aa2dded5c5e0a5636b6bbd1ffe0becd4d}\label{structm0st4fa_1_1_lexical_analyzer_result_aa2dded5c5e0a5636b6bbd1ffe0becd4d} 
+\index{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}!toString@{toString}}
+\index{toString@{toString}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
+std\+::string \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -109,7 +127,7 @@ bool \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Le
 \index{indecies@{indecies}!m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}}
 \doxysubsubsection{\texorpdfstring{indecies}{indecies}}
 {\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
-\mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}} \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::indecies = \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\{0, 0\}}
+Indecies \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{m0st4fa\+::\+Lexical\+Analyzer\+Result}}$<$ TokenT, InputT $>$\+::indecies = Indecies\{0, 0\}}
 
 \Hypertarget{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}\label{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120} 
 \index{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$@{m0st4fa::LexicalAnalyzerResult$<$ TokenT, InputT $>$}!lineNumber@{lineNumber}}

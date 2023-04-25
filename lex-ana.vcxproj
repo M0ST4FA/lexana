@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common.cpp" />
+    <ClCompile Include="examples\example 1.cpp" />
     <ClCompile Include="examples\main.cpp" />
     <ClCompile Include="FiniteStateMachine.cpp" />
     <ClCompile Include="Logger.cpp" />

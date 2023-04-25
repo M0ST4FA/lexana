@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['la_5fflag_0',['LA_FLAG',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9',1,'m0st4fa']]],
-  ['ladatastructs_2eh_1',['LADataStructs.h',['../_l_a_data_structs_8h.html',1,'']]],
-  ['laf_5fallow_5fnew_5fline_2',['LAF_ALLOW_NEW_LINE',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83',1,'m0st4fa']]],
-  ['laf_5fallow_5fwhite_5fspace_5fchars_3',['LAF_ALLOW_WHITE_SPACE_CHARS',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934',1,'m0st4fa']]],
-  ['laf_5fcount_4',['LAF_COUNT',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d',1,'m0st4fa']]],
-  ['laf_5fdefault_5',['LAF_DEFAULT',['../namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd',1,'m0st4fa']]],
-  ['level_6',['level',['../structm0st4fa_1_1_logger_info.html#a56ee87d4afca4a821c562e971b91a150',1,'m0st4fa::LoggerInfo']]],
-  ['lexicalanalyzer_7',['LexicalAnalyzer',['../classm0st4fa_1_1_lexical_analyzer.html#ac9780af3718c7ca8c9e266c18068a195',1,'m0st4fa::LexicalAnalyzer::LexicalAnalyzer()=default'],['../classm0st4fa_1_1_lexical_analyzer.html#a2ca5caacf72c67a63e15711536f15599',1,'m0st4fa::LexicalAnalyzer::LexicalAnalyzer(const DFAType&lt; TransFn&lt; TableT &gt;, InputT &gt; &amp;automaton, const TokenFactoryType&lt; TokenT, InputT &gt; tokenFactory, const std::string_view sourceCode)'],['../classm0st4fa_1_1_lexical_analyzer.html#aedfbc5995c40ab51b5240cc28504df42',1,'m0st4fa::LexicalAnalyzer::LexicalAnalyzer(const LexicalAnalyzer &amp;)=default'],['../classm0st4fa_1_1_lexical_analyzer.html#a7b1474f2eae431d8161fc8c926464bf1',1,'m0st4fa::LexicalAnalyzer::LexicalAnalyzer(LexicalAnalyzer &amp;&amp;)=default'],['../classm0st4fa_1_1_lexical_analyzer.html',1,'m0st4fa::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;']]],
-  ['lexicalanalyzer_2eh_8',['LexicalAnalyzer.h',['../_lexical_analyzer_8h.html',1,'']]],
-  ['lexicalanalyzerresult_9',['LexicalAnalyzerResult',['../structm0st4fa_1_1_lexical_analyzer_result.html#af87e7d2b0645435246ca62ec03bb0c60',1,'m0st4fa::LexicalAnalyzerResult::LexicalAnalyzerResult()=default'],['../structm0st4fa_1_1_lexical_analyzer_result.html#a43bb7aef6d5e7aa64fabe9b7600fee61',1,'m0st4fa::LexicalAnalyzerResult::LexicalAnalyzerResult(const TokenT &amp;token, Indecies indecies, const size_t lineNumber, const size_t colNumber)'],['../structm0st4fa_1_1_lexical_analyzer_result.html#aea47fee1f84723b5cc27a86e80cdd1a5',1,'m0st4fa::LexicalAnalyzerResult::LexicalAnalyzerResult(const m0st4fa::FSMResult &amp;fsmres, const size_t lineNumber, const size_t colNumber, const TokenFactoryType factory)'],['../structm0st4fa_1_1_lexical_analyzer_result.html',1,'m0st4fa::LexicalAnalyzerResult&lt; TokenT, InputT &gt;']]],
-  ['line_10',['line',['../structm0st4fa_1_1_position.html#a7d4dc9d943364f9b3c3e87697916f58e',1,'m0st4fa::Position']]],
-  ['linenumber_11',['lineNumber',['../structm0st4fa_1_1_lexical_analyzer_result.html#ab4858d6928b62cbbe1e763f15c8d3120',1,'m0st4fa::LexicalAnalyzerResult']]],
-  ['ll_5fdebug_12',['LL_DEBUG',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaba8d2a9de0eed63e563b5c25cc2d4354',1,'m0st4fa']]],
-  ['ll_5ferror_13',['LL_ERROR',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38',1,'m0st4fa']]],
-  ['ll_5ffatal_5ferror_14',['LL_FATAL_ERROR',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaa7a0860bc65cbabf07fb7136adb4c996',1,'m0st4fa']]],
-  ['ll_5finfo_15',['LL_INFO',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaa8ff9b7ae7ea16b9b7ad0a963f4ce5d2',1,'m0st4fa']]],
-  ['ll_5flog_5flevel_5fcount_16',['LL_LOG_LEVEL_COUNT',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aa35116d6aed868e08f70d062bb41f3fb1',1,'m0st4fa']]],
-  ['ll_5fwarrning_17',['LL_WARRNING',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aabe8b1c70024abcd7776c158afba1c0ef',1,'m0st4fa']]],
-  ['log_18',['log',['../classm0st4fa_1_1_logger.html#ad2d7c8f0ebb50dc5747374ce0df12e18',1,'m0st4fa::Logger']]],
-  ['log_5flevel_19',['LOG_LEVEL',['../namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282a',1,'m0st4fa']]],
-  ['logdebug_20',['logDebug',['../classm0st4fa_1_1_logger.html#a7749a995f655048181f5d779507d1de7',1,'m0st4fa::Logger']]],
-  ['logger_21',['Logger',['../classm0st4fa_1_1_logger.html',1,'m0st4fa']]],
-  ['logger_2ecpp_22',['Logger.cpp',['../_logger_8cpp.html',1,'']]],
-  ['logger_2eh_23',['Logger.h',['../_logger_8h.html',1,'']]],
-  ['loggerinfo_24',['LoggerInfo',['../structm0st4fa_1_1_logger_info.html',1,'m0st4fa']]]
+  ['name_0',['name',['../structm0st4fa_1_1_token.html#aa6c790e1609df5dffd4c49e0ee144aa6',1,'m0st4fa::Token']]]
 ];

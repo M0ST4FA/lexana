@@ -2,6 +2,11 @@
 \label{structm0st4fa_1_1_token}\index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 
 
+This data structure represents a token used by the lexical analyzer.  
+
+
+
+
 {\ttfamily \#include $<$LAData\+Structs.\+h$>$}
 
 \doxysubsection*{Public Member Functions}
@@ -29,26 +34,34 @@ static const \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}$<$ TerminalT, Att
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename TerminalT, typename AttrT = std\+::string\+\_\+view$>$\newline
+requires requires (TerminalT a) \{ Terminal\+T\+::\+T\+\_\+\+EOF; Terminal\+T\+::\+T\+\_\+\+EPSILON; stringfy(a); \}\newline
+struct m0st4fa\+::\+Token$<$ Terminal\+T, Attr\+T $>$}
+This data structure represents a token used by the lexical analyzer. 
+
+
+
 \doxysubsection{Member Function Documentation}
 \Hypertarget{structm0st4fa_1_1_token_af8abfae9984cd8008c496dc28cf47834}\label{structm0st4fa_1_1_token_af8abfae9984cd8008c496dc28cf47834} 
 \index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}!operator std::string@{operator std::string}}
 \index{operator std::string@{operator std::string}!m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 \doxysubsubsection{\texorpdfstring{operator std::string()}{operator std::string()}}
-{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string$>$ \\
+{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string\+\_\+view$>$ \\
 \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT, AttrT $>$\+::operator std\+::string (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{structm0st4fa_1_1_token_a98551730b63a7f9100935e61deff9fcc}\label{structm0st4fa_1_1_token_a98551730b63a7f9100935e61deff9fcc} 
 \index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}!operator==@{operator==}}
 \index{operator==@{operator==}!m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 \doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
-{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string$>$ \\
+{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string\+\_\+view$>$ \\
 bool \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT, AttrT $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}$<$ TerminalT, AttrT $>$ \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 \Hypertarget{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}\label{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f} 
 \index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}!toString@{toString}}
 \index{toString@{toString}!m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 \doxysubsubsection{\texorpdfstring{toString()}{toString()}}
-{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string$>$ \\
+{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string\+\_\+view$>$ \\
 std\+::string \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT, AttrT $>$\+::to\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -58,7 +71,7 @@ std\+::string \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ 
 \index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}!attribute@{attribute}}
 \index{attribute@{attribute}!m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 \doxysubsubsection{\texorpdfstring{attribute}{attribute}}
-{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string$>$ \\
+{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string\+\_\+view$>$ \\
 AttrT \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT, AttrT $>$\+::attribute}
 
 \Hypertarget{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65}\label{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65} 
@@ -73,7 +86,7 @@ const \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}$<$ TerminalT, AttrT $>$ 
 \index{m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}!name@{name}}
 \index{name@{name}!m0st4fa::Token$<$ TerminalT, AttrT $>$@{m0st4fa::Token$<$ TerminalT, AttrT $>$}}
 \doxysubsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string$>$ \\
+{\footnotesize\ttfamily template$<$typename TerminalT , typename AttrT  = std\+::string\+\_\+view$>$ \\
 TerminalT \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT, AttrT $>$\+::name = Terminal\+T\+::\+T\+\_\+\+EOF}
 
 \Hypertarget{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522}\label{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522} 

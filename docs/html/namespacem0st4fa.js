@@ -1,91 +1,15 @@
 var namespacem0st4fa =
 [
-    [ "utility", "namespacem0st4fa_1_1utility.html", "namespacem0st4fa_1_1utility" ],
-    [ "DeterFiniteAutomatan", "classm0st4fa_1_1_deter_finite_automatan.html", "classm0st4fa_1_1_deter_finite_automatan" ],
-    [ "FiniteStateMachine", "classm0st4fa_1_1_finite_state_machine.html", "classm0st4fa_1_1_finite_state_machine" ],
-    [ "FSMResult", "structm0st4fa_1_1_f_s_m_result.html", "structm0st4fa_1_1_f_s_m_result" ],
-    [ "FSMStateSetType", "structm0st4fa_1_1_f_s_m_state_set_type.html", "structm0st4fa_1_1_f_s_m_state_set_type" ],
-    [ "FSMTable", "structm0st4fa_1_1_f_s_m_table.html", "structm0st4fa_1_1_f_s_m_table" ],
-    [ "Indecies", "structm0st4fa_1_1_indecies.html", "structm0st4fa_1_1_indecies" ],
-    [ "InvalidStateMachineArgumentsException", "structm0st4fa_1_1_invalid_state_machine_arguments_exception.html", "structm0st4fa_1_1_invalid_state_machine_arguments_exception" ],
     [ "LexicalAnalyzer", "classm0st4fa_1_1_lexical_analyzer.html", "classm0st4fa_1_1_lexical_analyzer" ],
     [ "LexicalAnalyzerResult", "structm0st4fa_1_1_lexical_analyzer_result.html", "structm0st4fa_1_1_lexical_analyzer_result" ],
-    [ "Logger", "classm0st4fa_1_1_logger.html", "classm0st4fa_1_1_logger" ],
-    [ "LoggerInfo", "structm0st4fa_1_1_logger_info.html", "structm0st4fa_1_1_logger_info" ],
-    [ "NonDeterFiniteAutomatan", "classm0st4fa_1_1_non_deter_finite_automatan.html", "classm0st4fa_1_1_non_deter_finite_automatan" ],
     [ "Position", "structm0st4fa_1_1_position.html", "structm0st4fa_1_1_position" ],
-    [ "Substring", "structm0st4fa_1_1_substring.html", "structm0st4fa_1_1_substring" ],
     [ "Token", "structm0st4fa_1_1_token.html", "structm0st4fa_1_1_token" ],
-    [ "TransitionFunction", "structm0st4fa_1_1_transition_function.html", "structm0st4fa_1_1_transition_function" ],
-    [ "UnrecognizedSimModeException", "structm0st4fa_1_1_unrecognized_sim_mode_exception.html", "structm0st4fa_1_1_unrecognized_sim_mode_exception" ],
-    [ "StateSetConcept", "conceptm0st4fa_1_1_state_set_concept.html", null ],
-    [ "DFAType", "namespacem0st4fa.html#a1f8d00b7aef4244566206c4cc67f7fd3", null ],
-    [ "FlagsType", "namespacem0st4fa.html#a53b8a61e6b48c3c7423155472a6af1ad", null ],
-    [ "FSMStateType", "namespacem0st4fa.html#a855fbcfd3ea0757ffebb58511f70c162", null ],
-    [ "IndexType", "namespacem0st4fa.html#af754423c0a61517ca3581db1774a32fb", null ],
-    [ "NFA", "namespacem0st4fa.html#a89db6866f32fc5ab7a636ad61cbbf320", null ],
     [ "TokenFactoryType", "namespacem0st4fa.html#a58965446aff3084930498d9cce4e9997", null ],
-    [ "TransFn", "namespacem0st4fa.html#a8f0c0f49a8de2f4244a969644d1d80e8", null ],
-    [ "ERROR_TYPE", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3", [
-      [ "ET_INVALID_ARGUMENT", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a09a80eda4f4a4272bb5903efea9be104", null ],
-      [ "ET_INVALID_LEXEME", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a91d5eae76238a9295c7f9a62301a3e7a", null ],
-      [ "ET_PROD_BODY_EMPTY", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a5abbe3a17d11e4d64bce3012abd145ff", null ],
-      [ "ET_UNEXCPECTED_TOKEN", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a59e91c7907652bd3042b8c77e6ddd745", null ],
-      [ "ET_ERR_RECOVERY_LIMIT_EXCEEDED", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3aca3022eddb29a7b13f551427446c6120", null ],
-      [ "ET_MISSING_VAL", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a84a465c9f469c6917adccf2b0431d0fd", null ],
-      [ "ET_INVALID_VAL", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a08ddb443a1fe48bb9a9c4d44fb481e47", null ],
-      [ "ET_STACK_UNDERFLOW", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a59ed13bc921ce3dee96b3c725cbd757c", null ],
-      [ "ET_UNACCEPTED_STRING", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a3aef67b6ca0742b8e2af9f6e3d9822ae", null ],
-      [ "ET_INVALID_TABLE_ENTRY", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a5299670177b1b8b667cb02cf0ebf6c05", null ],
-      [ "ET_UNACCEPTED_GRAMMAR", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3aa232b0469a516d6e336b65b99e62ca83", null ],
-      [ "ET_INVALID_FLAGS", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3a5a52af6f66b60862344dd74bfdc87481", null ],
-      [ "ET_ERROR_TYPE_COUNT", "namespacem0st4fa.html#a3cb95ff74b81746aaec9f7ab1814b5c3aee64bcf2d3862f3b273c03681aaf57fd", null ]
-    ] ],
-    [ "FSM_FLAG", "namespacem0st4fa.html#a7c3a36bae6428b2485cb69de36ff92fc", [
-      [ "FF_FLAG_NONE", "namespacem0st4fa.html#a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246", null ],
-      [ "FF_FLAG_MAX", "namespacem0st4fa.html#a7c3a36bae6428b2485cb69de36ff92fca20ae23d7fc54abb9fd084e812f74ed87", null ]
-    ] ],
-    [ "FSM_MODE", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3", [
-      [ "MM_WHOLE_STRING", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a", null ],
-      [ "MM_LONGEST_PREFIX", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294", null ],
-      [ "MM_LONGEST_SUBSTRING", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb", null ],
-      [ "MM_NONE", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6", null ],
-      [ "MM_FSM_MODE_MAX", "namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9", null ]
-    ] ],
-    [ "FSMType", "namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92", [
-      [ "MT_EPSILON_NFA", "namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697", null ],
-      [ "MT_NON_EPSILON_NFA", "namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa", null ],
-      [ "MT_DFA", "namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc", null ],
-      [ "MT_MACHINE_TYPE_MAX", "namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b", null ]
-    ] ],
     [ "LA_FLAG", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9", [
-      [ "LAF_DEFAULT", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd", null ],
-      [ "LAF_ALLOW_WHITE_SPACE_CHARS", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934", null ],
-      [ "LAF_ALLOW_NEW_LINE", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83", null ],
-      [ "LAF_COUNT", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d", null ]
+      [ "LAF_DEFAULT", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9ab8f839029805bbb167407d29588a2df9", null ],
+      [ "LAF_ALLOW_WHITE_SPACE_CHARS", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9a6a1e41e855e1ea13cd25c05f71b43011", null ],
+      [ "LAF_ALLOW_NEW_LINE", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9ae61b3e16b384c4904bb6f24d7d89280e", null ],
+      [ "LAF_COUNT", "namespacem0st4fa.html#a650a9bd65d2a3b704ebe88b2cedf33e9ad0733925b7823a40422b27e8161ba2ab", null ]
     ] ],
-    [ "LOG_LEVEL", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282a", [
-      [ "LL_FATAL_ERROR", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaa7a0860bc65cbabf07fb7136adb4c996", null ],
-      [ "LL_ERROR", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38", null ],
-      [ "LL_WARRNING", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aabe8b1c70024abcd7776c158afba1c0ef", null ],
-      [ "LL_INFO", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaa8ff9b7ae7ea16b9b7ad0a963f4ce5d2", null ],
-      [ "LL_DEBUG", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aaba8d2a9de0eed63e563b5c25cc2d4354", null ],
-      [ "LL_LOG_LEVEL_COUNT", "namespacem0st4fa.html#a75f0123b01c102ef108e270f6138282aa35116d6aed868e08f70d062bb41f3fb1", null ]
-    ] ],
-    [ "insertAndAssert", "namespacem0st4fa_1_1utility.html#a7ff3ec7a85f4ca32cc83a3e03d7e6239", null ],
-    [ "insertAndAssert", "namespacem0st4fa_1_1utility.html#acd211dd6f2451643326c2d099268ab02", null ],
-    [ "isIn", "namespacem0st4fa_1_1utility.html#abb27011d2e9eed27684de9c7a352eef5", null ],
-    [ "operator<<", "namespacem0st4fa.html#a9499f790e242b20c65796d37b4d1fc8b", null ],
-    [ "operator<<", "namespacem0st4fa.html#accca36199a8a42507ec600d898d02a65", null ],
-    [ "operator<<", "namespacem0st4fa.html#a76665ed65a323251e0bc1b310a0d5b3e", null ],
-    [ "operator==", "namespacem0st4fa_1_1utility.html#a3d9f44417c4fffc907dc4f86aa949548", null ],
-    [ "operator==", "namespacem0st4fa_1_1utility.html#ae9f6f0264cf7b195cca7e3a77f143a10", null ],
-    [ "pow", "namespacem0st4fa_1_1utility.html#a4532f9043d863ed3f35d577a283d4871", null ],
-    [ "toInteger", "namespacem0st4fa_1_1utility.html#adc03eb4b9c83ca258f2705d7fe1811f7", null ],
-    [ "toString", "namespacem0st4fa_1_1utility.html#a381f2e8e66ab802671424ce2a82bfe2d", null ],
-    [ "toString", "namespacem0st4fa_1_1utility.html#ab455344553cd252bd8c8635bd942a3a7", null ],
-    [ "toString", "namespacem0st4fa_1_1utility.html#a15c011a3a44c32321dbee80ff9c083f8", null ],
-    [ "toString", "namespacem0st4fa_1_1utility.html#adbf445d12d35264d99fb6afc9800018e", null ],
-    [ "toString", "namespacem0st4fa_1_1utility.html#a5de11fa2a6d6d1e77581ed7e3b3489b9", null ],
-    [ "withinRange", "namespacem0st4fa_1_1utility.html#a5c9a274051c084ddb99d5f6246007c99", null ]
+    [ "operator<<", "namespacem0st4fa.html#accca36199a8a42507ec600d898d02a65", null ]
 ];

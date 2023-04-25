@@ -133,6 +133,9 @@ $(document).ready(function(){initNavTree('structm0st4fa_1_1_token.html',''); ini
 </div><!--header-->
 <div class="contents">
 
+<p>This data structure represents a token used by the lexical analyzer.  
+ <a href="structm0st4fa_1_1_token.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_l_a_data_structs_8h_source.html">LADataStructs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -158,14 +161,18 @@ Static Public Attributes</h2></td></tr>
 <tr class="memitem:a9fbd330fbe2d49ca4aa162928dcaf522"><td class="memItemLeft" align="right" valign="top">static const <a class="el" href="structm0st4fa_1_1_token.html">Token</a>&lt; TerminalT, AttrT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structm0st4fa_1_1_token.html#a9fbd330fbe2d49ca4aa162928dcaf522">TEOF</a> = { TerminalT::T_EOF }</td></tr>
 <tr class="separator:a9fbd330fbe2d49ca4aa162928dcaf522"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename TerminalT, typename AttrT = std::string_view&gt;<br />
+requires requires (TerminalT a) { TerminalT::T_EOF; TerminalT::T_EPSILON; stringfy(a); }<br />
+struct m0st4fa::Token&lt; TerminalT, AttrT &gt;</div><p>This data structure represents a token used by the lexical analyzer. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="af8abfae9984cd8008c496dc28cf47834" name="af8abfae9984cd8008c496dc28cf47834"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8abfae9984cd8008c496dc28cf47834">&#9670;&#160;</a></span>operator std::string()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
+template&lt;typename TerminalT , typename AttrT  = std::string_view&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -192,7 +199,7 @@ template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
+template&lt;typename TerminalT , typename AttrT  = std::string_view&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -220,7 +227,7 @@ template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
+template&lt;typename TerminalT , typename AttrT  = std::string_view&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -248,7 +255,7 @@ template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
+template&lt;typename TerminalT , typename AttrT  = std::string_view&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">AttrT <a class="el" href="structm0st4fa_1_1_token.html">m0st4fa::Token</a>&lt; TerminalT, AttrT &gt;::attribute</td>
@@ -289,7 +296,7 @@ requires requires (TerminalT a) { TerminalT::T_EOF; TerminalT::T_EPSILON; string
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename TerminalT , typename AttrT  = std::string&gt; </div>
+template&lt;typename TerminalT , typename AttrT  = std::string_view&gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">TerminalT <a class="el" href="structm0st4fa_1_1_token.html">m0st4fa::Token</a>&lt; TerminalT, AttrT &gt;::name = TerminalT::T_EOF</td>

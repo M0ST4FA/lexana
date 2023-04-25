@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gtestlogseverity_0',['GTestLogSeverity',['../namespacetesting_1_1internal.html#aa6255ef3b023c5b4e1a2198d887fb977',1,'testing::internal']]]
+  ['terminal_0',['Terminal',['../example_011_8cpp.html#ae768d2646bea7874f3fcbfea0520963b',1,'example 1.cpp']]]
 ];

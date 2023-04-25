@@ -7,16 +7,25 @@
 
 namespace m0st4fa {
 
-	// FLAGS
-	enum struct LA_FLAG {
+	/**
+	* @brief These are the flags for lexical analyzer that control its behavior.
+	**/
+	enum LA_FLAG {
 		LAF_DEFAULT                    = 0b0000,
+		//! @brief Do not skip whitespace characters.
 		LAF_ALLOW_WHITE_SPACE_CHARS = 0b0001,
+		//! @brief Do not skip only "new line" (does not allow other whitespace characters).
 		LAF_ALLOW_NEW_LINE          = 0b0010,
-		LAF_COUNT = 3,
+		//! @brief The number of flags.
+		LAF_COUNT = 3
 	};
 
-	// TOKEN
-	template <typename TerminalT, typename AttrT = std::string>
+
+	/**
+	* @brief This data structure represents a token used by the lexical analyzer.
+	* 
+	**/
+	template <typename TerminalT, typename AttrT = std::string_view>
 		requires requires (TerminalT a) { TerminalT::T_EOF; TerminalT::T_EPSILON; stringfy(a); }
 	struct Token {
 		TerminalT name = TerminalT::T_EOF;
@@ -79,7 +88,6 @@ namespace m0st4fa {
 
 		LexicalAnalyzerResult() = default;
 		LexicalAnalyzerResult(const TokenT& token, Indecies indecies, const size_t lineNumber, const size_t colNumber) : token{ token }, indecies{ indecies + colNumber }, lineNumber{ lineNumber }, foundToken { true } {};
-		// TODO: CHANGE HOW YOU CALCULATE INDECIES, NOTICE THAT NEW LINES WILL DISRUPT THE RESULT
 		LexicalAnalyzerResult(const m0st4fa::FSMResult& fsmres, const size_t lineNumber, const size_t colNumber, const TokenFactoryType factory) : foundToken{ true }, token{ factory((FSMStateType)fsmres.finalState, fsmres.getMatch()) }, indecies{ fsmres.indecies + colNumber }, lineNumber{lineNumber} {};
 
 
@@ -90,6 +98,14 @@ namespace m0st4fa {
 
 		explicit operator TokenT() const {
 			return this->token;
+		}
+
+		std::string toString() const {
+			return std::format("{{\nfoundToken: {},\ntoken: {},\nindecies: {},\nlineNumber: {}\n}}", foundToken, token.toString(), indecies.toString(), lineNumber);
+		}
+
+		operator std::string() const {
+			return this->toString();
 		}
 	};
 

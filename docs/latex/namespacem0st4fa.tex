@@ -1,424 +1,85 @@
 \hypertarget{namespacem0st4fa}{}\doxysection{m0st4fa Namespace Reference}
 \label{namespacem0st4fa}\index{m0st4fa@{m0st4fa}}
-\doxysubsection*{Namespaces}
-\begin{DoxyCompactItemize}
-\item 
-namespace \mbox{\hyperlink{namespacem0st4fa_1_1utility}{utility}}
-\end{DoxyCompactItemize}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
-\item 
-class \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{Deter\+Finite\+Automatan}}
-\begin{DoxyCompactList}\small\item\em A DFA that that can be used to match strings. Provides a single function\+: \doxylink{classm0st4fa_1_1_deter_finite_automatan_ac29003da19a49bd7d831b8287f18cbf2}{simulate()};. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classm0st4fa_1_1_finite_state_machine}{Finite\+State\+Machine}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_state_set_type}{FSMState\+Set\+Type}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_table}{FSMTable}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_invalid_state_machine_arguments_exception}{Invalid\+State\+Machine\+Arguments\+Exception}}
 \item 
 class \mbox{\hyperlink{classm0st4fa_1_1_lexical_analyzer}{Lexical\+Analyzer}}
 \item 
 struct \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{Lexical\+Analyzer\+Result}}
 \begin{DoxyCompactList}\small\item\em represents the result of a single {\ttfamily get\+Next\+Token()} call. \end{DoxyCompactList}\item 
-class \mbox{\hyperlink{classm0st4fa_1_1_logger}{Logger}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_logger_info}{Logger\+Info}}
-\item 
-class \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{Non\+Deter\+Finite\+Automatan}}
-\begin{DoxyCompactList}\small\item\em An NFA that can be used to match strings. The transition function must map states and input to sets of states. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structm0st4fa_1_1_position}{Position}}
 \begin{DoxyCompactList}\small\item\em represents the position of the search during analyzing input lexically. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_substring}{Substring}}
-\item 
 struct \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_transition_function}{Transition\+Function}}
-\item 
-struct \mbox{\hyperlink{structm0st4fa_1_1_unrecognized_sim_mode_exception}{Unrecognized\+Sim\+Mode\+Exception}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Concepts}
-\begin{DoxyCompactItemize}
-\item 
-concept \mbox{\hyperlink{conceptm0st4fa_1_1_state_set_concept}{State\+Set\+Concept}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This data structure represents a token used by the lexical analyzer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename Trans\+FuncT , typename InputT  = std\+::string$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a1f8d00b7aef4244566206c4cc67f7fd3}{DFAType}} = \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{Deter\+Finite\+Automatan}}$<$ Trans\+FuncT, InputT $>$
-\item 
-using \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMState\+Type}} = unsigned
-\item 
-typedef unsigned \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{Flags\+Type}}
-\item 
-typedef unsigned long long \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{Index\+Type}}
-\item 
-{\footnotesize template$<$typename TableT  = FSMTable$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a8f0c0f49a8de2f4244a969644d1d80e8}{Trans\+Fn}} = \mbox{\hyperlink{structm0st4fa_1_1_transition_function}{Transition\+Function}}$<$ TableT $>$
-\item 
-{\footnotesize template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{Token\+Factory\+Type}} = std\+::function$<$ TokenT(\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMState\+Type}}, InputT)$>$
-\item 
-{\footnotesize template$<$typename Trans\+FuncT , typename InputT  = std\+::string$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a89db6866f32fc5ab7a636ad61cbbf320}{NFA}} = \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{Non\+Deter\+Finite\+Automatan}}$<$ Trans\+FuncT, InputT $>$
+{\footnotesize template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ }\\using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{Token\+Factory\+Type}} = std\+::function$<$ TokenT(FSMState\+Type, InputT)$>$
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}{FSM\+\_\+\+MODE}} \{ \newline
-\mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a}{MM\+\_\+\+WHOLE\+\_\+\+STRING}} = 0
-, \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}{MM\+\_\+\+LONGEST\+\_\+\+PREFIX}}
-, \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb}{MM\+\_\+\+LONGEST\+\_\+\+SUBSTRING}}
-, \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6}{MM\+\_\+\+NONE}}
-, \newline
-\mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9}{MM\+\_\+\+FSM\+\_\+\+MODE\+\_\+\+MAX}}
+enum \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{LA\+\_\+\+FLAG}} \{ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ab8f839029805bbb167407d29588a2df9}{LAF\+\_\+\+DEFAULT}} = 0b0000
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a6a1e41e855e1ea13cd25c05f71b43011}{LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS}} = 0b0001
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ae61b3e16b384c4904bb6f24d7d89280e}{LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE}} = 0b0010
+, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ad0733925b7823a40422b27e8161ba2ab}{LAF\+\_\+\+COUNT}} = 3
  \}
-\item 
-enum class \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{FSMType}} \{ \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697}{MT\+\_\+\+EPSILON\+\_\+\+NFA}} = 0
-, \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}{MT\+\_\+\+NON\+\_\+\+EPSILON\+\_\+\+NFA}}
-, \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc}{MT\+\_\+\+DFA}}
-, \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b}{MT\+\_\+\+MACHINE\+\_\+\+TYPE\+\_\+\+MAX}}
- \}
-\item 
-enum \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fc}{FSM\+\_\+\+FLAG}} \{ \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246}{FF\+\_\+\+FLAG\+\_\+\+NONE}} = 0b0000000
-, \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca20ae23d7fc54abb9fd084e812f74ed87}{FF\+\_\+\+FLAG\+\_\+\+MAX}}
- \}
-\item 
-enum struct \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{LA\+\_\+\+FLAG}} \{ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}{LAF\+\_\+\+DEFAULT}} = 0b0000
-, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934}{LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS}} = 0b0001
-, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83}{LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE}} = 0b0010
-, \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d}{LAF\+\_\+\+COUNT}} = 3
- \}
-\item 
-enum class \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3}{ERROR\+\_\+\+TYPE}} \{ \newline
-\mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a09a80eda4f4a4272bb5903efea9be104}{ET\+\_\+\+INVALID\+\_\+\+ARGUMENT}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a91d5eae76238a9295c7f9a62301a3e7a}{ET\+\_\+\+INVALID\+\_\+\+LEXEME}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5abbe3a17d11e4d64bce3012abd145ff}{ET\+\_\+\+PROD\+\_\+\+BODY\+\_\+\+EMPTY}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59e91c7907652bd3042b8c77e6ddd745}{ET\+\_\+\+UNEXCPECTED\+\_\+\+TOKEN}}
-, \newline
-\mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aca3022eddb29a7b13f551427446c6120}{ET\+\_\+\+ERR\+\_\+\+RECOVERY\+\_\+\+LIMIT\+\_\+\+EXCEEDED}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a84a465c9f469c6917adccf2b0431d0fd}{ET\+\_\+\+MISSING\+\_\+\+VAL}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a08ddb443a1fe48bb9a9c4d44fb481e47}{ET\+\_\+\+INVALID\+\_\+\+VAL}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59ed13bc921ce3dee96b3c725cbd757c}{ET\+\_\+\+STACK\+\_\+\+UNDERFLOW}}
-, \newline
-\mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a3aef67b6ca0742b8e2af9f6e3d9822ae}{ET\+\_\+\+UNACCEPTED\+\_\+\+STRING}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5299670177b1b8b667cb02cf0ebf6c05}{ET\+\_\+\+INVALID\+\_\+\+TABLE\+\_\+\+ENTRY}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aa232b0469a516d6e336b65b99e62ca83}{ET\+\_\+\+UNACCEPTED\+\_\+\+GRAMMAR}}
-, \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5a52af6f66b60862344dd74bfdc87481}{ET\+\_\+\+INVALID\+\_\+\+FLAGS}}
-, \newline
-\mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aee64bcf2d3862f3b273c03681aaf57fd}{ET\+\_\+\+ERROR\+\_\+\+TYPE\+\_\+\+COUNT}}
- \}
-\item 
-enum class \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282a}{LOG\+\_\+\+LEVEL}} \{ \newline
-\mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa7a0860bc65cbabf07fb7136adb4c996}{LL\+\_\+\+FATAL\+\_\+\+ERROR}}
-, \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38}{LL\+\_\+\+ERROR}}
-, \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aabe8b1c70024abcd7776c158afba1c0ef}{LL\+\_\+\+WARRNING}}
-, \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa8ff9b7ae7ea16b9b7ad0a963f4ce5d2}{LL\+\_\+\+INFO}}
-, \newline
-\mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaba8d2a9de0eed63e563b5c25cc2d4354}{LL\+\_\+\+DEBUG}}
-, \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa35116d6aed868e08f70d062bb41f3fb1}{LL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+COUNT}}
- \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em These are the flags for lexical analyzer that control its behavior. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{to\+String}} (const std\+::source\+\_\+location \&srcloc, bool full)
-\item 
-size\+\_\+t \mbox{\hyperlink{namespacem0st4fa_1_1utility_a4532f9043d863ed3f35d577a283d4871}{pow}} (size\+\_\+t base, size\+\_\+t p)
-\item 
-size\+\_\+t \mbox{\hyperlink{namespacem0st4fa_1_1utility_adc03eb4b9c83ca258f2705d7fe1811f7}{to\+Integer}} (const std\+::string \&str, bool at\+Beginning)
-\item 
-{\footnotesize template$<$typename T $>$ \newline
-requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Convertable\+To\+String; \}}\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_adbf445d12d35264d99fb6afc9800018e}{to\+String}} (const T \&iterable, bool as\+List=true)
-\item 
-{\footnotesize template$<$typename T $>$ \newline
-requires requires (T iterable) \{ \{$\ast$iterable.\+begin()\} -\/$>$ Num\+Convertable\+To\+String; \}}\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a5de11fa2a6d6d1e77581ed7e3b3489b9}{to\+String}} (const T \&iterable, bool as\+List=true)
-\item 
-{\footnotesize template$<$Num\+Convertable\+To\+String T, size\+\_\+t xdim, size\+\_\+t ydim$>$ }\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_a381f2e8e66ab802671424ce2a82bfe2d}{to\+String}} (const std\+::array$<$ std\+::array$<$ T, ydim $>$, xdim $>$ \&array, bool as\+List=true)
-\item 
-{\footnotesize template$<$typename K , typename V $>$ }\\std\+::string \mbox{\hyperlink{namespacem0st4fa_1_1utility_ab455344553cd252bd8c8635bd942a3a7}{to\+String}} (const std\+::map$<$ K, V $>$ \&map)
-\item 
-{\footnotesize template$<$typename IterableT , typename ExceptT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_acd211dd6f2451643326c2d099268ab02}{insert\+And\+Assert}} (const IterableT \&from, IterableT \&to, ExceptT except)
-\item 
-{\footnotesize template$<$typename IterableT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a7ff3ec7a85f4ca32cc83a3e03d7e6239}{insert\+And\+Assert}} (const IterableT \&from, IterableT \&to)
-\item 
-{\footnotesize template$<$typename ElementT , typename IterableT $>$ }\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_abb27011d2e9eed27684de9c7a352eef5}{is\+In}} (const ElementT element, const IterableT \&iterable)
-\item 
-{\footnotesize template$<$typename IterableT $>$ \newline
-requires requires (IterableT a) \{ a.\+contains($\ast$a.\+begin()); \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a3d9f44417c4fffc907dc4f86aa949548}{operator==}} (const IterableT \&lhs, const IterableT \&rhs)
-\item 
-{\footnotesize template$<$typename IterableT $>$ \newline
-requires requires (IterableT a) \{ a.\+at(0); \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_ae9f6f0264cf7b195cca7e3a77f143a10}{operator==}} (const IterableT \&lhs, const IterableT \&rhs)
-\item 
-{\footnotesize template$<$typename T $>$ \newline
-requires requires(T a, T b) \{ a $<$ b; a $>$ b; \}}\\bool \mbox{\hyperlink{namespacem0st4fa_1_1utility_a5c9a274051c084ddb99d5f6246007c99}{within\+Range}} (T element, T b1, T b2, bool inclusive=false)
-\item 
-{\footnotesize template$<$State\+Set\+Concept T$>$ }\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e}{operator$<$$<$}} (std\+::ostream \&os, const T \&set)
-\item 
-std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_a9499f790e242b20c65796d37b4d1fc8b}{operator$<$$<$}} (const std\+::ostream \&, const \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}} \&)
-\item 
 {\footnotesize template$<$typename TerminalT $>$ \newline
-requires requires (TerminalT a) \{ \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{to\+String}}(a); \}}\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&token)
+requires requires (TerminalT a) \{ to\+String(a); \}}\\std\+::ostream \& \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&token)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Typedef Documentation}
-\Hypertarget{namespacem0st4fa_a1f8d00b7aef4244566206c4cc67f7fd3}\label{namespacem0st4fa_a1f8d00b7aef4244566206c4cc67f7fd3} 
-\index{m0st4fa@{m0st4fa}!DFAType@{DFAType}}
-\index{DFAType@{DFAType}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{DFAType}{DFAType}}
-{\footnotesize\ttfamily template$<$typename Trans\+FuncT , typename InputT  = std\+::string$>$ \\
-using \mbox{\hyperlink{namespacem0st4fa_a1f8d00b7aef4244566206c4cc67f7fd3}{m0st4fa\+::\+DFAType}} = typedef \mbox{\hyperlink{classm0st4fa_1_1_deter_finite_automatan}{Deter\+Finite\+Automatan}}$<$Trans\+FuncT, InputT$>$}
-
-\Hypertarget{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}\label{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad} 
-\index{m0st4fa@{m0st4fa}!FlagsType@{FlagsType}}
-\index{FlagsType@{FlagsType}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{FlagsType}{FlagsType}}
-{\footnotesize\ttfamily typedef unsigned \mbox{\hyperlink{namespacem0st4fa_a53b8a61e6b48c3c7423155472a6af1ad}{m0st4fa\+::\+Flags\+Type}}}
-
-\Hypertarget{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}\label{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162} 
-\index{m0st4fa@{m0st4fa}!FSMStateType@{FSMStateType}}
-\index{FSMStateType@{FSMStateType}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{FSMStateType}{FSMStateType}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{m0st4fa\+::\+FSMState\+Type}} = typedef unsigned}
-
-\Hypertarget{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}\label{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb} 
-\index{m0st4fa@{m0st4fa}!IndexType@{IndexType}}
-\index{IndexType@{IndexType}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{IndexType}{IndexType}}
-{\footnotesize\ttfamily typedef unsigned long long \mbox{\hyperlink{namespacem0st4fa_af754423c0a61517ca3581db1774a32fb}{m0st4fa\+::\+Index\+Type}}}
-
-\Hypertarget{namespacem0st4fa_a89db6866f32fc5ab7a636ad61cbbf320}\label{namespacem0st4fa_a89db6866f32fc5ab7a636ad61cbbf320} 
-\index{m0st4fa@{m0st4fa}!NFA@{NFA}}
-\index{NFA@{NFA}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{NFA}{NFA}}
-{\footnotesize\ttfamily template$<$typename Trans\+FuncT , typename InputT  = std\+::string$>$ \\
-using \mbox{\hyperlink{namespacem0st4fa_a89db6866f32fc5ab7a636ad61cbbf320}{m0st4fa\+::\+NFA}} = typedef \mbox{\hyperlink{classm0st4fa_1_1_non_deter_finite_automatan}{Non\+Deter\+Finite\+Automatan}}$<$Trans\+FuncT, InputT$>$}
-
 \Hypertarget{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}\label{namespacem0st4fa_a58965446aff3084930498d9cce4e9997} 
 \index{m0st4fa@{m0st4fa}!TokenFactoryType@{TokenFactoryType}}
 \index{TokenFactoryType@{TokenFactoryType}!m0st4fa@{m0st4fa}}
 \doxysubsubsection{\texorpdfstring{TokenFactoryType}{TokenFactoryType}}
 {\footnotesize\ttfamily template$<$typename TokenT , typename InputT  = std\+::string\+\_\+view$>$ \\
-using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa\+::\+Token\+Factory\+Type}} = typedef std\+::function$<$TokenT(\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMState\+Type}}, InputT)$>$}
-
-\Hypertarget{namespacem0st4fa_a8f0c0f49a8de2f4244a969644d1d80e8}\label{namespacem0st4fa_a8f0c0f49a8de2f4244a969644d1d80e8} 
-\index{m0st4fa@{m0st4fa}!TransFn@{TransFn}}
-\index{TransFn@{TransFn}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{TransFn}{TransFn}}
-{\footnotesize\ttfamily template$<$typename TableT  = FSMTable$>$ \\
-using \mbox{\hyperlink{namespacem0st4fa_a8f0c0f49a8de2f4244a969644d1d80e8}{m0st4fa\+::\+Trans\+Fn}} = typedef \mbox{\hyperlink{structm0st4fa_1_1_transition_function}{Transition\+Function}}$<$TableT$>$}
+using \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa\+::\+Token\+Factory\+Type}} = typedef std\+::function$<$TokenT(FSMState\+Type, InputT)$>$}
 
 
 
 \doxysubsection{Enumeration Type Documentation}
-\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3} 
-\index{m0st4fa@{m0st4fa}!ERROR\_TYPE@{ERROR\_TYPE}}
-\index{ERROR\_TYPE@{ERROR\_TYPE}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{ERROR\_TYPE}{ERROR\_TYPE}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3}{m0st4fa\+::\+ERROR\+\_\+\+TYPE}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_INVALID\_ARGUMENT@{ET\_INVALID\_ARGUMENT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_INVALID\_ARGUMENT@{ET\_INVALID\_ARGUMENT}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a09a80eda4f4a4272bb5903efea9be104}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a09a80eda4f4a4272bb5903efea9be104} 
-ET\+\_\+\+INVALID\+\_\+\+ARGUMENT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_INVALID\_LEXEME@{ET\_INVALID\_LEXEME}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_INVALID\_LEXEME@{ET\_INVALID\_LEXEME}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a91d5eae76238a9295c7f9a62301a3e7a}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a91d5eae76238a9295c7f9a62301a3e7a} 
-ET\+\_\+\+INVALID\+\_\+\+LEXEME&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_PROD\_BODY\_EMPTY@{ET\_PROD\_BODY\_EMPTY}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_PROD\_BODY\_EMPTY@{ET\_PROD\_BODY\_EMPTY}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5abbe3a17d11e4d64bce3012abd145ff}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5abbe3a17d11e4d64bce3012abd145ff} 
-ET\+\_\+\+PROD\+\_\+\+BODY\+\_\+\+EMPTY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_UNEXCPECTED\_TOKEN@{ET\_UNEXCPECTED\_TOKEN}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_UNEXCPECTED\_TOKEN@{ET\_UNEXCPECTED\_TOKEN}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59e91c7907652bd3042b8c77e6ddd745}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59e91c7907652bd3042b8c77e6ddd745} 
-ET\+\_\+\+UNEXCPECTED\+\_\+\+TOKEN&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_ERR\_RECOVERY\_LIMIT\_EXCEEDED@{ET\_ERR\_RECOVERY\_LIMIT\_EXCEEDED}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_ERR\_RECOVERY\_LIMIT\_EXCEEDED@{ET\_ERR\_RECOVERY\_LIMIT\_EXCEEDED}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aca3022eddb29a7b13f551427446c6120}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aca3022eddb29a7b13f551427446c6120} 
-ET\+\_\+\+ERR\+\_\+\+RECOVERY\+\_\+\+LIMIT\+\_\+\+EXCEEDED&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_MISSING\_VAL@{ET\_MISSING\_VAL}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_MISSING\_VAL@{ET\_MISSING\_VAL}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a84a465c9f469c6917adccf2b0431d0fd}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a84a465c9f469c6917adccf2b0431d0fd} 
-ET\+\_\+\+MISSING\+\_\+\+VAL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_INVALID\_VAL@{ET\_INVALID\_VAL}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_INVALID\_VAL@{ET\_INVALID\_VAL}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a08ddb443a1fe48bb9a9c4d44fb481e47}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a08ddb443a1fe48bb9a9c4d44fb481e47} 
-ET\+\_\+\+INVALID\+\_\+\+VAL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_STACK\_UNDERFLOW@{ET\_STACK\_UNDERFLOW}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_STACK\_UNDERFLOW@{ET\_STACK\_UNDERFLOW}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59ed13bc921ce3dee96b3c725cbd757c}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a59ed13bc921ce3dee96b3c725cbd757c} 
-ET\+\_\+\+STACK\+\_\+\+UNDERFLOW&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_UNACCEPTED\_STRING@{ET\_UNACCEPTED\_STRING}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_UNACCEPTED\_STRING@{ET\_UNACCEPTED\_STRING}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a3aef67b6ca0742b8e2af9f6e3d9822ae}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a3aef67b6ca0742b8e2af9f6e3d9822ae} 
-ET\+\_\+\+UNACCEPTED\+\_\+\+STRING&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_INVALID\_TABLE\_ENTRY@{ET\_INVALID\_TABLE\_ENTRY}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_INVALID\_TABLE\_ENTRY@{ET\_INVALID\_TABLE\_ENTRY}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5299670177b1b8b667cb02cf0ebf6c05}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5299670177b1b8b667cb02cf0ebf6c05} 
-ET\+\_\+\+INVALID\+\_\+\+TABLE\+\_\+\+ENTRY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_UNACCEPTED\_GRAMMAR@{ET\_UNACCEPTED\_GRAMMAR}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_UNACCEPTED\_GRAMMAR@{ET\_UNACCEPTED\_GRAMMAR}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aa232b0469a516d6e336b65b99e62ca83}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aa232b0469a516d6e336b65b99e62ca83} 
-ET\+\_\+\+UNACCEPTED\+\_\+\+GRAMMAR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_INVALID\_FLAGS@{ET\_INVALID\_FLAGS}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_INVALID\_FLAGS@{ET\_INVALID\_FLAGS}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5a52af6f66b60862344dd74bfdc87481}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3a5a52af6f66b60862344dd74bfdc87481} 
-ET\+\_\+\+INVALID\+\_\+\+FLAGS&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ET\_ERROR\_TYPE\_COUNT@{ET\_ERROR\_TYPE\_COUNT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!ET\_ERROR\_TYPE\_COUNT@{ET\_ERROR\_TYPE\_COUNT}}}\Hypertarget{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aee64bcf2d3862f3b273c03681aaf57fd}\label{namespacem0st4fa_a3cb95ff74b81746aaec9f7ab1814b5c3aee64bcf2d3862f3b273c03681aaf57fd} 
-ET\+\_\+\+ERROR\+\_\+\+TYPE\+\_\+\+COUNT&\\
-\hline
-
-\end{DoxyEnumFields}
-\Hypertarget{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fc}\label{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fc} 
-\index{m0st4fa@{m0st4fa}!FSM\_FLAG@{FSM\_FLAG}}
-\index{FSM\_FLAG@{FSM\_FLAG}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{FSM\_FLAG}{FSM\_FLAG}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fc}{m0st4fa\+::\+FSM\+\_\+\+FLAG}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FF\_FLAG\_NONE@{FF\_FLAG\_NONE}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!FF\_FLAG\_NONE@{FF\_FLAG\_NONE}}}\Hypertarget{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246}\label{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca6546a914d6e00575a6c055edca9ea246} 
-FF\+\_\+\+FLAG\+\_\+\+NONE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FF\_FLAG\_MAX@{FF\_FLAG\_MAX}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!FF\_FLAG\_MAX@{FF\_FLAG\_MAX}}}\Hypertarget{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca20ae23d7fc54abb9fd084e812f74ed87}\label{namespacem0st4fa_a7c3a36bae6428b2485cb69de36ff92fca20ae23d7fc54abb9fd084e812f74ed87} 
-FF\+\_\+\+FLAG\+\_\+\+MAX&\\
-\hline
-
-\end{DoxyEnumFields}
-\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3} 
-\index{m0st4fa@{m0st4fa}!FSM\_MODE@{FSM\_MODE}}
-\index{FSM\_MODE@{FSM\_MODE}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{FSM\_MODE}{FSM\_MODE}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3}{m0st4fa\+::\+FSM\+\_\+\+MODE}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM\_WHOLE\_STRING@{MM\_WHOLE\_STRING}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MM\_WHOLE\_STRING@{MM\_WHOLE\_STRING}}}\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a} 
-MM\+\_\+\+WHOLE\+\_\+\+STRING&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM\_LONGEST\_PREFIX@{MM\_LONGEST\_PREFIX}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MM\_LONGEST\_PREFIX@{MM\_LONGEST\_PREFIX}}}\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294} 
-MM\+\_\+\+LONGEST\+\_\+\+PREFIX&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM\_LONGEST\_SUBSTRING@{MM\_LONGEST\_SUBSTRING}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MM\_LONGEST\_SUBSTRING@{MM\_LONGEST\_SUBSTRING}}}\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb} 
-MM\+\_\+\+LONGEST\+\_\+\+SUBSTRING&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM\_NONE@{MM\_NONE}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MM\_NONE@{MM\_NONE}}}\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6} 
-MM\+\_\+\+NONE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MM\_FSM\_MODE\_MAX@{MM\_FSM\_MODE\_MAX}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MM\_FSM\_MODE\_MAX@{MM\_FSM\_MODE\_MAX}}}\Hypertarget{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9}\label{namespacem0st4fa_a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9} 
-MM\+\_\+\+FSM\+\_\+\+MODE\+\_\+\+MAX&\\
-\hline
-
-\end{DoxyEnumFields}
-\Hypertarget{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}\label{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92} 
-\index{m0st4fa@{m0st4fa}!FSMType@{FSMType}}
-\index{FSMType@{FSMType}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{FSMType}{FSMType}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92}{m0st4fa\+::\+FSMType}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MT\_EPSILON\_NFA@{MT\_EPSILON\_NFA}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MT\_EPSILON\_NFA@{MT\_EPSILON\_NFA}}}\Hypertarget{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697}\label{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697} 
-MT\+\_\+\+EPSILON\+\_\+\+NFA&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MT\_NON\_EPSILON\_NFA@{MT\_NON\_EPSILON\_NFA}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MT\_NON\_EPSILON\_NFA@{MT\_NON\_EPSILON\_NFA}}}\Hypertarget{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa}\label{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa} 
-MT\+\_\+\+NON\+\_\+\+EPSILON\+\_\+\+NFA&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MT\_DFA@{MT\_DFA}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MT\_DFA@{MT\_DFA}}}\Hypertarget{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc}\label{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc} 
-MT\+\_\+\+DFA&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MT\_MACHINE\_TYPE\_MAX@{MT\_MACHINE\_TYPE\_MAX}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!MT\_MACHINE\_TYPE\_MAX@{MT\_MACHINE\_TYPE\_MAX}}}\Hypertarget{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b}\label{namespacem0st4fa_a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b} 
-MT\+\_\+\+MACHINE\+\_\+\+TYPE\+\_\+\+MAX&\\
-\hline
-
-\end{DoxyEnumFields}
 \Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9} 
 \index{m0st4fa@{m0st4fa}!LA\_FLAG@{LA\_FLAG}}
 \index{LA\_FLAG@{LA\_FLAG}!m0st4fa@{m0st4fa}}
 \doxysubsubsection{\texorpdfstring{LA\_FLAG}{LA\_FLAG}}
-{\footnotesize\ttfamily enum struct \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{m0st4fa\+::\+LA\+\_\+\+FLAG}}\hspace{0.3cm}{\ttfamily [strong]}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{m0st4fa\+::\+LA\+\_\+\+FLAG}}}
+
+
+
+These are the flags for lexical analyzer that control its behavior. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_DEFAULT@{LAF\_DEFAULT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_DEFAULT@{LAF\_DEFAULT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_DEFAULT@{LAF\_DEFAULT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_DEFAULT@{LAF\_DEFAULT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ab8f839029805bbb167407d29588a2df9}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ab8f839029805bbb167407d29588a2df9} 
 LAF\+\_\+\+DEFAULT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934} 
-LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_WHITE\_SPACE\_CHARS@{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a6a1e41e855e1ea13cd25c05f71b43011}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a6a1e41e855e1ea13cd25c05f71b43011} 
+LAF\+\_\+\+ALLOW\+\_\+\+WHITE\+\_\+\+SPACE\+\_\+\+CHARS&Do not skip whitespace characters. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83} 
-LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_ALLOW\_NEW\_LINE@{LAF\_ALLOW\_NEW\_LINE}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ae61b3e16b384c4904bb6f24d7d89280e}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ae61b3e16b384c4904bb6f24d7d89280e} 
+LAF\+\_\+\+ALLOW\+\_\+\+NEW\+\_\+\+LINE&Do not skip only \"{}new line\"{} (does not allow other whitespace characters). \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_COUNT@{LAF\_COUNT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_COUNT@{LAF\_COUNT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d} 
-LAF\+\_\+\+COUNT&\\
-\hline
-
-\end{DoxyEnumFields}
-\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282a}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282a} 
-\index{m0st4fa@{m0st4fa}!LOG\_LEVEL@{LOG\_LEVEL}}
-\index{LOG\_LEVEL@{LOG\_LEVEL}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{LOG\_LEVEL}{LOG\_LEVEL}}
-{\footnotesize\ttfamily enum class \mbox{\hyperlink{namespacem0st4fa_a75f0123b01c102ef108e270f6138282a}{m0st4fa\+::\+LOG\+\_\+\+LEVEL}}\hspace{0.3cm}{\ttfamily [strong]}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_FATAL\_ERROR@{LL\_FATAL\_ERROR}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_FATAL\_ERROR@{LL\_FATAL\_ERROR}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa7a0860bc65cbabf07fb7136adb4c996}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa7a0860bc65cbabf07fb7136adb4c996} 
-LL\+\_\+\+FATAL\+\_\+\+ERROR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_ERROR@{LL\_ERROR}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_ERROR@{LL\_ERROR}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa960a39a012e475a4b7370a803841ab38} 
-LL\+\_\+\+ERROR&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_WARRNING@{LL\_WARRNING}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_WARRNING@{LL\_WARRNING}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aabe8b1c70024abcd7776c158afba1c0ef}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aabe8b1c70024abcd7776c158afba1c0ef} 
-LL\+\_\+\+WARRNING&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_INFO@{LL\_INFO}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_INFO@{LL\_INFO}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa8ff9b7ae7ea16b9b7ad0a963f4ce5d2}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaa8ff9b7ae7ea16b9b7ad0a963f4ce5d2} 
-LL\+\_\+\+INFO&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_DEBUG@{LL\_DEBUG}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_DEBUG@{LL\_DEBUG}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaba8d2a9de0eed63e563b5c25cc2d4354}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aaba8d2a9de0eed63e563b5c25cc2d4354} 
-LL\+\_\+\+DEBUG&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LL\_LOG\_LEVEL\_COUNT@{LL\_LOG\_LEVEL\_COUNT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LL\_LOG\_LEVEL\_COUNT@{LL\_LOG\_LEVEL\_COUNT}}}\Hypertarget{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa35116d6aed868e08f70d062bb41f3fb1}\label{namespacem0st4fa_a75f0123b01c102ef108e270f6138282aa35116d6aed868e08f70d062bb41f3fb1} 
-LL\+\_\+\+LOG\+\_\+\+LEVEL\+\_\+\+COUNT&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LAF\_COUNT@{LAF\_COUNT}!m0st4fa@{m0st4fa}}\index{m0st4fa@{m0st4fa}!LAF\_COUNT@{LAF\_COUNT}}}\Hypertarget{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ad0733925b7823a40422b27e8161ba2ab}\label{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ad0733925b7823a40422b27e8161ba2ab} 
+LAF\+\_\+\+COUNT&The number of flags. \\
 \hline
 
 \end{DoxyEnumFields}
 
 
 \doxysubsection{Function Documentation}
-\Hypertarget{namespacem0st4fa_a9499f790e242b20c65796d37b4d1fc8b}\label{namespacem0st4fa_a9499f790e242b20c65796d37b4d1fc8b} 
-\index{m0st4fa@{m0st4fa}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily std\+::ostream \& m0st4fa\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{FSMResult}} \&}]{result }\end{DoxyParamCaption})}
-
 \Hypertarget{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}\label{namespacem0st4fa_accca36199a8a42507ec600d898d02a65} 
 \index{m0st4fa@{m0st4fa}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
 {\footnotesize\ttfamily template$<$typename TerminalT $>$ \newline
-requires requires (TerminalT a) \{ \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{to\+String}}(a); \}\\
+requires requires (TerminalT a) \{ to\+String(a); \}\\
 std\+::ostream \& m0st4fa\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa\+::\+Token}}$<$ TerminalT $>$ \&}]{token }\end{DoxyParamCaption})}
-
-\Hypertarget{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e}\label{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e} 
-\index{m0st4fa@{m0st4fa}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!m0st4fa@{m0st4fa}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$State\+Set\+Concept T$>$ \\
-std\+::ostream \& m0st4fa\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const T \&}]{set }\end{DoxyParamCaption})}
 

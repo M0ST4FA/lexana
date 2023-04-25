@@ -19,10 +19,10 @@ namespace m0st4fa {
 		InputT m_SourceCode;
 
 		/** 
-		* @brief the current line w're searching at.
+		* @brief The current line w're searching at.
 		**/ 
 		size_t m_Line = 0;
-		// @brief the last character we've touched since the last retrieved token or escaped whitespace.
+		// @brief The last character we've touched since the last retrieved token or escaped whitespace.
 		size_t m_Col = 0;
 		Logger m_Logger;
 

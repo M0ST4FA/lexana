@@ -6,110 +6,116 @@
 \DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <string>}}
 \DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <functional>}}
 \DoxyCodeLine{00005\ }
-\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{_finite_state_machine_8h}{FiniteStateMachine.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}FiniteStateMachine.h"{}}}
 \DoxyCodeLine{00007\ }
 \DoxyCodeLine{00008\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespacem0st4fa}{m0st4fa}}\ \{}
 \DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \ \ \ \ \textcolor{comment}{//\ FLAGS}}
-\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keyword}{enum\ struct}\ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{LA\_FLAG}}\ \{}
-\DoxyCodeLine{00012\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a696c8b5debb307ec49dc99fdeabb9efd}{LAF\_DEFAULT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0b0000,}
-\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9aab6bcbd77510b2232879a3dd668d8934}{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}}\ =\ 0b0001,}
-\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a7fb426a2d3b8272dcdd0c30c242bfa83}{LAF\_ALLOW\_NEW\_LINE}}\ \ \ \ \ \ \ \ \ \ =\ 0b0010,}
-\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a97c686f887355ffabc48c5eb40be6f3d}{LAF\_COUNT}}\ =\ 3,}
-\DoxyCodeLine{00016\ \ \ \ \ \};}
-\DoxyCodeLine{00017\ }
-\DoxyCodeLine{00018\ \ \ \ \ \textcolor{comment}{//\ TOKEN}}
-\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT\ =\ std::\textcolor{keywordtype}{string}>}
-\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
-\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}\ \{}
-\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ TerminalT\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ =\ TerminalT::T\_EOF;}
-\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ AttrT\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}};}
-\DoxyCodeLine{00024\ }
-\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token<TerminalT,\ AttrT>}}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65}{EPSILON}};}
-\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token<TerminalT,\ AttrT>}}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522}{TEOF}};}
-\DoxyCodeLine{00027\ }
-\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a98551730b63a7f9100935e61deff9fcc}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}\&\ other)\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ ==\ other.\mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ \&\&\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}}\ ==\ other.\mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}};}
-\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \};}
-\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ }
-\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}();}
-\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<"{}}\ +\ stringfy(this-\/>name)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ (std::string)this-\/>attribute\ +\ \textcolor{stringliteral}{"{}>"{}};}
-\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00039\ \ \ \ \ \};}
-\DoxyCodeLine{00040\ }
-\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT>}
-\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
-\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keyword}{const}\ Token<TerminalT,\ AttrT>\ \mbox{\hyperlink{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65}{Token<TerminalT,\ AttrT>::EPSILON}}\ =\ \{\ TerminalT::T\_EPSILON\ \};}
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT>}
-\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ Token<TerminalT,\ AttrT>\ \mbox{\hyperlink{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522}{Token<TerminalT,\ AttrT>::TEOF}}\ =\ \{\ TerminalT::T\_EOF\ \};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ }
-\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT>}
-\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ \mbox{\hyperlink{namespacem0st4fa_1_1utility_a15c011a3a44c32321dbee80ff9c083f8}{toString}}(a);\ \}}
-\DoxyCodeLine{00051\ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacem0st4fa_a76665ed65a323251e0bc1b310a0d5b3e}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa::Token<TerminalT>}}\&\ token)\ \{}
-\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ token.\mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}();}
-\DoxyCodeLine{00053\ \ \ \ \ \}}
-\DoxyCodeLine{00054\ \ \ \ \ }
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TokenT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ \ \ \ \ \ lexeme}}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{TokenFactoryType}}\ =\ std::function<TokenT(\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}},\ InputT)>;}
-\DoxyCodeLine{00059\ \ \ \ \ }
-\DoxyCodeLine{00060\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ RESULT}}
-\DoxyCodeLine{00065\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TokenT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
-\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{LexicalAnalyzerResult}}\ \{}
-\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{TokenFactoryType}}\ =\ \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa::TokenFactoryType<TokenT,\ InputT>}};}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ the\ token\ is\ found\ or\ not}}
-\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ token\ itself}}
-\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ TokenT\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\ =\ TokenT\{\};}
-\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ indecies\ of\ the\ lexeme\ of\ the\ token\ within\ the\ actual\ input}}
-\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ =\ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\{0,\ 0\};}
-\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ number\ of\ the\ line\ at\ which\ the\ lexeme\ has\ been\ found}}
-\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\ =\ 0;}
-\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ remaining\ input\ after\ the\ lexeme\ was\ extracted}}
-\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::string\_view\ remainingInput\{\};}}
-\DoxyCodeLine{00079\ }
-\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_af87e7d2b0645435246ca62ec03bb0c60}{LexicalAnalyzerResult}}()\ =\ \textcolor{keywordflow}{default};}
-\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a43bb7aef6d5e7aa64fabe9b7600fee61}{LexicalAnalyzerResult}}(\textcolor{keyword}{const}\ TokenT\&\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}},\ \mbox{\hyperlink{structm0st4fa_1_1_indecies}{Indecies}}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ colNumber)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ +\ colNumber\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\ \{\ true\ \}\ \{\};}
-\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ TODO:\ CHANGE\ HOW\ YOU\ CALCULATE\ INDECIES,\ NOTICE\ THAT\ NEW\ LINES\ WILL\ DISRUPT\ THE\ RESULT}}
-\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5}{LexicalAnalyzerResult}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_f_s_m_result}{m0st4fa::FSMResult}}\&\ fsmres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ colNumber,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{TokenFactoryType}}\ factory)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\{\ true\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\{\ factory((\mbox{\hyperlink{namespacem0st4fa_a855fbcfd3ea0757ffebb58511f70c162}{FSMStateType}})fsmres.finalState,\ fsmres.getMatch())\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\{\ fsmres.\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ +\ colNumber\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\{\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\}\ \{\};}
-\DoxyCodeLine{00084\ }
-\DoxyCodeLine{00085\ }
-\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a8bba13ab2f1735ed716955a2ad4f85ab}{reset}}()\ \{}
-\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>foundToken\ =\ \textcolor{keyword}{false};}
-\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>token\ =\ TokenT\{\};}
-\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00090\ }
-\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ TokenT()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}};}
-\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00094\ \ \ \ \ \};}
-\DoxyCodeLine{00095\ }
-\DoxyCodeLine{00096\ \ \ \ \ \textcolor{comment}{//\ POSITION}}
-\DoxyCodeLine{00100\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_position}{Position}}\ \{}
-\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}}\ =\ 0;}
-\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}}\ =\ 0;}
-\DoxyCodeLine{00103\ }
-\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::pair<size\_t,\ size\_t>()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}}\};}
-\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{enum}\ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9}{LA\_FLAG}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ab8f839029805bbb167407d29588a2df9}{LAF\_DEFAULT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ 0b0000,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9a6a1e41e855e1ea13cd25c05f71b43011}{LAF\_ALLOW\_WHITE\_SPACE\_CHARS}}\ =\ 0b0001,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ae61b3e16b384c4904bb6f24d7d89280e}{LAF\_ALLOW\_NEW\_LINE}}\ \ \ \ \ \ \ \ \ \ =\ 0b0010,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{namespacem0st4fa_a650a9bd65d2a3b704ebe88b2cedf33e9ad0733925b7823a40422b27e8161ba2ab}{LAF\_COUNT}}\ =\ 3}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT\ =\ std::\textcolor{keywordtype}{string}\_view>}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ TerminalT\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ =\ TerminalT::T\_EOF;}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ AttrT\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token<TerminalT,\ AttrT>}}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65}{EPSILON}};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token<TerminalT,\ AttrT>}}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522}{TEOF}};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_token_a98551730b63a7f9100935e61deff9fcc}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{Token}}\&\ other)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ ==\ other.\mbox{\hyperlink{structm0st4fa_1_1_token_aa6c790e1609df5dffd4c49e0ee144aa6}{name}}\ \&\&\ \mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}}\ ==\ other.\mbox{\hyperlink{structm0st4fa_1_1_token_aa81aa37396df1ae5c2325b984b43a00f}{attribute}};}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}();}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}<"{}}\ +\ stringfy(this-\/>name)\ +\ \textcolor{stringliteral}{"{},\ "{}}\ +\ (std::string)this-\/>attribute\ +\ \textcolor{stringliteral}{"{}>"{}};}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ \};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT>}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
+\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keyword}{const}\ Token<TerminalT,\ AttrT>\ \mbox{\hyperlink{structm0st4fa_1_1_token_a66045b8a4a3a141a91ea9f6793fdbc65}{Token<TerminalT,\ AttrT>::EPSILON}}\ =\ \{\ TerminalT::T\_EPSILON\ \};}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT,\ \textcolor{keyword}{typename}\ AttrT>}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ TerminalT::T\_EOF;\ TerminalT::T\_EPSILON;\ stringfy(a);\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ Token<TerminalT,\ AttrT>\ \mbox{\hyperlink{structm0st4fa_1_1_token_a9fbd330fbe2d49ca4aa162928dcaf522}{Token<TerminalT,\ AttrT>::TEOF}}\ =\ \{\ TerminalT::T\_EOF\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ TerminalT>}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keyword}{requires}\ \textcolor{keyword}{requires}\ (TerminalT\ a)\ \{\ toString(a);\ \}}
+\DoxyCodeLine{00060\ \ \ \ \ std::ostream\&\ \mbox{\hyperlink{namespacem0st4fa_accca36199a8a42507ec600d898d02a65}{operator<<}}(std::ostream\&\ os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_token}{m0st4fa::Token<TerminalT>}}\&\ token)\ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os\ <<\ token.\mbox{\hyperlink{structm0st4fa_1_1_token_aeefe81554b3b8661d118ccfb686b292f}{toString}}();}
+\DoxyCodeLine{00062\ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ }
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TokenT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ state\ \ \ \ \ \ lexeme}}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{TokenFactoryType}}\ =\ std::function<TokenT(FSMStateType,\ InputT)>;}
+\DoxyCodeLine{00068\ \ \ \ \ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{comment}{//\ RESULT}}
+\DoxyCodeLine{00074\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ TokenT,\ \textcolor{keyword}{typename}\ InputT\ =\ std::\textcolor{keywordtype}{string}\_view>}
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result}{LexicalAnalyzerResult}}\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{TokenFactoryType}}\ =\ \mbox{\hyperlink{namespacem0st4fa_a58965446aff3084930498d9cce4e9997}{m0st4fa::TokenFactoryType<TokenT,\ InputT>}};}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ whether\ the\ token\ is\ found\ or\ not}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ token\ itself}}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ TokenT\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\ =\ TokenT\{\};}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ indecies\ of\ the\ lexeme\ of\ the\ token\ within\ the\ actual\ input}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ Indecies\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ =\ Indecies\{0,\ 0\};}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ number\ of\ the\ line\ at\ which\ the\ lexeme\ has\ been\ found}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\ =\ 0;}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ the\ remaining\ input\ after\ the\ lexeme\ was\ extracted}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \textcolor{comment}{//std::string\_view\ remainingInput\{\};}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_af87e7d2b0645435246ca62ec03bb0c60}{LexicalAnalyzerResult}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a43bb7aef6d5e7aa64fabe9b7600fee61}{LexicalAnalyzerResult}}(\textcolor{keyword}{const}\ TokenT\&\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}},\ Indecies\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ colNumber)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ +\ colNumber\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\{\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\ \{\ true\ \}\ \{\};}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aea47fee1f84723b5cc27a86e80cdd1a5}{LexicalAnalyzerResult}}(\textcolor{keyword}{const}\ m0st4fa::FSMResult\&\ fsmres,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}},\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{size\_t}\ colNumber,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac8205ff0b13908453d35d595fa0308b5}{TokenFactoryType}}\ factory)\ :\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}}\{\ true\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}\{\ factory((FSMStateType)fsmres.finalState,\ fsmres.getMatch())\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\{\ fsmres.\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}\ +\ colNumber\ \},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\{\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}}\}\ \{\};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a8bba13ab2f1735ed716955a2ad4f85ab}{reset}}()\ \{}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>foundToken\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>token\ =\ TokenT\{\};}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \textcolor{keyword}{operator}\ TokenT()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}};}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aa2dded5c5e0a5636b6bbd1ffe0becd4d}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::format(\textcolor{stringliteral}{"{}\{\{\(\backslash\)nfoundToken:\ \{\},\(\backslash\)ntoken:\ \{\},\(\backslash\)nindecies:\ \{\},\(\backslash\)nlineNumber:\ \{\}\(\backslash\)n\}\}"{}},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a4c41d3033b192bfea88222e1c4d496a5}{foundToken}},\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ac64f618f741f0e80e9b55b970b306cef}{token}}.toString(),\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_a6569c4fdf4969379965d197107b19d40}{indecies}}.toString(),\ \mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_ab4858d6928b62cbbe1e763f15c8d3120}{lineNumber}});}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
 \DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_position_a139da50d0ceac699197706d6f81a44ea}{toString}}();}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_lexical_analyzer_result_aa2dded5c5e0a5636b6bbd1ffe0becd4d}{toString}}();}
 \DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_position_a139da50d0ceac699197706d6f81a44ea}{toString}}()\textcolor{keyword}{\ const\ }\{}
-\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::format(\textcolor{stringliteral}{"{}(\{\},\ \{\})"{}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}});}
-\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \}}
-\DoxyCodeLine{00113\ \ \ \ \ \};}
-\DoxyCodeLine{00114\ }
-\DoxyCodeLine{00115\ \}}
-\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00110\ \ \ \ \ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{comment}{//\ POSITION}}
+\DoxyCodeLine{00116\ \textcolor{comment}{}\ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structm0st4fa_1_1_position}{Position}}\ \{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}}\ =\ 0;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}}\ =\ 0;}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::pair<size\_t,\ size\_t>()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}}\};}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \textcolor{keyword}{operator}\ std::string()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{structm0st4fa_1_1_position_a139da50d0ceac699197706d6f81a44ea}{toString}}();}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{structm0st4fa_1_1_position_a139da50d0ceac699197706d6f81a44ea}{toString}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::format(\textcolor{stringliteral}{"{}(\{\},\ \{\})"{}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a7d4dc9d943364f9b3c3e87697916f58e}{line}},\ \mbox{\hyperlink{structm0st4fa_1_1_position_a8df6c6ad07e98795b769559cbcb46dbe}{column}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00129\ \ \ \ \ \};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
 
 \end{DoxyCode}

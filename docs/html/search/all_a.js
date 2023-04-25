@@ -1,24 +1,9 @@
 var searchData=
 [
-  ['convertabletostring_0',['ConvertableToString',['../conceptm0st4fa_1_1utility_1_1_convertable_to_string.html',1,'m0st4fa::utility']]],
-  ['m0st4fa_1',['m0st4fa',['../namespacem0st4fa.html',1,'']]],
-  ['m_5flogger_2',['m_Logger',['../classm0st4fa_1_1_finite_state_machine.html#a82838d5d7a530883491d24bae45a6d0a',1,'m0st4fa::FiniteStateMachine']]],
-  ['m_5fstateset_3',['m_StateSet',['../structm0st4fa_1_1_f_s_m_state_set_type.html#ae414f764740602d23e37e64010a8541f',1,'m0st4fa::FSMStateSetType']]],
-  ['m_5ftable_4',['m_Table',['../structm0st4fa_1_1_transition_function.html#aebce54b69baa0fe1877428379ef50144',1,'m0st4fa::TransitionFunction']]],
-  ['m_5ftransitionfunc_5',['m_TransitionFunc',['../classm0st4fa_1_1_finite_state_machine.html#a2272f8f6104113949263db50b9293a62',1,'m0st4fa::FiniteStateMachine']]],
-  ['main_6',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['main_2ecpp_7',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['matchedstates_8',['matchedStates',['../structm0st4fa_1_1_substring.html#a9cb41c7e4b13b14bdeb05d1c942d9597',1,'m0st4fa::Substring']]],
-  ['mm_5ffsm_5fmode_5fmax_9',['MM_FSM_MODE_MAX',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a82600a2188987f9a626cf7f02d5ccbd9',1,'m0st4fa']]],
-  ['mm_5flongest_5fprefix_10',['MM_LONGEST_PREFIX',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a456b958363273312579a7e97e12c0294',1,'m0st4fa']]],
-  ['mm_5flongest_5fsubstring_11',['MM_LONGEST_SUBSTRING',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a9857ed071b6970f381b4163b30f857fb',1,'m0st4fa']]],
-  ['mm_5fnone_12',['MM_NONE',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3a64c00db69df99cf1af465a96444b53e6',1,'m0st4fa']]],
-  ['mm_5fwhole_5fstring_13',['MM_WHOLE_STRING',['../namespacem0st4fa.html#a8896a52a4afd0f9df5a5ed99bcc66ff3ab7ffe915b99112ed2c95e0f8d917073a',1,'m0st4fa']]],
-  ['mt_5fdfa_14',['MT_DFA',['../namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92afc791e61adbabe19e3c5fc01607034fc',1,'m0st4fa']]],
-  ['mt_5fepsilon_5fnfa_15',['MT_EPSILON_NFA',['../namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92ac672dfcbdcdb9eb98050cbb825150697',1,'m0st4fa']]],
-  ['mt_5fmachine_5ftype_5fmax_16',['MT_MACHINE_TYPE_MAX',['../namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92acb4c108c7104cd31db08eeb175cdf31b',1,'m0st4fa']]],
-  ['mt_5fnon_5fepsilon_5fnfa_17',['MT_NON_EPSILON_NFA',['../namespacem0st4fa.html#a16d816fdb0011ddd3fa33eb920abbe92affb7f31d80464bd8892f51e554fb7aaa',1,'m0st4fa']]],
-  ['numconvertabletostring_18',['NumConvertableToString',['../conceptm0st4fa_1_1utility_1_1_num_convertable_to_string.html',1,'m0st4fa::utility']]],
-  ['statesetconcept_19',['StateSetConcept',['../conceptm0st4fa_1_1_state_set_concept.html',1,'m0st4fa']]],
-  ['utility_20',['utility',['../namespacem0st4fa_1_1utility.html',1,'m0st4fa']]]
+  ['operator_20tokent_0',['operator TokenT',['../structm0st4fa_1_1_lexical_analyzer_result.html#a0665a508992cb5e89fdef2c6b171a322',1,'m0st4fa::LexicalAnalyzerResult']]],
+  ['operator_3c_3c_1',['operator&lt;&lt;',['../namespacem0st4fa.html#accca36199a8a42507ec600d898d02a65',1,'m0st4fa']]],
+  ['operator_3d_2',['operator=',['../classm0st4fa_1_1_lexical_analyzer.html#abcbf6d3869e434c507198d397dbf0afa',1,'m0st4fa::LexicalAnalyzer']]],
+  ['operator_3d_3d_3',['operator==',['../structm0st4fa_1_1_token.html#a98551730b63a7f9100935e61deff9fcc',1,'m0st4fa::Token']]],
+  ['pair_3c_20size_5ft_2c_20size_5ft_20_3e_4',['pair&lt; size_t, size_t &gt;',['../structm0st4fa_1_1_position.html#ad059c22afa11cb4877e0ef26ef3848f2',1,'m0st4fa::Position']]],
+  ['string_5',['string',['../structm0st4fa_1_1_token.html#af8abfae9984cd8008c496dc28cf47834',1,'m0st4fa::Token::string()'],['../structm0st4fa_1_1_lexical_analyzer_result.html#a517a3f886af508318f0c96d7e3f6229a',1,'m0st4fa::LexicalAnalyzerResult::string()'],['../structm0st4fa_1_1_position.html#acd1071190e52003ee369f6b30309e987',1,'m0st4fa::Position::string()']]]
 ];

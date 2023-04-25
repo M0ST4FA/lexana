@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['_5fget_5ffinal_5fstates_5ffrom_5fstate_5fset_0',['_get_final_states_from_state_set',['../classm0st4fa_1_1_finite_state_machine.html#a8ac7a0fe5d311a5f34ca92cebd9936f1',1,'m0st4fa::FiniteStateMachine']]],
-  ['_5fis_5fstate_5ffinal_1',['_is_state_final',['../classm0st4fa_1_1_finite_state_machine.html#a7215857088d45243d073f33c231b20c2',1,'m0st4fa::FiniteStateMachine']]]
+  ['getautomatan_0',['getAutomatan',['../classm0st4fa_1_1_lexical_analyzer.html#a78175d1ee2447dca701e2eeaae3fe518',1,'m0st4fa::LexicalAnalyzer']]],
+  ['getcol_1',['getCol',['../classm0st4fa_1_1_lexical_analyzer.html#adee6ddc157dcbcfdc0969b8c59d2e1c0',1,'m0st4fa::LexicalAnalyzer']]],
+  ['getline_2',['getLine',['../classm0st4fa_1_1_lexical_analyzer.html#a2102c8791bfff625f6dd1e1a041c58b5',1,'m0st4fa::LexicalAnalyzer']]],
+  ['getnexttoken_3',['getNextToken',['../classm0st4fa_1_1_lexical_analyzer.html#a360582fb5a0a0c77553dfdfcba14fcbc',1,'m0st4fa::LexicalAnalyzer']]],
+  ['getposition_4',['getPosition',['../classm0st4fa_1_1_lexical_analyzer.html#a8fe9088959a4edcd58bd500267221cb0',1,'m0st4fa::LexicalAnalyzer']]],
+  ['getsourcecode_5',['getSourceCode',['../classm0st4fa_1_1_lexical_analyzer.html#ab0311f5dc70584a1c72b5ef08e60c434',1,'m0st4fa::LexicalAnalyzer']]],
+  ['gettokenfactory_6',['getTokenFactory',['../classm0st4fa_1_1_lexical_analyzer.html#a104e6bb82d82935f490ec847e47d32b9',1,'m0st4fa::LexicalAnalyzer']]]
 ];
