@@ -1,9 +1,10 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 #include <functional>
 
-#include "FiniteStateMachine.h"
+#include "fsm/FiniteStateMachine.h"
 
 namespace m0st4fa {
 
@@ -64,7 +65,7 @@ namespace m0st4fa {
 
 	template<typename TokenT, typename InputT = std::string_view>
 	//													state      lexeme
-	using TokenFactoryType = std::function<TokenT(FSMStateType, InputT)>;
+	using TokenFactoryType = std::function<TokenT(m0st4fa::fsm::FSMStateType, InputT)>;
 	
 
 	// RESULT
@@ -79,16 +80,16 @@ namespace m0st4fa {
 		bool foundToken = false;
 		// the token itself
 		TokenT token = TokenT{};
-		// the indecies of the lexeme of the token within the actual input
-		Indecies indecies = Indecies{0, 0};
+		// the indicies of the lexeme of the token within the actual input
+		fsm::Indicies indicies = fsm::Indicies{0, 0};
 		// the number of the line at which the lexeme has been found
 		size_t lineNumber = 0;
 		// the remaining input after the lexeme was extracted
 		//std::string_view remainingInput{};
 
 		LexicalAnalyzerResult() = default;
-		LexicalAnalyzerResult(const TokenT& token, Indecies indecies, const size_t lineNumber, const size_t colNumber) : token{ token }, indecies{ indecies + colNumber }, lineNumber{ lineNumber }, foundToken { true } {};
-		LexicalAnalyzerResult(const m0st4fa::FSMResult& fsmres, const size_t lineNumber, const size_t colNumber, const TokenFactoryType factory) : foundToken{ true }, token{ factory((FSMStateType)fsmres.finalState, fsmres.getMatch()) }, indecies{ fsmres.indecies + colNumber }, lineNumber{lineNumber} {};
+		LexicalAnalyzerResult(const TokenT& token, fsm::Indicies indicies, const size_t lineNumber, const size_t colNumber) : token{ token }, indicies{ indicies + colNumber }, lineNumber{ lineNumber }, foundToken { true } {};
+		LexicalAnalyzerResult(const fsm::FSMResult& fsmres, const size_t lineNumber, const size_t colNumber, const TokenFactoryType factory) : foundToken{ true }, token{ factory((fsm::FSMStateType)fsmres.finalState, fsmres.getMatch()) }, indicies{ fsmres.indicies + colNumber }, lineNumber{lineNumber} {};
 
 
 		void reset() {
@@ -101,7 +102,7 @@ namespace m0st4fa {
 		}
 
 		std::string toString() const {
-			return std::format("{{\nfoundToken: {},\ntoken: {},\nindecies: {},\nlineNumber: {}\n}}", foundToken, token.toString(), indecies.toString(), lineNumber);
+			return std::format("{{\nfoundToken: {},\ntoken: {},\nindicies: {},\nlineNumber: {}\n}}", foundToken, token.toString(), indicies.toString(), lineNumber);
 		}
 
 		operator std::string() const {

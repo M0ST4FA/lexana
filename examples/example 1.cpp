@@ -1,4 +1,4 @@
-#include "../LexicalAnalyzer.h"
+#include "lexana/LexicalAnalyzer.h"
 
 extern void example1();
 

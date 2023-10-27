@@ -3,9 +3,9 @@
 #include <iostream>
 #include <map>
 
-#include "../FiniteStateMachine.h"
-#include "../DFA.h"
-#include "../common.h"
+#include "fsm/FiniteStateMachine.h"
+#include "fsm/DFA.h"
+#include "utility/common.h"
 #include "universal.h"
 
 template<typename FSMType>
@@ -13,12 +13,12 @@ class FSMTests : public testing::Test, public FSMSharedInfo {
 	using Base = FSMSharedInfo;
 
 protected:
-	//using FSMStateType = m0st4fa::FSMStateType;
-	using FSMStateSetType = m0st4fa::FSMStateSetType;
-	using TableType = m0st4fa::FSMTable;
-	using TranFn = m0st4fa::TransFn<TableType>;
-	using DFAType = m0st4fa::DeterFiniteAutomatan<TranFn>;
-	using Result = m0st4fa::FSMResult;
+	//using FSMStateType = m0st4fa::fsm::FSMStateType;
+	using FSMStateSetType = m0st4fa::fsm::FSMStateSetType;
+	using TableType = m0st4fa::fsm::FSMTable;
+	using TranFn = m0st4fa::fsm::TransFn<TableType>;
+	using DFAType = m0st4fa::fsm::DeterFiniteAutomaton<TranFn>;
+	using Result = m0st4fa::fsm::FSMResult;
 
 	void SetUp() override {
 
@@ -30,34 +30,34 @@ protected:
 
 public:
 
-	void testFSMResultPositive(const Result& res, bool accepted, std::pair<size_t, size_t> indecies, std::source_location srcLoc = std::source_location::current()) const {
+	void testFSMResultPositive(const Result& res, bool accepted, std::pair<size_t, size_t> indicies, std::source_location srcLoc = std::source_location::current()) const {
 		std::string errmsg = std::format(ANSI_ERR_COLOR"{}" ANSI_RESET_ALL, m0st4fa::toString(srcLoc, true));
 		if (not res.input.empty()) {
 			errmsg += " input string -> " + std::string(res.input);
 		};
 
 		EXPECT_TRUE(res.accepted == accepted) << errmsg;
-		EXPECT_EQ(res.indecies.start, indecies.first) << errmsg;
-		EXPECT_EQ(res.indecies.end, indecies.second) << errmsg;
+		EXPECT_EQ(res.indicies.start, indicies.first) << errmsg;
+		EXPECT_EQ(res.indicies.end, indicies.second) << errmsg;
 
 	}
 
-	void testFSMResultNegative(const Result& res, bool accepted, std::pair<size_t, size_t> indecies, std::source_location srcLoc = std::source_location::current()) const {
+	void testFSMResultNegative(const Result& res, bool accepted, std::pair<size_t, size_t> indicies, std::source_location srcLoc = std::source_location::current()) const {
 		std::string errmsg = std::format(ANSI_ERR_COLOR"{}" ANSI_RESET_ALL, m0st4fa::toString(srcLoc, true));
 		if (not res.input.empty()) {
 			errmsg += " input string -> " + std::string(res.input);
 		};
 
-		bool condition = (res.accepted == accepted) and (res.indecies.start == indecies.first) and (res.indecies.end == indecies.second);
+		bool condition = (res.accepted == accepted) and (res.indicies.start == indicies.first) and (res.indicies.end == indicies.second);
 
 		EXPECT_FALSE(condition) << errmsg;
-	/*	EXPECT_FALSE(res.indecies.start == indecies.first) << errmsg;
-		EXPECT_FALSE(res.indecies.end == indecies.second) << errmsg;*/
+	/*	EXPECT_FALSE(res.indicies.start == indicies.first) << errmsg;
+		EXPECT_FALSE(res.indicies.end == indicies.second) << errmsg;*/
 	}
 
 };
 
-TYPED_TEST_CASE_P(FSMTests);
+TYPED_TEST_SUITE_P(FSMTests);
 
 template<typename T>
 std::ostream& operator<<(std::ostream& os, const typename FSMTests<T>::Token token) {
@@ -67,7 +67,7 @@ std::ostream& operator<<(std::ostream& os, const typename FSMTests<T>::Token tok
 
 TYPED_TEST_P(FSMTests, simulate) {
 
-	using enum m0st4fa::FSM_MODE;
+	using enum m0st4fa::fsm::FSM_MODE;
 
 	// Data structures
 	typename TestFixture::TranFn tranFn;
@@ -119,8 +119,8 @@ TYPED_TEST_P(FSMTests, simulate) {
 
 TYPED_TEST_P(FSMTests, simulate2) {
 
-	using enum m0st4fa::FSM_MODE;
-	using m0st4fa::FSMStateType;
+	using enum m0st4fa::fsm::FSM_MODE;
+	using m0st4fa::fsm::FSMStateType;
 
 	// Data structures
 	typename TestFixture::TableType table{};
@@ -152,4 +152,4 @@ TYPED_TEST_P(FSMTests, simulate2) {
 
 }
 
-REGISTER_TYPED_TEST_CASE_P(FSMTests, simulate, simulate2);
+REGISTER_TYPED_TEST_SUITE_P(FSMTests, simulate, simulate2);

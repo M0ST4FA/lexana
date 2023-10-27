@@ -1,20 +1,21 @@
 #pragma once
 
 #include <string>
+#include <string_view>
 
-#include "../FiniteStateMachine.h"
-#include "../DFA.h"
-#include "../Logger.h"
-#include "../LADataStructs.h"
+#include "fsm/FiniteStateMachine.h"
+#include "fsm/DFA.h"
+#include "utility/Logger.h"
+#include "lexana/LADataStructs.h"
 
 namespace m0st4fa {
 
-	template <typename TokenT, typename TableT = FSMTable, typename InputT = std::string_view>
+	template <typename TokenT, typename TableT = fsm::FSMTable, typename InputT = std::string_view>
 	class LexicalAnalyzer {
 
 		using Result = LexicalAnalyzerResult<TokenT, InputT>;
 
-		DFAType<TransFn<TableT>, InputT> m_Automatan;
+		fsm::DFA<fsm::TransFn<TableT>, InputT> m_Automatan;
 		TokenFactoryType<TokenT, InputT> m_TokenFactory = nullptr;
 		InputT m_SourceCode;
 
@@ -38,8 +39,8 @@ namespace m0st4fa {
 			return true;
 		};
 		/**
-		* @brief remove all whitespaces and count new lines, then check whether source code is empty.
-		* @return boolean indicating whether the checks have been successful, i.e. all whitespaces have been dealt with accordingly and the source code is not empty.
+		* @brief remove all white-spaces and count new lines, then check whether source code is empty.
+		* @return boolean indicating whether the checks have been successful, i.e. all white-spaces have been dealt with accordingly and the source code is not empty.
 		**/
 		inline bool _check_presearch_conditions(const unsigned flags = (unsigned)LA_FLAG::LAF_DEFAULT) {
 			// remove all white spaces and count new lines
@@ -52,7 +53,7 @@ namespace m0st4fa {
 
 	protected:
 
-		const DFAType<TransFn<TableT>, InputT>& getAutomatan() { return this->m_Automatan; };
+		const fsm::DFA<fsm::TransFn<TableT>, InputT>& getAutomatan() { return this->m_Automatan; };
 		const TokenFactoryType<TokenT, InputT> getTokenFactory() { return this->m_TokenFactory; };
 
 	public:
@@ -60,7 +61,7 @@ namespace m0st4fa {
 		LexicalAnalyzer() = default;
 
 		LexicalAnalyzer(
-			const DFAType<TransFn<TableT>, InputT>& automaton,
+			const fsm::DFA<fsm::TransFn<TableT>, InputT>& automaton,
 			const TokenFactoryType<TokenT, InputT> tokenFactory,
 			const std::string_view sourceCode) :
 			m_Automatan{ automaton }, m_TokenFactory{ tokenFactory }, m_SourceCode{ sourceCode }
@@ -106,7 +107,7 @@ namespace m0st4fa {
 	{
 
 		// this function will be entered in case white space characters are to be removed.
-		// remove all whitespaces...
+		// remove all white-spaces...
 		while (true) {
 			const char currChar = *this->m_SourceCode.data();
 			const bool isWhiteSpace = std::isspace(currChar) && currChar != '\0'; // null marks the EOF.
@@ -146,7 +147,7 @@ namespace m0st4fa {
 			return Result{};
 
 		// check whether there is a matched lexeme
-		const FSMResult fsmRes = this->m_Automatan.simulate(this->m_SourceCode, FSM_MODE::MM_LONGEST_PREFIX);
+		const fsm::FSMResult fsmRes = this->m_Automatan.simulate(this->m_SourceCode, fsm::FSM_MODE::MM_LONGEST_PREFIX);
 
 		// if there is not, early return
 		if (not fsmRes.accepted)
@@ -179,7 +180,7 @@ namespace m0st4fa {
 			return Result{};
 
 		// check whether there is a matched lexeme
-		const FSMResult fsmRes = this->m_Automatan.simulate(this->m_SourceCode, FSM_MODE::MM_LONGEST_PREFIX);
+		const fsm::FSMResult fsmRes = this->m_Automatan.simulate(this->m_SourceCode, fsm::FSM_MODE::MM_LONGEST_PREFIX);
 
 		// if there is not, early return
 		if (!fsmRes.accepted)

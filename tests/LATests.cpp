@@ -1,19 +1,20 @@
 #include "gtest/gtest.h"
 #include "./fsm.h"
 #include "./universal.h"
-#include "../LexicalAnalyzer.h"
+#include "lexana/LexicalAnalyzer.h"
 
 using m0st4fa::LexicalAnalyzer;
+
 
 class LATests : public ::testing::Test, public FSMSharedInfo, public LASharedInfo {
 
 protected:
-	using enum m0st4fa::FSM_MODE;
+	using enum m0st4fa::fsm::FSM_MODE;
 	using enum Terminal;
-	typedef LexicalAnalyzer<TokenType, m0st4fa::FSMTable, std::string_view> LexicalAnalyzerType;
+	typedef LexicalAnalyzer<TokenType, m0st4fa::fsm::FSMTable, std::string_view> LexicalAnalyzerType;
 	using Result = m0st4fa::LexicalAnalyzerResult<TokenType, std::string_view>;
 
-	void testLAResultPositive(const Result& res, bool foundToken = false, const TokenType& token = TokenType{}, m0st4fa::Indecies indecies = m0st4fa::Indecies{}, size_t lineNumber = 0, std::source_location srcLoc = std::source_location::current()) const {
+	void testLAResultPositive(const Result& res, bool foundToken = false, const TokenType& token = TokenType{}, m0st4fa::fsm::Indicies indicies = m0st4fa::fsm::Indicies{}, size_t lineNumber = 0, std::source_location srcLoc = std::source_location::current()) const {
 
 		std::string errmsg = std::format(ANSI_ERR_COLOR"{}" ANSI_RESET_ALL, m0st4fa::toString(srcLoc, true));
 		/*if (not res.input) {
@@ -21,24 +22,24 @@ protected:
 		};*/
 
 		ASSERT_EQ(res.foundToken, foundToken) << errmsg;
-		ASSERT_EQ(res.indecies, indecies) << errmsg << std::format("\n{}", res.indecies.toString());;
+		ASSERT_EQ(res.indicies, indicies) << errmsg << std::format("\n{}", res.indicies.toString());;
 		ASSERT_EQ(res.token, res.token) << errmsg;
 		ASSERT_EQ(res.lineNumber, lineNumber) << errmsg;
 
 	};
 
-	void testLAResultNegative(const Result& res, bool foundToken = false, const TokenType& token = TokenType{}, m0st4fa::Indecies indecies = m0st4fa::Indecies{}, size_t lineNumber = 0, std::source_location srcLoc = std::source_location::current()) const {
+	void testLAResultNegative(const Result& res, bool foundToken = false, const TokenType& token = TokenType{}, m0st4fa::fsm::Indicies indicies = m0st4fa::fsm::Indicies{}, size_t lineNumber = 0, std::source_location srcLoc = std::source_location::current()) const {
 
 		std::string errmsg = std::format(ANSI_ERR_COLOR"{}" ANSI_RESET_ALL, m0st4fa::toString(srcLoc, true));
 		/*if (not res.input) {
 			errmsg += " input string -> " + std::string(input);
 		};*/
 
-		bool condition = (res.foundToken == foundToken) or (res.indecies == indecies) or (res.token == token) or (res.lineNumber == lineNumber);
+		bool condition = (res.foundToken == foundToken) or (res.indicies == indicies) or (res.token == token) or (res.lineNumber == lineNumber);
 
-		ASSERT_FALSE(not condition) << errmsg << std::format("\nres.indecies: {}, indecies: {}\n res.token: {}, input token: {}\n res.lineNumber: {}, input lineNumber: {}", res.indecies.toString(), indecies.toString(), res.token.toString(), token.toString(), res.lineNumber, lineNumber);
+		ASSERT_FALSE(not condition) << errmsg << std::format("\nres.indicies: {}, indicies: {}\n res.token: {}, input token: {}\n res.lineNumber: {}, input lineNumber: {}", res.indicies.toString(), indicies.toString(), res.token.toString(), token.toString(), res.lineNumber, lineNumber);
 		/*ASSERT_EQ(res.foundToken, !foundToken) << errmsg;
-		ASSERT_FALSE(res.indecies == indecies) << errmsg << std::format("\n{}", res.indecies.toString());
+		ASSERT_FALSE(res.indicies == indicies) << errmsg << std::format("\n{}", res.indicies.toString());
 		ASSERT_FALSE(res.token == token) << errmsg << std::format("\n{} == {}", res.token.toString(), res.token.toString());
 		ASSERT_FALSE(res.lineNumber == lineNumber) << errmsg << std::format("{} == {}", res.lineNumber, lineNumber);*/
 	};

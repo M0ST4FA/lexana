@@ -1,0 +1,3 @@
+[submodule "external/fsm"]
+	path = external/fsm
+	url = https://github.com/M0sT4FA/fsm
