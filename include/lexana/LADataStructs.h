@@ -9,9 +9,10 @@
 namespace m0st4fa {
 
 	/**
-	* @brief These are the flags for lexical analyzer that control its behavior.
+	* @brief The flags for lexical analyzer that control its behavior.
 	**/
 	enum LA_FLAG {
+		//! @brief Default behavior.
 		LAF_DEFAULT                    = 0b0000,
 		//! @brief Do not skip whitespace characters.
 		LAF_ALLOW_WHITE_SPACE_CHARS = 0b0001,
@@ -23,7 +24,7 @@ namespace m0st4fa {
 
 
 	/**
-	* @brief This data structure represents a token used by the lexical analyzer.
+	* @brief Token used by the lexical analyzer.
 	* 
 	**/
 	template <typename TerminalT, typename AttrT = std::string_view>
