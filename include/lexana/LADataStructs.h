@@ -6,10 +6,10 @@
 
 #include "fsm/FiniteStateMachine.h"
 
-namespace m0st4fa {
+namespace m0st4fa::lexana {
 
 	/**
-	* @brief The flags for lexical analyzer that control its behavior.
+	* @brief The LexicalAnalyzer flags that control its behavior.
 	**/
 	enum LA_FLAG {
 		//! @brief Default behavior.
@@ -24,26 +24,49 @@ namespace m0st4fa {
 
 
 	/**
-	* @brief Token used by the lexical analyzer.
-	* 
+	* @brief Token used by the lexical analyzer; each token has a name and an attribute and represents a lexeme from the input file.
 	**/
 	template <typename TerminalT, typename AttrT = std::string_view>
 		requires requires (TerminalT a) { TerminalT::T_EOF; TerminalT::T_EPSILON; stringfy(a); }
 	struct Token {
+		/**
+		 * @brief The name associated with the token.
+		 */
 		TerminalT name = TerminalT::T_EOF;
+		/**
+		 * @brief The attribute associated with the token.
+		 */
 		AttrT attribute;
 
+		/**
+		 * @brief The Token object representing epsilon (an empty-string lexeme).
+		 */
 		static const Token<TerminalT, AttrT> EPSILON;
+		/**
+		 * @brief The Token object representing an end-of-file lexeme.
+		 */
 		static const Token<TerminalT, AttrT> TEOF;
 
-		bool operator==(const Token& other) const {
-			return name == other.name && attribute == other.attribute;
+		/**
+		 * @brief Checks whether to Token objects are equal (i.e. have the same name *and* attribute).
+		 * @param rhs The right-hand-side parameter/operand of the operator. The left-hand-side is `this` object.
+		 * @return `true` if both Token objects are equal; `false` otherwise.
+		 */
+		bool operator==(const Token& rhs) const {
+			return name == rhs.name && attribute == rhs.attribute;
 		};
 		
+		/**
+		 * @brief Calls toString().
+		 */
 		operator std::string() const {
 			return this->toString();
 		}
 
+		/**
+		 * @brief Converts this Token object into an std::string object and returns it.
+		 * @return The std::string object corresponding to `this`.
+		 */
 		std::string toString() const {
 			return "<" + stringfy(this->name) + ", " + (std::string)this->attribute + ">";
 		}
@@ -59,15 +82,16 @@ namespace m0st4fa {
 
 	template <typename TerminalT>
 		requires requires (TerminalT a) { toString(a); }
-	std::ostream& operator<<(std::ostream& os, const m0st4fa::Token<TerminalT>& token) {
+	std::ostream& operator<<(std::ostream& os, const lexana::Token<TerminalT>& token) {
 		return os << token.toString();
 	}
 	
-
+	/**
+	 * @brief Aliases the type of a factory function that creates tokens based on FSM states and lexeme input.
+	 */
 	template<typename TokenT, typename InputT = std::string_view>
-	//													state      lexeme
+	//													    state             lexeme
 	using TokenFactoryType = std::function<TokenT(m0st4fa::fsm::FSMStateType, InputT)>;
-	
 
 	// RESULT
 	/**
@@ -75,7 +99,7 @@ namespace m0st4fa {
 	**/
 	template<typename TokenT, typename InputT = std::string_view>
 	struct LexicalAnalyzerResult {
-		using TokenFactoryType = m0st4fa::TokenFactoryType<TokenT, InputT>;
+		using TokenFactoryType = lexana::TokenFactoryType<TokenT, InputT>;
 
 		// whether the token is found or not
 		bool foundToken = false;

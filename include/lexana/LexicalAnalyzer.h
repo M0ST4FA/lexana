@@ -8,7 +8,7 @@
 #include "utility/Logger.h"
 #include "lexana/LADataStructs.h"
 
-namespace m0st4fa {
+namespace m0st4fa::lexana {
 
 	template <typename TokenT, typename TableT = fsm::FSMTable, typename InputT = std::string_view>
 	class LexicalAnalyzer {
@@ -96,7 +96,7 @@ namespace m0st4fa {
 
 }
 
-namespace m0st4fa {
+namespace m0st4fa::lexana {
 
 	/**
 	* @brief Eliminate any whitespace "prefix" from the current source code. depending on the flag given to it, it may also count new lines and set `m_Line` and `m_Col` appropriately.
@@ -139,7 +139,7 @@ namespace m0st4fa {
 	* @return the next token.
 	**/
 	template<typename TokenT, typename TableT, typename InputT>
-	m0st4fa::LexicalAnalyzer<TokenT, TableT, InputT>::Result m0st4fa::LexicalAnalyzer<TokenT, TableT, InputT>::getNextToken(unsigned flags)
+	lexana::LexicalAnalyzer<TokenT, TableT, InputT>::Result lexana::LexicalAnalyzer<TokenT, TableT, InputT>::getNextToken(unsigned flags)
 	{
 
 		// if checks fail
@@ -173,7 +173,7 @@ namespace m0st4fa {
 	* @return the next token.
 	**/
 	template<typename TokenT, typename TableT, typename InputT>
-	m0st4fa::LexicalAnalyzer<TokenT, TableT, InputT>::Result m0st4fa::LexicalAnalyzer<TokenT, TableT, InputT>::peak(unsigned flags) {
+	lexana::LexicalAnalyzer<TokenT, TableT, InputT>::Result lexana::LexicalAnalyzer<TokenT, TableT, InputT>::peak(unsigned flags) {
 
 		// if checks fail
 		if (!this->_check_presearch_conditions(flags))

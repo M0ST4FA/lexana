@@ -89,7 +89,7 @@ protected:
 		return toString(term);
 	}
 
-	using TokenType = m0st4fa::Token<Terminal, std::string_view>;
+	using TokenType = m0st4fa::lexana::Token<Terminal, std::string_view>;
 
 	static TokenType fact_ab(m0st4fa::fsm::FSMStateType state, std::string_view lexeme) {
 		switch (state) {

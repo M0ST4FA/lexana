@@ -3,7 +3,7 @@
 #include "./universal.h"
 #include "lexana/LexicalAnalyzer.h"
 
-using m0st4fa::LexicalAnalyzer;
+using m0st4fa::lexana::LexicalAnalyzer;
 
 
 class LATests : public ::testing::Test, public FSMSharedInfo, public LASharedInfo {
@@ -12,7 +12,7 @@ protected:
 	using enum m0st4fa::fsm::FSM_MODE;
 	using enum Terminal;
 	typedef LexicalAnalyzer<TokenType, m0st4fa::fsm::FSMTable, std::string_view> LexicalAnalyzerType;
-	using Result = m0st4fa::LexicalAnalyzerResult<TokenType, std::string_view>;
+	using Result = m0st4fa::lexana::LexicalAnalyzerResult<TokenType, std::string_view>;
 
 	void testLAResultPositive(const Result& res, bool foundToken = false, const TokenType& token = TokenType{}, m0st4fa::fsm::Indicies indicies = m0st4fa::fsm::Indicies{}, size_t lineNumber = 0, std::source_location srcLoc = std::source_location::current()) const {
 
@@ -81,14 +81,14 @@ TEST_F(LATests, id_eq_num) {
 		this->testLAResultPositive(la2.peak(), true, TokenType{ Terminal::T_ID, "newid" }, { 0, 5 }, 0);
 		this->testLAResultPositive(la2.getNextToken(), true, TokenType{ Terminal::T_ID, "newid" }, { 0, 5 }, 0);
 
-		this->testLAResultPositive(la2.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_ID, "newidverylong" }, { 1, 14 }, 1);
-		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_ID, "newidverylong" }, { 1, 14 }, 1);
+		this->testLAResultPositive(la2.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_ID, "newidverylong" }, { 1, 14 }, 1);
+		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_ID, "newidverylong" }, { 1, 14 }, 1);
 
-		this->testLAResultPositive(la2.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_EQUAL, "=" }, { 1, 2 }, 2);
-		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_EQUAL, "=" }, { 1, 2 }, 2);
+		this->testLAResultPositive(la2.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_EQUAL, "=" }, { 1, 2 }, 2);
+		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_EQUAL, "=" }, { 1, 2 }, 2);
 
-		this->testLAResultPositive(la2.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_NUM, "555" }, { 1, 4 }, 3);
-		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_NUM, "555" }, { 1, 4 }, 3);
+		this->testLAResultPositive(la2.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_NUM, "555" }, { 1, 4 }, 3);
+		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ T_NUM, "555" }, { 1, 4 }, 3);
 
 	}
 
@@ -133,17 +133,17 @@ TEST_F(LATests, ab) {
 		this->testLAResultPositive(la2.peak(), true, TokenType{ Terminal::T_A, "aabbb" }, { 0, 5 }, 0);
 		this->testLAResultPositive(la2.getNextToken(), true, TokenType{ Terminal::T_A, "aabbb" }, { 0, 5 }, 0);
 
-		this->testLAResultPositive(la2.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 1);
-		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 1);
+		this->testLAResultPositive(la2.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 1);
+		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 1);
 
-		this->testLAResultPositive(la3.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 0);
-		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 0);
+		this->testLAResultPositive(la3.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 0);
+		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 0);
 
-		this->testLAResultPositive(la3.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aaabb" }, { 0, 5 }, 1);
-		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aaabb" }, { 0, 5 }, 1);
+		this->testLAResultPositive(la3.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aaabb" }, { 0, 5 }, 1);
+		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aaabb" }, { 0, 5 }, 1);
 
-		this->testLAResultPositive(la3.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 2);
-		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 2);
+		this->testLAResultPositive(la3.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 2);
+		this->testLAResultPositive(la3.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aabb" }, { 0, 4 }, 2);
 	}
 	
 
@@ -191,8 +191,8 @@ TEST_F(LATests, a) {
 		this->testLAResultPositive(la2.peak(), true, TokenType{ Terminal::T_A, "a" }, { 0, 1 }, 0);
 		this->testLAResultPositive(la2.getNextToken(), true, TokenType{ Terminal::T_A, "a" }, { 0, 1 }, 0);
 
-		this->testLAResultPositive(la2.peak((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aa" }, { 0, 2 }, 1);
-		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aa" }, { 0, 2 }, 1);
+		this->testLAResultPositive(la2.peak((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aa" }, { 0, 2 }, 1);
+		this->testLAResultPositive(la2.getNextToken((size_t)m0st4fa::lexana::LA_FLAG::LAF_ALLOW_NEW_LINE), true, TokenType{ Terminal::T_A, "aa" }, { 0, 2 }, 1);
 	}
 
 

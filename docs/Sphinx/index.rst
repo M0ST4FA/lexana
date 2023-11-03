@@ -6,10 +6,27 @@
 Welcome to lexana's documentation!
 ==================================
 
+A library providing basic lexical analyzer function. Written in C++.
+
+Getting Started
+---------------
+
+New to the library? This document explains basic features and usages.
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
+   GettingStarted
+
+API
+---
+
+.. toctree:: 
+   :maxdepth: 2
+
+   lexana/LexicalAnalyzer
+   lexana/Token
+   lexana/Enum
 
 
 Indices and tables
