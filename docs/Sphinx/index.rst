@@ -25,6 +25,7 @@ API
    :maxdepth: 2
 
    lexana/LexicalAnalyzer
+   lexana/LAResult
    lexana/Token
    lexana/Enum
 

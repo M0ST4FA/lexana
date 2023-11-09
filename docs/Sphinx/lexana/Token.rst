@@ -8,6 +8,6 @@ Token Documentation
   :allow-dot-graphs:
 
 
----
+----
 
-.. doxygendefine:: m0st4fa::lexana::TokenFactoryType
+.. doxygentypedef:: m0st4fa::lexana::TokenFactoryType
