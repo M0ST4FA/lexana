@@ -148,7 +148,7 @@ namespace m0st4fa::lexana {
 	* @brief Eliminates any whitespace "prefix" from the source code. 
 	* @details Depending on the flags given to it, it may allow new lines or other characters. It also sets the line and character numbers correctly.
 	* @param flags The flags to the function. These flags influence the characters escaped. 
-	* @note Currently, the only flag that is supported is LA_FLAG::LAF_ALLOW_NEW_LINE; any other flag will be ignored and will have no effect.
+	* @note Currently, the only flag that is supported is LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE; any other flag will be ignored and will have no effect.
 	**/
 	template<typename TokenT, typename TableT, typename InputT>
 	void LexicalAnalyzer<TokenT, TableT, InputT>::_remove_whitespace_prefix(unsigned flags)
@@ -160,7 +160,7 @@ namespace m0st4fa::lexana {
 			const char currChar = *this->m_SourceCode.data();
 			const bool isWhiteSpace = std::isspace(currChar) && currChar != '\0'; // null marks the EOF.
 			// test whether `currChar` is a new line and new lines are allowed to be counted
-			const bool matchNewLine = currChar == '\n' && (flags & (unsigned)LA_FLAG::LAF_ALLOW_NEW_LINE);
+			const bool matchNewLine = currChar == '\n' && (flags & (unsigned)LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE);
 
 			// if we have not catched a white space...
 			if (!isWhiteSpace)

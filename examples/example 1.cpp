@@ -40,7 +40,7 @@ void example1() {
        * The next step is to construct the DFA.
     **/
 
-       // for convenience (not recommended in real life)
+    // for convenience (not recommended in real life)
     using namespace m0st4fa;
 
     // 1. building the transition function
@@ -51,7 +51,7 @@ void example1() {
     * Final states: {2}
     **/
 
-    FSMTable table{ };
+    fsm::FSMTable table{ };
     // set \w+
     for (char c = 'a'; c <= 'z'; c++)
         table(1, c) = 2;
@@ -70,34 +70,34 @@ void example1() {
     table(2, '_') = 2;
 
 
-    TransFn<> transFunction{ table }; // remember: `TransFn<>` is just an abstraction, the actual table/function is `table`
+    fsm::TransFn<> transFunction{ table }; // remember: `TransFn<>` is just an abstraction, the actual table/function is `table`
 
     // 2. construct the DFA
-    DeterFiniteAutomatan<TransFn<>> automaton{ {2}, transFunction };
+    fsm::DeterFiniteAutomaton<fsm::TransFn<>> automaton{ {2}, transFunction };
     // here, the set of final states is {2} and `transFunction` is our transition function.
     
 
     // 2- CREATE THE LEXER
 
-    auto tokenFactory = [](const FSMStateType& state, const std::string_view lexeme) {
+    auto tokenFactory = [](const fsm::FSMStateType& state, const std::string_view lexeme) {
 
-        m0st4fa::Token<Terminal> res;
+        lexana::Token<Terminal> res;
 
         if (state == 2)
-            return m0st4fa::Token<Terminal>(Terminal::T_ID, lexeme);
+            return lexana::Token<Terminal>(Terminal::T_ID, lexeme);
 
 
-        return Token<Terminal>();
+        return lexana::Token<Terminal>();
     };
 
     std::string input = "x1 y1\n x2\n y2";
 
-    LexicalAnalyzer<Token<Terminal>, FSMTable> lex{ automaton, tokenFactory, input };
+    lexana::LexicalAnalyzer<lexana::Token<Terminal>, fsm::FSMTable> lex{ automaton, tokenFactory, input };
 
     // 3- RUN THE LEXER
-    std::cout << lex.getNextToken(LA_FLAG::LAF_ALLOW_NEW_LINE).toString() << "\n";
-    std::cout << lex.getNextToken(LA_FLAG::LAF_ALLOW_NEW_LINE).toString() << "\n";
-    std::cout << lex.getNextToken(LA_FLAG::LAF_ALLOW_NEW_LINE).toString() << "\n";
-    std::cout << lex.getNextToken(LA_FLAG::LAF_ALLOW_NEW_LINE).toString() << std::endl;
+    std::cout << lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString() << "\n";
+    std::cout << lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString() << "\n";
+    std::cout << lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString() << "\n";
+    std::cout << lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString() << std::endl;
 
 }

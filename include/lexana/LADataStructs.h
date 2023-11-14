@@ -19,7 +19,7 @@ namespace m0st4fa::lexana {
 		LAF_ALLOW_WHITE_SPACE_CHARS = 0b0001,
 
 		//! @brief Skip other characters except "new line" (does not allow other whitespace characters).
-		LAF_ALLOW_NEW_LINE          = 0b0010,
+		LAF_ALLOW_ONLY_NEW_LINE     = 0b0010,
 
 		//! @brief The number of flags.
 		LAF_COUNT = 3

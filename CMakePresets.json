@@ -61,7 +61,7 @@
         "CMAKE_BUILD_TYPE": "Debug",
         "BUILD_DOCUMENTATION": true,
         "BUILD_TESTING": true,
-        "BUILD_EXAMPLES": false
+        "BUILD_EXAMPLES": true
       }
     },
     {
