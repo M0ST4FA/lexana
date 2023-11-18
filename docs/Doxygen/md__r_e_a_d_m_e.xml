@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="md__r_e_a_d_m_e" kind="page">
+    <compoundname>md__r_e_a_d_m_e</compoundname>
+    <title>lexana</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><anchor id="md__r_e_a_d_m_e_1autotoc_md0"/> Lexana is a library written in C++ intended to help write lexical analyzers faster.</para>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md1">
+<title>Installation</title>
+<para>There are many ways to incorporate this project into your project. The simples is using git submodule (which is the one listed here), but you can also use <computeroutput>FetchContent()</computeroutput> and <computeroutput>ExternalProject_Add()</computeroutput> Cmake commands.</para>
+<para>I assume that your project puts external libraries in a top level directory named external.</para>
+<para><orderedlist>
+<listitem><para>Submodule the repo into your project</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">git<sp/>submodule<sp/>add<sp/>https://github.com/M0sT4fa/lexana.git<sp/>external/lexana<sp/>--recursive</highlight></codeline>
+</programlisting></para>
+<para><bold>⚠️Warning</bold>: The <computeroutput>--recursive</computeroutput> option is extremely important. It makes sure dependencies of this project are fetched with it. If you didn&apos;t include it, run this command from the root directory of your project:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">git<sp/>submodule<sp/>--remote<sp/>external/lexana</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Within <computeroutput>CMakeLists.txt</computeroutput>, add <computeroutput>add_subdirectory()</computeroutput> command with <computeroutput>external/lexana</computeroutput> directory as its argument.</para>
+<para><programlisting filename=".CMake"><codeline><highlight class="normal">#<sp/>Add<sp/>the<sp/>following<sp/>command<sp/>to<sp/>your<sp/>top-level<sp/>CMakeLists.txt</highlight></codeline>
+<codeline><highlight class="normal">add_subdirectory(&quot;${CMAKE_SOURCE_DIR}/external/lexana&quot;)</highlight></codeline>
+</programlisting></para>
+</listitem></orderedlist>
+</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md2">
+<title>Usage Example</title>
+<para><programlisting filename=".c"><codeline><highlight class="normal">++</highlight></codeline>
+<codeline><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>Setup<sp/>code<sp/>that<sp/>defines<sp/>`automaton`<sp/>and<sp/>`tokenFactory`<sp/>is<sp/>not<sp/>shown<sp/>here<sp/>for<sp/>simplicity.<sp/>For<sp/>more<sp/>information,<sp/>see<sp/>the<sp/>documentation.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>std::string<sp/>input<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;x1<sp/>y1\n<sp/>x2\n<sp/>y2&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>lexana::LexicalAnalyzer&lt;lexana::Token&lt;Terminal&gt;,<sp/>fsm::FSMTable&gt;<sp/>lex{<sp/>automaton,<sp/>tokenFactory,<sp/>input<sp/>};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\n&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+</programlisting></para>
+<para>In this example, we see a <computeroutput>LexicalAnalyzer</computeroutput> object being defined and used to extract tokens out of an input string, according to some lexical grammar. The lexical grammar is defined by the <computeroutput>automaton</computeroutput> given as input to the <computeroutput>LexicalAnalyzer</computeroutput> object (the definition of the <computeroutput>automaton</computeroutput> is not shown for simplicity).</para>
+<para>Furthermore, the <computeroutput>tokenFactory</computeroutput> function (which is defined by you) is used to convert lexemes found by the <computeroutput>automaton</computeroutput> (which is called implicity by the lexical analyzer) to <computeroutput>Token</computeroutput> objects. The <computeroutput>Token</computeroutput> objects are then written to standard output. Options can be given to the lexical analyzer to customize how it recognizes lexemes, as shown here.</para>
+<para>See the <ulink url="https://lexana.readthedocs.io/">documentation</ulink> for more details. Also, you can look at and build the <ulink url="https://github.com/M0ST4FA/lexana/tree/master/examples">example</ulink> to get a better idea.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md3">
+<title>Running the Tests</title>
+<para>To run the tests, set the configuration to <computeroutput>x64 Debug</computeroutput>. This will run the tests for this library and for the libraries in the namespace <computeroutput><ref refid="namespacem0st4fa" kindref="compound">m0st4fa</ref></computeroutput> on which this library depends.</para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md4">
+<title>Meta</title>
+<para>Mostafa Bideer - <ulink url="mailto:mostafa2018a3s@gmail.com">mostafa2018a3s@gmail.com</ulink></para>
+<para>Distributed under the MIT license. See <computeroutput>LICENSE</computeroutput> for more information.</para>
+<para><ulink url="https://github.com/M0sT4fa/">My Github Biography</ulink></para>
+</sect1>
+<sect1 id="md__r_e_a_d_m_e_1autotoc_md5">
+<title>Contributing</title>
+<para><orderedlist>
+<listitem><para>Fork it (<ulink url="https://github.com/yourname/yourproject/fork">https://github.com/yourname/yourproject/fork</ulink>)</para>
+</listitem><listitem><para>Create your feature branch (<computeroutput>git checkout -b feature/fooBar</computeroutput>)</para>
+</listitem><listitem><para>Commit your changes (<lsquo/>git commit -am &apos;Add some fooBar<rsquo/><computeroutput>)</computeroutput></para>
+</listitem><listitem><para><computeroutput>Push to the branch (</computeroutput>git push origin feature/fooBar`)</para>
+</listitem><listitem><para>Create a new Pull Request </para>
+</listitem></orderedlist>
+</para>
+</sect1>
+    </detaileddescription>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

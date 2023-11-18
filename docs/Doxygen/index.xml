@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.9.7" xml:lang="en-US">
+  <compound refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kind="class"><name>m0st4fa::lexana::LexicalAnalyzer</name>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" kind="typedef"><name>Result</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" kind="variable"><name>m_Automaton</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kind="variable"><name>m_TokenFactory</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" kind="variable"><name>m_SourceCode</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" kind="variable"><name>m_Line</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" kind="variable"><name>m_Col</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3cd58cec68b83612127f42feaa4c44be" kind="variable"><name>m_Logger</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" kind="function"><name>_remove_whitespace_prefix</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" kind="function"><name>_check_source_code_empty</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" kind="function"><name>_check_presearch_conditions</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" kind="function"><name>getAutomaton</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" kind="function"><name>getTokenFactory</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1aa7947bb7f91ec7f3e9d61128fc43f3c3" kind="function"><name>LexicalAnalyzer</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" kind="function"><name>LexicalAnalyzer</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad0bbb0c3343286b21e88adf0a7446856" kind="function"><name>LexicalAnalyzer</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a2ac505a52b89aa170edecc76ec4cf29e" kind="function"><name>LexicalAnalyzer</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" kind="function"><name>operator=</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" kind="function"><name>getSourceCode</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" kind="function"><name>getLine</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" kind="function"><name>getCol</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" kind="function"><name>getPosition</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" kind="function"><name>getNextToken</name></member>
+    <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" kind="function"><name>peak</name></member>
+  </compound>
+  <compound refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kind="struct"><name>m0st4fa::lexana::LexicalAnalyzerResult</name>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a53358c5c4ad738b135a26ce692ebed34" kind="typedef"><name>TokenFactoryType</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1aa6e1695d1e7228fc57ce5d606b6f6ca9" kind="variable"><name>foundToken</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a1502d07e3ad13f3b167bf9345441285b" kind="variable"><name>token</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a5fb5e19f5b6a61014e77fb67176cc764" kind="variable"><name>indicies</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1af7f249c0c1e14ae8a615740ad07cff2d" kind="variable"><name>lineNumber</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a3206dd3f2412fbc50a92bf2938434edc" kind="function"><name>LexicalAnalyzerResult</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a4eefaf01242af7826e6bce23656b3624" kind="function"><name>LexicalAnalyzerResult</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a7e3c2d3ffba98e58ba3a9a156e80114c" kind="function"><name>LexicalAnalyzerResult</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a28733c86a429a8e03dd0cac97cb45247" kind="function"><name>reset</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a85ffe495eabe63baeb02e7c3c13b4fe9" kind="function"><name>operator TokenT</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" kind="function"><name>toString</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1ace65ff516f9f3c037e2ae6198f9bff3c" kind="function"><name>operator std::string</name></member>
+  </compound>
+  <compound refid="structm0st4fa_1_1lexana_1_1_position" kind="struct"><name>m0st4fa::lexana::Position</name>
+    <member refid="structm0st4fa_1_1lexana_1_1_position_1a4da900d78bdb7c136efced1ee09fa950" kind="variable"><name>line</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_position_1a7744e3b6095f9b34c632ef30ad54f11e" kind="variable"><name>column</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_position_1a0f289da269bb8e5db7d5a7c547dbe432" kind="function"><name>operator std::pair&lt; size_t, size_t &gt;</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_position_1aeb5eb26061b61569338f04acd3a69b4b" kind="function"><name>operator std::string</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="structm0st4fa_1_1lexana_1_1_token" kind="struct"><name>m0st4fa::lexana::Token</name>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1ad038bc29e309a10268a05d9d0a274cb0" kind="variable"><name>name</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1a79643c2239a700748387923a29bcd3f5" kind="variable"><name>attribute</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1a45437adb5499adcbd7c98653bba277b5" kind="variable"><name>EPSILON</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1ac16458b3559cc69479bb176cdd7a5d03" kind="variable"><name>TEOF</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1a1cb9aab109d53f9e5dd898dc8cea5f3a" kind="function"><name>operator==</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1abb7384f7caeedf830638cb480da03764" kind="function"><name>operator std::string</name></member>
+    <member refid="structm0st4fa_1_1lexana_1_1_token_1a03050543e301ace90c5bcb0363432832" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="namespacem0st4fa" kind="namespace"><name>m0st4fa</name>
+  </compound>
+  <compound refid="namespacem0st4fa_1_1lexana" kind="namespace"><name>m0st4fa::lexana</name>
+    <member refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eb" kind="enum"><name>LA_FLAG</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kind="enumvalue"><name>LAF_DEFAULT</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaf1230dc0b95964fc998150653b2eb59d" kind="enumvalue"><name>LAF_ALLOW_WHITE_SPACE_CHARS</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eba77875afba3067542c2c1b1cd0e09b965" kind="enumvalue"><name>LAF_ALLOW_ONLY_NEW_LINE</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eba6a0611418b9f77b0f6ae06ba41fbcfbd" kind="enumvalue"><name>LAF_COUNT</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kind="typedef"><name>TokenFactoryType</name></member>
+    <member refid="namespacem0st4fa_1_1lexana_1a5130a88f30b34e251b294ea69ecdae91" kind="function"><name>operator&lt;&lt;</name></member>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="_l_a_data_structs_8h" kind="file"><name>LADataStructs.h</name>
+  </compound>
+  <compound refid="_lexical_analyzer_8h" kind="file"><name>LexicalAnalyzer.h</name>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md__r_e_a_d_m_e</name>
+  </compound>
+  <compound refid="dir_d44c64559bbebec7f509842c48db8b23" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_40f5fa7740d7cc63f869ba63320a11f8" kind="dir"><name>include/lexana</name>
+  </compound>
+</doxygenindex>

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>lexana</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Lexana<sp/>is<sp/>a<sp/>library<sp/>written<sp/>in<sp/>C++<sp/>intended<sp/>to<sp/>help<sp/>write<sp/>lexical<sp/>analyzers<sp/>faster.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">There<sp/>are<sp/>many<sp/>ways<sp/>to<sp/>incorporate<sp/>this<sp/>project<sp/>into<sp/>your<sp/>project.<sp/>The<sp/>simples<sp/>is<sp/>using<sp/>git<sp/>submodule<sp/>(which<sp/>is<sp/>the<sp/>one<sp/>listed<sp/>here),<sp/>but<sp/>you<sp/>can<sp/>also<sp/>use<sp/>`FetchContent()`<sp/>and<sp/>`ExternalProject_Add()`<sp/>Cmake<sp/>commands.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">I<sp/>assume<sp/>that<sp/>your<sp/>project<sp/>puts<sp/>external<sp/>libraries<sp/>in<sp/>a<sp/>top<sp/>level<sp/>directory<sp/>named<sp/>external.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Submodule<sp/>the<sp/>repo<sp/>into<sp/>your<sp/>project</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```powershell</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>git<sp/>submodule<sp/>add<sp/>https://github.com/M0sT4fa/lexana.git<sp/>external/lexana<sp/>--recursive</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>**⚠️Warning**:<sp/>The<sp/>`--recursive`<sp/>option<sp/>is<sp/>extremely<sp/>important.<sp/>It<sp/>makes<sp/>sure<sp/>dependencies<sp/>of<sp/>this<sp/>project<sp/>are<sp/>fetched<sp/>with<sp/>it.<sp/>If<sp/>you<sp/>didn&apos;t<sp/>include<sp/>it,<sp/>run<sp/>this<sp/>command<sp/>from<sp/>the<sp/>root<sp/>directory<sp/>of<sp/>your<sp/>project:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```powershell</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>git<sp/>submodule<sp/>--remote<sp/>external/lexana</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">2.<sp/>Within<sp/>`CMakeLists.txt`,<sp/>add<sp/>`add_subdirectory()`<sp/>command<sp/>with<sp/>`external/lexana`<sp/>directory<sp/>as<sp/>its<sp/>argument.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```CMake</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>#<sp/>Add<sp/>the<sp/>following<sp/>command<sp/>to<sp/>your<sp/>top-level<sp/>CMakeLists.txt</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>add_subdirectory(&quot;${CMAKE_SOURCE_DIR}/external/lexana&quot;)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```c++</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>//<sp/>Setup<sp/>code<sp/>that<sp/>defines<sp/>`automaton`<sp/>and<sp/>`tokenFactory`<sp/>is<sp/>not<sp/>shown<sp/>here<sp/>for<sp/>simplicity.<sp/>For<sp/>more<sp/>information,<sp/>see<sp/>the<sp/>documentation.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::string<sp/>input<sp/>=<sp/>&quot;x1<sp/>y1\n<sp/>x2\n<sp/>y2&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>lexana::LexicalAnalyzer&lt;lexana::Token&lt;Terminal&gt;,<sp/>fsm::FSMTable&gt;<sp/>lex{<sp/>automaton,<sp/>tokenFactory,<sp/>input<sp/>};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/>&quot;\n&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>std::cout<sp/>&lt;&lt;<sp/>lex.getNextToken(lexana::LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE).toString()<sp/>&lt;&lt;<sp/>std::endl;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">In<sp/>this<sp/>example,<sp/>we<sp/>see<sp/>a<sp/>`LexicalAnalyzer`<sp/>object<sp/>being<sp/>defined<sp/>and<sp/>used<sp/>to<sp/>extract<sp/>tokens<sp/>out<sp/>of<sp/>an<sp/>input<sp/>string,<sp/>according<sp/>to<sp/>some<sp/>lexical<sp/>grammar.<sp/>The<sp/>lexical<sp/>grammar<sp/>is<sp/>defined<sp/>by<sp/>the<sp/>`automaton`<sp/>given<sp/>as<sp/>input<sp/>to<sp/>the<sp/>`LexicalAnalyzer`<sp/>object<sp/>(the<sp/>definition<sp/>of<sp/>the<sp/>`automaton`<sp/>is<sp/>not<sp/>shown<sp/>for<sp/>simplicity).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Furthermore,<sp/>the<sp/>`tokenFactory`<sp/>function<sp/>(which<sp/>is<sp/>defined<sp/>by<sp/>you)<sp/>is<sp/>used<sp/>to<sp/>convert<sp/>lexemes<sp/>found<sp/>by<sp/>the<sp/>`automaton`<sp/>(which<sp/>is<sp/>called<sp/>implicity<sp/>by<sp/>the<sp/>lexical<sp/>analyzer)<sp/>to<sp/>`Token`<sp/>objects.<sp/>The<sp/>`Token`<sp/>objects<sp/>are<sp/>then<sp/>written<sp/>to<sp/>standard<sp/>output.</highlight></codeline>
+<codeline><highlight class="normal">Options<sp/>can<sp/>be<sp/>given<sp/>to<sp/>the<sp/>lexical<sp/>analyzer<sp/>to<sp/>customize<sp/>how<sp/>it<sp/>recognizes<sp/>lexemes,<sp/>as<sp/>shown<sp/>here.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>the<sp/>[documentation][doc-link]<sp/>for<sp/>more<sp/>details.<sp/>Also,<sp/>you<sp/>can<sp/>look<sp/>at<sp/>and<sp/>build<sp/>the<sp/>[example][lexana-example-dir]<sp/>to<sp/>get<sp/>a<sp/>better<sp/>idea.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Running<sp/>the<sp/>Tests</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>run<sp/>the<sp/>tests,<sp/>set<sp/>the<sp/>configuration<sp/>to<sp/>`x64<sp/>Debug`.<sp/>This<sp/>will<sp/>run<sp/>the<sp/>tests<sp/>for<sp/>this<sp/>library<sp/>and<sp/>for<sp/>the<sp/>libraries<sp/>in<sp/>the<sp/>namespace<sp/>`m0st4fa`<sp/>on<sp/>which<sp/>this<sp/>library<sp/>depends.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Meta</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Mostafa<sp/>Bideer<sp/>-<sp/>&lt;mostafa2018a3s@gmail.com&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Distributed<sp/>under<sp/>the<sp/>MIT<sp/>license.<sp/>See<sp/>`LICENSE`<sp/>for<sp/>more<sp/>information.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[My<sp/>Github<sp/>Biography](https://github.com/M0sT4fa/)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contributing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Fork<sp/>it<sp/>(&lt;https://github.com/yourname/yourproject/fork&gt;)</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Create<sp/>your<sp/>feature<sp/>branch<sp/>(`git<sp/>checkout<sp/>-b<sp/>feature/fooBar`)</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Commit<sp/>your<sp/>changes<sp/>(`git<sp/>commit<sp/>-am<sp/>&apos;Add<sp/>some<sp/>fooBar&apos;`)</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Push<sp/>to<sp/>the<sp/>branch<sp/>(`git<sp/>push<sp/>origin<sp/>feature/fooBar`)</highlight></codeline>
+<codeline><highlight class="normal">5.<sp/>Create<sp/>a<sp/>new<sp/>Pull<sp/>Request</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;!--<sp/>Link<sp/>References<sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[doc-link]:<sp/>https://lexana.readthedocs.io/</highlight></codeline>
+<codeline><highlight class="normal">[lexana-example-dir]:<sp/>https://github.com/M0ST4FA/lexana/tree/master/examples</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

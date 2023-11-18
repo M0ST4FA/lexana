@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="dir_40f5fa7740d7cc63f869ba63320a11f8" kind="dir">
+    <compoundname>include/lexana</compoundname>
+    <innerfile refid="_l_a_data_structs_8h">LADataStructs.h</innerfile>
+    <innerfile refid="_lexical_analyzer_8h">LexicalAnalyzer.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/lexana/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,624 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kind="class" language="C++" prot="public">
+    <compoundname>m0st4fa::lexana::LexicalAnalyzer</compoundname>
+    <includes refid="_lexical_analyzer_8h" local="no">LexicalAnalyzer.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename TokenT</type>
+      </param>
+      <param>
+        <type>typename TableT</type>
+        <defval>fsm::FSMTable</defval>
+      </param>
+      <param>
+        <type>typename InputT</type>
+        <defval>std::string_view</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-type">
+      <memberdef kind="typedef" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" prot="private" static="no">
+        <type><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref>&lt; TokenT, InputT &gt;</type>
+        <definition>using m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::Result =  LexicalAnalyzerResult&lt;TokenT, InputT&gt;</definition>
+        <argsstring></argsstring>
+        <name>Result</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::Result</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="22" column="1" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" prot="private" static="no" mutable="no">
+        <type>fsm::DFA&lt; fsm::TransFn&lt; TableT &gt;, InputT &gt;</type>
+        <definition>fsm::DFA&lt;fsm::TransFn&lt;TableT&gt;, InputT&gt; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Automaton</definition>
+        <argsstring></argsstring>
+        <name>m_Automaton</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_Automaton</qualifiedname>
+        <briefdescription>
+<para>The automaton used by the lexical analyzer to match the lexemes of tokens. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="25" column="10" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" compoundref="_lexical_analyzer_8h" startline="78" endline="78">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getAutomaton</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" compoundref="_lexical_analyzer_8h" startline="114" endline="122">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" prot="private" static="no" mutable="no">
+        <type><ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType</ref>&lt; TokenT, InputT &gt;</type>
+        <definition>TokenFactoryType&lt;TokenT, InputT&gt; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_TokenFactory</definition>
+        <argsstring></argsstring>
+        <name>m_TokenFactory</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_TokenFactory</qualifiedname>
+        <initializer>= nullptr</initializer>
+        <briefdescription>
+<para>The function that generates tokens given a lexeme. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="28" column="18" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="28" bodyend="-1"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" compoundref="_lexical_analyzer_8h" startline="83" endline="83">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getTokenFactory</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" compoundref="_lexical_analyzer_8h" startline="96" endline="105">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::LexicalAnalyzer</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" compoundref="_lexical_analyzer_8h" startline="114" endline="122">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" prot="private" static="no" mutable="no">
+        <type>InputT</type>
+        <definition>InputT m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_SourceCode</definition>
+        <argsstring></argsstring>
+        <name>m_SourceCode</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_SourceCode</qualifiedname>
+        <briefdescription>
+<para>The stream of characters input to the lexical analyzer and from which tokens will be extracted. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="31" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" compoundref="_lexical_analyzer_8h" startline="125" endline="125">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getSourceCode</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" compoundref="_lexical_analyzer_8h" startline="114" endline="122">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Line</definition>
+        <argsstring></argsstring>
+        <name>m_Line</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_Line</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current line that the search is at. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="34" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" compoundref="_lexical_analyzer_8h" startline="128" endline="128">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getLine</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" compoundref="_lexical_analyzer_8h" startline="134" endline="136">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getPosition</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" compoundref="_lexical_analyzer_8h" startline="114" endline="122">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Col</definition>
+        <argsstring></argsstring>
+        <name>m_Col</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_Col</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The last character touched since the last retrieved token or escaped whitespace. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="37" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" compoundref="_lexical_analyzer_8h" startline="131" endline="131">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getCol</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" compoundref="_lexical_analyzer_8h" startline="134" endline="136">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getPosition</referencedby>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" compoundref="_lexical_analyzer_8h" startline="114" endline="122">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3cd58cec68b83612127f42feaa4c44be" prot="protected" static="no" mutable="no">
+        <type>Logger</type>
+        <definition>Logger m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Logger</definition>
+        <argsstring></argsstring>
+        <name>m_Logger</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::m_Logger</qualifiedname>
+        <briefdescription>
+<para>The Logger object used to log to standard streams. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="41" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_remove_whitespace_prefix</definition>
+        <argsstring>(unsigned=(unsigned) LA_FLAG::LAF_DEFAULT)</argsstring>
+        <name>_remove_whitespace_prefix</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::_remove_whitespace_prefix</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <defname>flags</defname>
+          <defval>(unsigned) <ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Eliminates any whitespace &quot;prefix&quot; from the source code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Depending on the flags given to it, it may allow new lines or other characters. It also sets the line and character numbers correctly. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flags to the function. These flags influence the characters escaped. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="note"><para>Currently, the only flag that is supported is <ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eba77875afba3067542c2c1b1cd0e09b965" kindref="member">LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE</ref>; any other flag will be ignored and will have no effect. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="43" column="13" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="154" bodyend="179"/>
+        <references refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eba77875afba3067542c2c1b1cd0e09b965" compoundref="_l_a_data_structs_8h" startline="22">m0st4fa::lexana::LAF_ALLOW_ONLY_NEW_LINE</references>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" compoundref="_lexical_analyzer_8h" startline="64" endline="71">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_check_presearch_conditions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_check_source_code_empty</definition>
+        <argsstring>()</argsstring>
+        <name>_check_source_code_empty</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::_check_source_code_empty</qualifiedname>
+        <briefdescription>
+<para>Checks whether source code/input to the lexical analyzer is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if source code is empty; <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="49" column="13" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="49" bodyend="58"/>
+        <referencedby refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" compoundref="_lexical_analyzer_8h" startline="64" endline="71">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_check_presearch_conditions</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_check_presearch_conditions</definition>
+        <argsstring>(const unsigned flags=(unsigned) LA_FLAG::LAF_DEFAULT)</argsstring>
+        <name>_check_presearch_conditions</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::_check_presearch_conditions</qualifiedname>
+        <param>
+          <type>const unsigned</type>
+          <declname>flags</declname>
+          <defval>(unsigned) <ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Removes all white-spaces and counts new lines, then checks whether source code is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="remark"><para>This is a convenience function that does all of the previously mentioned things in sequence. </para>
+</simplesect>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if the checks have been successful, i.e. all white-spaces have been dealt with accordingly and the source code is not empty; <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="64" column="13" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="64" bodyend="71"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" compoundref="_lexical_analyzer_8h" startline="49" endline="58">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_check_source_code_empty</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" compoundref="_lexical_analyzer_8h" startline="154" endline="179">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::_remove_whitespace_prefix</references>
+        <references refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaf1230dc0b95964fc998150653b2eb59d" compoundref="_l_a_data_structs_8h" startline="19">m0st4fa::lexana::LAF_ALLOW_WHITE_SPACE_CHARS</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const fsm::DFA&lt; fsm::TransFn&lt; TableT &gt;, InputT &gt; &amp;</type>
+        <definition>const fsm::DFA&lt; fsm::TransFn&lt; TableT &gt;, InputT &gt; &amp; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getAutomaton</definition>
+        <argsstring>()</argsstring>
+        <name>getAutomaton</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getAutomaton</qualifiedname>
+        <briefdescription>
+<para>Gets the fsm::DFA object used by this <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="78" column="16" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="78" bodyend="78"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" compoundref="_lexical_analyzer_8h" startline="25">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Automaton</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const <ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType</ref>&lt; TokenT, InputT &gt;</type>
+        <definition>const TokenFactoryType&lt; TokenT, InputT &gt; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getTokenFactory</definition>
+        <argsstring>()</argsstring>
+        <name>getTokenFactory</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getTokenFactory</qualifiedname>
+        <briefdescription>
+<para>Gets the TokenFactoryType object used by this <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="83" column="24" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="83" bodyend="83"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" compoundref="_lexical_analyzer_8h" startline="28">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_TokenFactory</references>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1aa7947bb7f91ec7f3e9d61128fc43f3c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::LexicalAnalyzer</definition>
+        <argsstring>()=default</argsstring>
+        <name>LexicalAnalyzer</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::LexicalAnalyzer</qualifiedname>
+        <briefdescription>
+<para>Default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::LexicalAnalyzer</definition>
+        <argsstring>(const fsm::DFA&lt; fsm::TransFn&lt; TableT &gt;, InputT &gt; &amp;automaton, const TokenFactoryType&lt; TokenT, InputT &gt; tokenFactory, const std::string_view sourceCode)</argsstring>
+        <name>LexicalAnalyzer</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::LexicalAnalyzer</qualifiedname>
+        <param>
+          <type>const fsm::DFA&lt; fsm::TransFn&lt; TableT &gt;, InputT &gt; &amp;</type>
+          <declname>automaton</declname>
+        </param>
+        <param>
+          <type>const <ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType</ref>&lt; TokenT, InputT &gt;</type>
+          <declname>tokenFactory</declname>
+        </param>
+        <param>
+          <type>const std::string_view</type>
+          <declname>sourceCode</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> object from given parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>automaton</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The fsm::DFA object that this <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> object will use for matching lexemes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tokenFactory</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The function that will be used to generate <ref refid="structm0st4fa_1_1lexana_1_1_token" kindref="compound">Token</ref> objects out of matched lexemes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sourceCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stream of characters out of which tokens will be extracted as <ref refid="structm0st4fa_1_1lexana_1_1_token" kindref="compound">Token</ref> objects. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="96" column="1" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="96" bodyend="105"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" compoundref="_lexical_analyzer_8h" startline="28">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_TokenFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad0bbb0c3343286b21e88adf0a7446856" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::LexicalAnalyzer</definition>
+        <argsstring>(const LexicalAnalyzer &amp;)=default</argsstring>
+        <name>LexicalAnalyzer</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::LexicalAnalyzer</qualifiedname>
+        <param>
+          <type>const <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a2ac505a52b89aa170edecc76ec4cf29e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::LexicalAnalyzer</definition>
+        <argsstring>(LexicalAnalyzer &amp;&amp;)=default</argsstring>
+        <name>LexicalAnalyzer</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::LexicalAnalyzer</qualifiedname>
+        <param>
+          <type><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> &amp;</type>
+        <definition>LexicalAnalyzer &amp; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::operator=</definition>
+        <argsstring>(const LexicalAnalyzer &amp;rhs)</argsstring>
+        <name>operator=</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref> &amp;</type>
+          <declname>rhs</declname>
+        </param>
+        <briefdescription>
+<para>Copy operator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="114" column="17" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="114" bodyend="122"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" compoundref="_lexical_analyzer_8h" startline="25">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Automaton</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" compoundref="_lexical_analyzer_8h" startline="37">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Col</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" compoundref="_lexical_analyzer_8h" startline="34">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Line</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" compoundref="_lexical_analyzer_8h" startline="31">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_SourceCode</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" compoundref="_lexical_analyzer_8h" startline="28">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_TokenFactory</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>const std::string_view &amp;</type>
+        <definition>const std::string_view &amp; m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getSourceCode</definition>
+        <argsstring>()</argsstring>
+        <name>getSourceCode</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getSourceCode</qualifiedname>
+        <briefdescription>
+<para>Gets the source code/stream of characters used by the lexical analyzer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="125" column="24" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="125" bodyend="125"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" compoundref="_lexical_analyzer_8h" startline="31">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_SourceCode</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getLine</definition>
+        <argsstring>()</argsstring>
+        <name>getLine</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getLine</qualifiedname>
+        <briefdescription>
+<para>Gets the last matched line within the source code. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="128" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="128" bodyend="128"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" compoundref="_lexical_analyzer_8h" startline="34">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Line</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getCol</definition>
+        <argsstring>()</argsstring>
+        <name>getCol</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getCol</qualifiedname>
+        <briefdescription>
+<para>Gets the position of the last matched character within the last matched line. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="131" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="131" bodyend="131"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" compoundref="_lexical_analyzer_8h" startline="37">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Col</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="structm0st4fa_1_1lexana_1_1_position" kindref="compound">Position</ref></type>
+        <definition>Position m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::getPosition</definition>
+        <argsstring>()</argsstring>
+        <name>getPosition</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getPosition</qualifiedname>
+        <briefdescription>
+<para>Gets the position of the last matched lexeme. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="134" column="10" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="134" bodyend="136"/>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" compoundref="_lexical_analyzer_8h" startline="37">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Col</references>
+        <references refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" compoundref="_lexical_analyzer_8h" startline="34">m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::m_Line</references>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" kindref="member">Result</ref></type>
+        <definition>lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::Result m0st4fa::lexana::lexana::LexicalAnalyzer::getNextToken</definition>
+        <argsstring>(unsigned=(unsigned) LA_FLAG::LAF_DEFAULT)</argsstring>
+        <name>getNextToken</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::getNextToken</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <defname>flags</defname>
+          <defval>(unsigned) <ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Gets the next matching token from the source code/input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>The behavior of the function can be modified by giving it some flags. The flags determine what characters are escaped. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flags to the function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next token in the input stream, if any; otherwise an empty token. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="138" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="188" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" kindref="member">Result</ref></type>
+        <definition>lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;::Result m0st4fa::lexana::lexana::LexicalAnalyzer::peak</definition>
+        <argsstring>(unsigned=(unsigned) LA_FLAG::LAF_DEFAULT)</argsstring>
+        <name>peak</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzer::peak</qualifiedname>
+        <param>
+          <type>unsigned</type>
+          <defname>flags</defname>
+          <defval>(unsigned) <ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref></defval>
+        </param>
+        <briefdescription>
+<para>Peaks the next token (i.e. it doesn&apos;t modify the character count nor line number). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>It deals with whitespace as with <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" kindref="member">getNextToken()</ref> (i.e. may skip them, depending on the flags, and hence modify line number and character count). </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>flags</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The flags to the function. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next token in the input stream, if any; otherwise an empty token. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LexicalAnalyzer.h" line="139" column="8" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="224" bodyend="243"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A machine (lexical analyzer) that can be used to convert a stream of characters into a stream of tokens. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TokenT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of a token object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>TableT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of FSM table. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InputT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input (stream of characters). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="7">
+        <label>Logger</label>
+      </node>
+      <node id="3">
+        <label>TokenFactoryType&lt; TokenT, std::string_view &gt;</label>
+      </node>
+      <node id="2">
+        <label>DFA&lt; fsm::TransFn&lt; fsm::FSMTable &gt;, std::string_view &gt;</label>
+      </node>
+      <node id="1">
+        <label>m0st4fa::lexana::LexicalAnalyzer&lt; TokenT, TableT, InputT &gt;</label>
+        <link refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>-m_Automaton</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>-m_TokenFactory</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>-m_SourceCode</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>-m_Col</edgelabel>
+          <edgelabel>-m_Line</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>#m_Logger</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>size_t</label>
+      </node>
+      <node id="5">
+        <label>std::basic_string_view&lt; Char &gt;</label>
+      </node>
+      <node id="4">
+        <label>std::string_view</label>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/lexana/LexicalAnalyzer.h" line="20" column="1" bodyfile="include/lexana/LexicalAnalyzer.h" bodystart="20" bodyend="141"/>
+    <listofallmembers>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>_check_presearch_conditions</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>_check_source_code_empty</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>_remove_whitespace_prefix</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getAutomaton</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getCol</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getLine</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getNextToken</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getPosition</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getSourceCode</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>getTokenFactory</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1aa7947bb7f91ec7f3e9d61128fc43f3c3" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>LexicalAnalyzer</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>LexicalAnalyzer</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad0bbb0c3343286b21e88adf0a7446856" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>LexicalAnalyzer</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a2ac505a52b89aa170edecc76ec4cf29e" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>LexicalAnalyzer</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_Automaton</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_Col</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_Line</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3cd58cec68b83612127f42feaa4c44be" prot="protected" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_Logger</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_SourceCode</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>m_TokenFactory</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>operator=</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>peak</name></member>
+      <member refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" prot="private" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzer</scope><name>Result</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

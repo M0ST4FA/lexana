@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structm0st4fa_1_1lexana_1_1_position" kind="struct" language="C++" prot="public">
+    <compoundname>m0st4fa::lexana::Position</compoundname>
+    <includes refid="_l_a_data_structs_8h" local="no">LADataStructs.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_position_1a4da900d78bdb7c136efced1ee09fa950" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::Position::line</definition>
+        <argsstring></argsstring>
+        <name>line</name>
+        <qualifiedname>m0st4fa::lexana::Position::line</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The line number at which the lexeme is found. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="188" column="8" bodyfile="include/lexana/LADataStructs.h" bodystart="188" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_position_1a0f289da269bb8e5db7d5a7c547dbe432" compoundref="_l_a_data_structs_8h" startline="194" endline="196">operator std::pair&lt; size_t, size_t &gt;</referencedby>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" compoundref="_l_a_data_structs_8h" startline="207" endline="209">toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_position_1a7744e3b6095f9b34c632ef30ad54f11e" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::Position::column</definition>
+        <argsstring></argsstring>
+        <name>column</name>
+        <qualifiedname>m0st4fa::lexana::Position::column</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The number of the first character of the lexeme within the line at which it is found. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="191" column="8" bodyfile="include/lexana/LADataStructs.h" bodystart="191" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_position_1a0f289da269bb8e5db7d5a7c547dbe432" compoundref="_l_a_data_structs_8h" startline="194" endline="196">operator std::pair&lt; size_t, size_t &gt;</referencedby>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" compoundref="_l_a_data_structs_8h" startline="207" endline="209">toString</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_position_1a0f289da269bb8e5db7d5a7c547dbe432" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::Position::operator std::pair&lt; size_t, size_t &gt;</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::pair&lt; size_t, size_t &gt;</name>
+        <qualifiedname>m0st4fa::lexana::Position::pair&lt; size_t, size_t &gt;</qualifiedname>
+        <briefdescription>
+<para>Converts the <ref refid="structm0st4fa_1_1lexana_1_1_position" kindref="compound">Position</ref> object into std::pair object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="194" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="194" bodyend="196"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_position_1a7744e3b6095f9b34c632ef30ad54f11e" compoundref="_l_a_data_structs_8h" startline="191">column</references>
+        <references refid="structm0st4fa_1_1lexana_1_1_position_1a4da900d78bdb7c136efced1ee09fa950" compoundref="_l_a_data_structs_8h" startline="188">line</references>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_position_1aeb5eb26061b61569338f04acd3a69b4b" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::Position::operator std::string</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>m0st4fa::lexana::Position::string</qualifiedname>
+        <briefdescription>
+<para>Calls <ref refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" kindref="member">toString()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="199" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="199" bodyend="201"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" compoundref="_l_a_data_structs_8h" startline="207" endline="209">toString</references>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string m0st4fa::lexana::Position::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>m0st4fa::lexana::Position::toString</qualifiedname>
+        <briefdescription>
+<para>Converts the <ref refid="structm0st4fa_1_1lexana_1_1_position" kindref="compound">Position</ref> object into an std::string object and returns it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The std::string object corresponding to <computeroutput>this</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="207" column="13" bodyfile="include/lexana/LADataStructs.h" bodystart="207" bodyend="209"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_position_1a7744e3b6095f9b34c632ef30ad54f11e" compoundref="_l_a_data_structs_8h" startline="191">column</references>
+        <references refid="structm0st4fa_1_1lexana_1_1_position_1a4da900d78bdb7c136efced1ee09fa950" compoundref="_l_a_data_structs_8h" startline="188">line</references>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_position_1aeb5eb26061b61569338f04acd3a69b4b" compoundref="_l_a_data_structs_8h" startline="199" endline="201">operator std::string</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The position of some lexeme. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="remark"><para>This struct is used by the lexical analyzer to represent the position of the last matched lexeme when calling the function <ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" kindref="member">LexicalAnalyzer::getPosition()</ref>. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>m0st4fa::lexana::Position</label>
+        <link refid="structm0st4fa_1_1lexana_1_1_position"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+column</edgelabel>
+          <edgelabel>+line</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>size_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/lexana/LADataStructs.h" line="185" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="185" bodyend="210"/>
+    <listofallmembers>
+      <member refid="structm0st4fa_1_1lexana_1_1_position_1a7744e3b6095f9b34c632ef30ad54f11e" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::Position</scope><name>column</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_position_1a4da900d78bdb7c136efced1ee09fa950" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::Position</scope><name>line</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_position_1a0f289da269bb8e5db7d5a7c547dbe432" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::Position</scope><name>operator std::pair&lt; size_t, size_t &gt;</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_position_1aeb5eb26061b61569338f04acd3a69b4b" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::Position</scope><name>operator std::string</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_position_1acd5a606874017219be0d16594f70619c" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::Position</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

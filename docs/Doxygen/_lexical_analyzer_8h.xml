@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="_lexical_analyzer_8h" kind="file" language="C++">
+    <compoundname>LexicalAnalyzer.h</compoundname>
+    <includes local="no">string</includes>
+    <includes local="no">string_view</includes>
+    <includes local="yes">fsm/FiniteStateMachine.h</includes>
+    <includes local="yes">fsm/DFA.h</includes>
+    <includes local="yes">utility/Logger.h</includes>
+    <includes refid="_l_a_data_structs_8h" local="yes">lexana/LADataStructs.h</includes>
+    <incdepgraph>
+      <node id="7">
+        <label>lexana/LADataStructs.h</label>
+        <link refid="_l_a_data_structs_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/lexana/LexicalAnalyzer.h</label>
+        <link refid="_lexical_analyzer_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>fsm/DFA.h</label>
+      </node>
+      <node id="4">
+        <label>fsm/FiniteStateMachine.h</label>
+      </node>
+      <node id="8">
+        <label>functional</label>
+      </node>
+      <node id="2">
+        <label>string</label>
+      </node>
+      <node id="3">
+        <label>string_view</label>
+      </node>
+      <node id="6">
+        <label>utility/Logger.h</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" prot="public">m0st4fa::lexana::LexicalAnalyzer</innerclass>
+    <innernamespace refid="namespacem0st4fa">m0st4fa</innernamespace>
+    <innernamespace refid="namespacem0st4fa_1_1lexana">m0st4fa::lexana</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string_view&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fsm/FiniteStateMachine.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;fsm/DFA.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;utility/Logger.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_l_a_data_structs_8h" kindref="compound">lexana/LADataStructs.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacem0st4fa_1_1lexana" kindref="compound">m0st4fa::lexana</ref><sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TokenT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TableT<sp/>=<sp/>fsm::FSMTable,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>InputT<sp/>=<sp/>std::</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">_view&gt;</highlight></codeline>
+<codeline lineno="20" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">Result</ref><sp/>=<sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult&lt;TokenT, InputT&gt;</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>fsm::DFA&lt;fsm::TransFn&lt;TableT&gt;,<sp/>InputT&gt;<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" kindref="member">m_Automaton</ref>;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType&lt;TokenT, InputT&gt;</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kindref="member">m_TokenFactory</ref><sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>InputT<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" kindref="member">m_SourceCode</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" kindref="member">m_Line</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" kindref="member">m_Col</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="41" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3cd58cec68b83612127f42feaa4c44be" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Logger<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3cd58cec68b83612127f42feaa4c44be" kindref="member">m_Logger</ref>;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" kindref="member">_remove_whitespace_prefix</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="49" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" kindref="member">_check_source_code_empty</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;m_SourceCode.empty())</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::string<sp/>msg<sp/>=<sp/>std::format(</highlight><highlight class="stringliteral">&quot;({},<sp/>{})<sp/>{:s}&quot;</highlight><highlight class="normal">,<sp/>this-&gt;m_Line,<sp/>this-&gt;m_Col,<sp/>std::string{</highlight><highlight class="stringliteral">&quot;End<sp/>of<sp/>file<sp/>reached&quot;</highlight><highlight class="normal">});</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Logger.logDebug(msg);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>assuming<sp/>that<sp/>EOF<sp/>is<sp/>the<sp/>default<sp/>value<sp/>for<sp/>a<sp/>token</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="64" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad97d265d41ac31d5505e87b9f9344f5d" kindref="member">_check_presearch_conditions</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>flags<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remove<sp/>all<sp/>white<sp/>spaces<sp/>and<sp/>count<sp/>new<sp/>lines</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(flags<sp/>&amp;<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaf1230dc0b95964fc998150653b2eb59d" kindref="member">LA_FLAG::LAF_ALLOW_WHITE_SPACE_CHARS</ref>))</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" kindref="member">_remove_whitespace_prefix</ref>(flags);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>are<sp/>at<sp/>the<sp/>end<sp/>of<sp/>the<sp/>source<sp/>code<sp/>or<sp/>it<sp/>is<sp/>empty,<sp/>return<sp/>EOF<sp/>token</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>not<sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a3331b0466137370008bca50d84e5c651" kindref="member">_check_source_code_empty</ref>();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fsm::DFA&lt;fsm::TransFn&lt;TableT&gt;,<sp/>InputT&gt;&amp;<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a7ee7e0a080e6b4d7f3495d068e9c10c6" kindref="member">getAutomaton</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" kindref="member">m_Automaton</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType&lt;TokenT, InputT&gt;</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ac67e05b2260ce3a62319213129e58634" kindref="member">getTokenFactory</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kindref="member">m_TokenFactory</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1aa7947bb7f91ec7f3e9d61128fc43f3c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1aa7947bb7f91ec7f3e9d61128fc43f3c3" kindref="member">LexicalAnalyzer</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad29fc2b53a33584ffb32a3603697dfd1" kindref="member">LexicalAnalyzer</ref>(</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fsm::DFA&lt;fsm::TransFn&lt;TableT&gt;,<sp/>InputT&gt;&amp;<sp/>automaton,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">TokenFactoryType&lt;TokenT, InputT&gt;</ref><sp/>tokenFactory,</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view<sp/>sourceCode)<sp/>:</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" kindref="member">m_Automaton</ref>{<sp/>automaton<sp/>},<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kindref="member">m_TokenFactory</ref>{<sp/>tokenFactory<sp/>},<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" kindref="member">m_SourceCode</ref>{<sp/>sourceCode<sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>the<sp/>token<sp/>factory<sp/>is<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>assert((</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">)<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kindref="member">m_TokenFactory</ref><sp/>&amp;&amp;<sp/></highlight><highlight class="stringliteral">&quot;Token<sp/>factory<sp/>is<sp/>not<sp/>set!&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad0bbb0c3343286b21e88adf0a7446856" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad0bbb0c3343286b21e88adf0a7446856" kindref="member">LexicalAnalyzer</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref>&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a2ac505a52b89aa170edecc76ec4cf29e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a2ac505a52b89aa170edecc76ec4cf29e" kindref="member">LexicalAnalyzer</ref>(<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref>&amp;&amp;)<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref>&amp;<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a1f69aa50bbb0560d1b202a242913bd2b" kindref="member">operator= </ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer" kindref="compound">LexicalAnalyzer</ref>&amp;<sp/>rhs)<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Automaton<sp/>=<sp/>rhs.<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe7c6ac5e4b1ab98696679ce0b159b43" kindref="member">m_Automaton</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Col<sp/>=<sp/>rhs.<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" kindref="member">m_Col</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Line<sp/>=<sp/>rhs.<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" kindref="member">m_Line</ref>;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_SourceCode<sp/>=<sp/>rhs.<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" kindref="member">m_SourceCode</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_TokenFactory<sp/>=<sp/>rhs.<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a886f7cd4e1a8b1aa774317d8e3b6ebf6" kindref="member">m_TokenFactory</ref>;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">this</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string_view&amp;<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ad4ba3696b0a5be18ce977279b1e175b8" kindref="member">getSourceCode</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af50ee97ecbd41e06f57976d171f1e034" kindref="member">m_SourceCode</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a96b9d4193848be83ee5923180f79ac57" kindref="member">getLine</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" kindref="member">m_Line</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1af69bdabcfb03e7954e18748489546f86" kindref="member">getCol</ref>()<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" kindref="member">m_Col</ref>;<sp/>};</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structm0st4fa_1_1lexana_1_1_position" kindref="compound">Position</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a0925318fd064522f6a8b3aa30cd0c938" kindref="member">getPosition</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_position" kindref="compound">Position</ref>{<ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a8b7bbdec2a36e0575ed15318e94ec17c" kindref="member">m_Line</ref>,<sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a83521db3b7093fb63e38d864e8ab91f0" kindref="member">m_Col</ref>};</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" kindref="member">Result</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" kindref="member">getNextToken</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1a6cdcf687a5ca0a64a9d63d8cbcf73f05" kindref="member">Result</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" kindref="member">peak</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal">)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1ebaab8aaebf0f3608778869710b280d147d" kindref="member">LA_FLAG::LAF_DEFAULT</ref>);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespacem0st4fa_1_1lexana" kindref="compound">m0st4fa::lexana</ref><sp/>{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TokenT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TableT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>InputT&gt;</highlight></codeline>
+<codeline lineno="154" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ab16929bccb0049bd037e9e9b6bcba27f" kindref="member">LexicalAnalyzer&lt;TokenT, TableT, InputT&gt;::_remove_whitespace_prefix</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>flags)</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>this<sp/>function<sp/>will<sp/>be<sp/>entered<sp/>in<sp/>case<sp/>white<sp/>space<sp/>characters<sp/>are<sp/>to<sp/>be<sp/>removed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>remove<sp/>all<sp/>white-spaces...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>currChar<sp/>=<sp/>*this-&gt;m_SourceCode.data();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isWhiteSpace<sp/>=<sp/>std::isspace(currChar)<sp/>&amp;&amp;<sp/>currChar<sp/>!=<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>null<sp/>marks<sp/>the<sp/>EOF.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>test<sp/>whether<sp/>`currChar`<sp/>is<sp/>a<sp/>new<sp/>line<sp/>and<sp/>new<sp/>lines<sp/>are<sp/>allowed<sp/>to<sp/>be<sp/>counted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>matchNewLine<sp/>=<sp/>currChar<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>(flags<sp/>&amp;<sp/>(unsigned)<ref refid="namespacem0st4fa_1_1lexana_1a9a9d1a058e5b31ba3d8a79f0646cc1eba77875afba3067542c2c1b1cd0e09b965" kindref="member">LA_FLAG::LAF_ALLOW_ONLY_NEW_LINE</ref>);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>we<sp/>have<sp/>not<sp/>catched<sp/>a<sp/>white<sp/>space...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!isWhiteSpace)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>early<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>erase<sp/>whitespace<sp/>from<sp/>source<sp/>code<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_SourceCode.remove_prefix(1);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>the<sp/>current<sp/>character<sp/>is<sp/>a<sp/>new<sp/>line<sp/>char<sp/>and<sp/>they<sp/>are<sp/>allowed,<sp/>do<sp/>not<sp/>remove<sp/>the<sp/>current<sp/>char</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(matchNewLine)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Line++,<sp/>this-&gt;m_Col<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Col++;<sp/></highlight><highlight class="comment">//<sp/>if<sp/>this<sp/>whitespace<sp/>character<sp/>is<sp/>not<sp/>a<sp/>new<sp/>line<sp/>character</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TokenT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TableT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>InputT&gt;</highlight></codeline>
+<codeline lineno="188" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">lexana::LexicalAnalyzer&lt;TokenT, TableT, InputT&gt;::Result</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1afe12332255c078e87c7d2071c05d6936" kindref="member">lexana::LexicalAnalyzer&lt;TokenT, TableT, InputT&gt;::getNextToken</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>flags)</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>checks<sp/>fail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(not<sp/>this-&gt;_check_presearch_conditions(flags))</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">Result</ref>{};<sp/></highlight><highlight class="comment">//<sp/>empty<sp/>token</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>whether<sp/>there<sp/>is<sp/>a<sp/>matched<sp/>lexeme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fsm::FSMResult<sp/>fsmRes<sp/>=<sp/>this-&gt;m_Automaton.simulate(this-&gt;m_SourceCode,<sp/>fsm::FSM_MODE::MM_LONGEST_PREFIX);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>there<sp/>is<sp/>not,<sp/>early<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(not<sp/>fsmRes.accepted)</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult&lt;TokenT, InputT&gt;</ref>{};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>there<sp/>is<sp/>a<sp/>matching<sp/>lexeme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>1.<sp/>extract<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">Result</ref><sp/>res{<sp/>fsmRes,<sp/>this-&gt;getLine(),<sp/>this-&gt;getCol(),<sp/>this-&gt;m_TokenFactory};</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>2.<sp/>adjust<sp/>the<sp/>column<sp/>(character)<sp/>number</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>lexemeSize<sp/>=<sp/>fsmRes.size();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_Col<sp/>+=<sp/>lexemeSize;</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>3.<sp/>erase<sp/>the<sp/>lexeme<sp/>from<sp/>source<sp/>code<sp/>stream</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this-&gt;m_SourceCode.remove_prefix(lexemeSize);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TokenT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>TableT,<sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>InputT&gt;</highlight></codeline>
+<codeline lineno="224" refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">lexana::LexicalAnalyzer&lt;TokenT, TableT, InputT&gt;::Result</ref><sp/><ref refid="classm0st4fa_1_1lexana_1_1_lexical_analyzer_1ae606114fc27015be013ccb17dc4c2fb5" kindref="member">lexana::LexicalAnalyzer&lt;TokenT, TableT, InputT&gt;::peak</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>flags)<sp/>{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>checks<sp/>fail</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;_check_presearch_conditions(flags))</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">Result</ref>{};</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>check<sp/>whether<sp/>there<sp/>is<sp/>a<sp/>matched<sp/>lexeme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>fsm::FSMResult<sp/>fsmRes<sp/>=<sp/>this-&gt;m_Automaton.simulate(this-&gt;m_SourceCode,<sp/>fsm::FSM_MODE::MM_LONGEST_PREFIX);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>there<sp/>is<sp/>not,<sp/>early<sp/>return</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!fsmRes.accepted)</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult&lt;TokenT, InputT&gt;</ref>{};</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>there<sp/>is<sp/>a<sp/>matching<sp/>lexeme</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>extract<sp/>it;<sp/>do<sp/>not<sp/>erase<sp/>it<sp/>nor<sp/>update<sp/>the<sp/>character<sp/>count<sp/>nor<sp/>line<sp/>count</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">Result</ref><sp/>res{<sp/>fsmRes,<sp/>this-&gt;getLine(),<sp/>this-&gt;getCol(),<sp/>this-&gt;m_TokenFactory<sp/>};</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>res;</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">};</highlight></codeline>
+    </programlisting>
+    <location file="include/lexana/LexicalAnalyzer.h"/>
+  </compounddef>
+</doxygen>

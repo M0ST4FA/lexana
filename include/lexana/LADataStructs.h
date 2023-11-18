@@ -13,7 +13,7 @@ namespace m0st4fa::lexana {
 	**/
 	enum LA_FLAG {
 		//! @brief Default behavior.
-		LAF_DEFAULT                    = 0b0000,
+		LAF_DEFAULT                 = 0b0000,
 
 		//! @brief Do not skip whitespace characters. They are included in the Token object as part of the lexeme/name.
 		LAF_ALLOW_WHITE_SPACE_CHARS = 0b0001,

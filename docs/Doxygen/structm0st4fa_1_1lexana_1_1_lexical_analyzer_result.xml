@@ -1,0 +1,380 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.7" xml:lang="en-US">
+  <compounddef id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kind="struct" language="C++" prot="public">
+    <compoundname>m0st4fa::lexana::LexicalAnalyzerResult</compoundname>
+    <includes refid="_l_a_data_structs_8h" local="no">LADataStructs.h</includes>
+    <templateparamlist>
+      <param>
+        <type>typename TokenT</type>
+      </param>
+      <param>
+        <type>typename InputT</type>
+        <defval>std::string_view</defval>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a53358c5c4ad738b135a26ce692ebed34" prot="public" static="no">
+        <type><ref refid="namespacem0st4fa_1_1lexana_1a025d151548b0a8f909c849034ae50b7d" kindref="member">lexana::TokenFactoryType</ref>&lt; TokenT, InputT &gt;</type>
+        <definition>using m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::TokenFactoryType =  lexana::TokenFactoryType&lt;TokenT, InputT&gt;</definition>
+        <argsstring></argsstring>
+        <name>TokenFactoryType</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::TokenFactoryType</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="117" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1aa6e1695d1e7228fc57ce5d606b6f6ca9" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::foundToken</definition>
+        <argsstring></argsstring>
+        <name>foundToken</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::foundToken</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+<para>Whether the token was found or not. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="120" column="6" bodyfile="include/lexana/LADataStructs.h" bodystart="120" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" compoundref="_l_a_data_structs_8h" startline="168" endline="170">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a1502d07e3ad13f3b167bf9345441285b" prot="public" static="no" mutable="no">
+        <type>TokenT</type>
+        <definition>TokenT m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::token</definition>
+        <argsstring></argsstring>
+        <name>token</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::token</qualifiedname>
+        <initializer>= TokenT{}</initializer>
+        <briefdescription>
+<para>The token itself. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="122" column="8" bodyfile="include/lexana/LADataStructs.h" bodystart="122" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a85ffe495eabe63baeb02e7c3c13b4fe9" compoundref="_l_a_data_structs_8h" startline="160" endline="162">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::operator TokenT</referencedby>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" compoundref="_l_a_data_structs_8h" startline="168" endline="170">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a5fb5e19f5b6a61014e77fb67176cc764" prot="public" static="no" mutable="no">
+        <type>fsm::Indicies</type>
+        <definition>fsm::Indicies m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::indicies</definition>
+        <argsstring></argsstring>
+        <name>indicies</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::indicies</qualifiedname>
+        <initializer>= fsm::Indicies{0, 0}</initializer>
+        <briefdescription>
+<para>The indicies of the lexeme/name of the token within the actual input. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="124" column="15" bodyfile="include/lexana/LADataStructs.h" bodystart="124" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" compoundref="_l_a_data_structs_8h" startline="168" endline="170">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1af7f249c0c1e14ae8a615740ad07cff2d" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::lineNumber</definition>
+        <argsstring></argsstring>
+        <name>lineNumber</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::lineNumber</qualifiedname>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The number of the line at which the lexeme was found. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="126" column="8" bodyfile="include/lexana/LADataStructs.h" bodystart="126" bodyend="-1"/>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" compoundref="_l_a_data_structs_8h" startline="168" endline="170">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a3206dd3f2412fbc50a92bf2938434edc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::LexicalAnalyzerResult</definition>
+        <argsstring>()=default</argsstring>
+        <name>LexicalAnalyzerResult</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::LexicalAnalyzerResult</qualifiedname>
+        <briefdescription>
+<para>The default constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="131" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a4eefaf01242af7826e6bce23656b3624" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::LexicalAnalyzerResult</definition>
+        <argsstring>(const TokenT &amp;token, fsm::Indicies indicies, const size_t lineNumber, const size_t colNumber)</argsstring>
+        <name>LexicalAnalyzerResult</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::LexicalAnalyzerResult</qualifiedname>
+        <param>
+          <type>const TokenT &amp;</type>
+          <declname>token</declname>
+        </param>
+        <param>
+          <type>fsm::Indicies</type>
+          <declname>indicies</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>lineNumber</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>colNumber</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object from given parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>token</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The token that the <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object will store. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>indicies</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The indicies of that token. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the line at which the token appears. The first line has the number 0. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>colNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the first letter of the token in the line at which it appears. The counting starts from 0. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="140" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="140" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a7e3c2d3ffba98e58ba3a9a156e80114c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::LexicalAnalyzerResult</definition>
+        <argsstring>(const fsm::FSMResult &amp;fsmres, const size_t lineNumber, const size_t colNumber, const TokenFactoryType factory)</argsstring>
+        <name>LexicalAnalyzerResult</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::LexicalAnalyzerResult</qualifiedname>
+        <param>
+          <type>const fsm::FSMResult &amp;</type>
+          <declname>fsmres</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>lineNumber</declname>
+        </param>
+        <param>
+          <type>const size_t</type>
+          <declname>colNumber</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a53358c5c4ad738b135a26ce692ebed34" kindref="member">TokenFactoryType</ref></type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object from given parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fsmres</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An FSMResult object from which the token and the indicies will be extracted. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the line at which the token appears. The first line has the number 0. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>colNumber</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of the first letter of the token in the line at which it appears. The counting starts from 0. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="147" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="147" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a28733c86a429a8e03dd0cac97cb45247" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::reset</definition>
+        <argsstring>()</argsstring>
+        <name>reset</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::reset</qualifiedname>
+        <briefdescription>
+<para>Resets the <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object to storing no <ref refid="structm0st4fa_1_1lexana_1_1_token" kindref="compound">Token</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="152" column="6" bodyfile="include/lexana/LADataStructs.h" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a85ffe495eabe63baeb02e7c3c13b4fe9" prot="public" static="no" const="yes" explicit="yes" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::operator TokenT</definition>
+        <argsstring>() const</argsstring>
+        <name>operator TokenT</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::operator TokenT</qualifiedname>
+        <briefdescription>
+<para>Converts the <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object to a <ref refid="structm0st4fa_1_1lexana_1_1_token" kindref="compound">Token</ref> object. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="160" column="10" bodyfile="include/lexana/LADataStructs.h" bodystart="160" bodyend="162"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a1502d07e3ad13f3b167bf9345441285b" compoundref="_l_a_data_structs_8h" startline="122">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::token</references>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>std::string</type>
+        <definition>std::string m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</definition>
+        <argsstring>() const</argsstring>
+        <name>toString</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::toString</qualifiedname>
+        <briefdescription>
+<para>Converts the <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result" kindref="compound">LexicalAnalyzerResult</ref> object into an std::string object and returns it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The std::string object corresponding to <computeroutput>this</computeroutput>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="168" column="13" bodyfile="include/lexana/LADataStructs.h" bodystart="168" bodyend="170"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1aa6e1695d1e7228fc57ce5d606b6f6ca9" compoundref="_l_a_data_structs_8h" startline="120">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::foundToken</references>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a5fb5e19f5b6a61014e77fb67176cc764" compoundref="_l_a_data_structs_8h" startline="124">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::indicies</references>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1af7f249c0c1e14ae8a615740ad07cff2d" compoundref="_l_a_data_structs_8h" startline="126">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::lineNumber</references>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a1502d07e3ad13f3b167bf9345441285b" compoundref="_l_a_data_structs_8h" startline="122">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::token</references>
+        <referencedby refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1ace65ff516f9f3c037e2ae6198f9bff3c" compoundref="_l_a_data_structs_8h" startline="175" endline="177">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::operator std::string</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1ace65ff516f9f3c037e2ae6198f9bff3c" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::operator std::string</definition>
+        <argsstring>() const</argsstring>
+        <name>operator std::string</name>
+        <qualifiedname>m0st4fa::lexana::LexicalAnalyzerResult::string</qualifiedname>
+        <briefdescription>
+<para>Calls <ref refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" kindref="member">toString()</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/lexana/LADataStructs.h" line="175" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="175" bodyend="177"/>
+        <references refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" compoundref="_l_a_data_structs_8h" startline="168" endline="170">m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;::toString</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>represents the result of a single <computeroutput>getNextToken()</computeroutput> call. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>TokenT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of a token object. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InputT</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of input (lexemes). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>TokenT</label>
+      </node>
+      <node id="2">
+        <label>bool</label>
+      </node>
+      <node id="4">
+        <label>Indicies</label>
+      </node>
+      <node id="1">
+        <label>m0st4fa::lexana::LexicalAnalyzerResult&lt; TokenT, InputT &gt;</label>
+        <link refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>+foundToken</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>+token</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>+indicies</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>+lineNumber</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>size_t</label>
+      </node>
+    </collaborationgraph>
+    <location file="include/lexana/LADataStructs.h" line="116" column="1" bodyfile="include/lexana/LADataStructs.h" bodystart="116" bodyend="178"/>
+    <listofallmembers>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1aa6e1695d1e7228fc57ce5d606b6f6ca9" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>foundToken</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a5fb5e19f5b6a61014e77fb67176cc764" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>indicies</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a3206dd3f2412fbc50a92bf2938434edc" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>LexicalAnalyzerResult</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a4eefaf01242af7826e6bce23656b3624" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>LexicalAnalyzerResult</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a7e3c2d3ffba98e58ba3a9a156e80114c" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>LexicalAnalyzerResult</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1af7f249c0c1e14ae8a615740ad07cff2d" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>lineNumber</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1ace65ff516f9f3c037e2ae6198f9bff3c" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>operator std::string</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a85ffe495eabe63baeb02e7c3c13b4fe9" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>operator TokenT</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a28733c86a429a8e03dd0cac97cb45247" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>reset</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a1502d07e3ad13f3b167bf9345441285b" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>token</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a53358c5c4ad738b135a26ce692ebed34" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>TokenFactoryType</name></member>
+      <member refid="structm0st4fa_1_1lexana_1_1_lexical_analyzer_result_1a862a4dd820317f6619ac35e97587264c" prot="public" virt="non-virtual"><scope>m0st4fa::lexana::LexicalAnalyzerResult</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
