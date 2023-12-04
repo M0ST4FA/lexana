@@ -6,7 +6,7 @@ find_package(Doxygen
 if (${DOXYGEN_FOUND})
 	
 	# This directory is relative to the binary directory
-	set( DOXYGEN_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/docs/${PROJECT_NAME}/" )
+	set( DOXYGEN_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/docs/" )
 	set( DOXYGEN_COLLABORATION_GRAPH YES )
 	set( DOXYGEN_EXTRACT_ALL YES )
 	set( DOXYGEN_CLASS_DIAGRAMS YES )
