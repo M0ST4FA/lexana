@@ -123,7 +123,7 @@ protected:
 			return { T_NUM, lexeme };
 
 		default:
-			m0st4fa::Logger{}.log(m0st4fa::LoggerInfo::FATAL_ERROR, std::format("Unexpected state: {}", state));
+			m0st4fa::Logger{}.log(m0st4fa::LoggerInfo::LL_FATAL_ERROR, std::format("Unexpected state: {}", state));
 			std::abort();
 			//throw std::runtime_error("Unreachable");
 		}

@@ -5,8 +5,8 @@ ${CMAKE_MODULE_PATH})
 
 find_package(Sphinx REQUIRED)
 
-set(SPHINX_SOURCE ${PROJECT_SOURCE_DIR}/docs/Sphinx)
-set(SPHINX_BUILD ${PROJECT_BINARY_DIR}/docs/sphinx)
+set(SPHINX_SOURCE "${PROJECT_SOURCE_DIR}/docs/Sphinx/source")
+set(SPHINX_BUILD "${PROJECT_BINARY_DIR}/docs/sphinx")
 
 add_custom_target(Sphinx_${PROJECT_NAME} ALL
 			  COMMAND
